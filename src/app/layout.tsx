@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Header, Footer } from '@/components/shell';
 import { Motion } from '@/components/motion';
 import { CartProvider } from '@/components/cart';
-import { JsonLd, siteUrl } from '@/lib/seo';
+import { JsonLd, siteUrl, canonicalUrl } from '@/lib/seo';
 import { site, getBooks } from '@/lib/content';
 import { introBootstrap } from '@/lib/intro';
 import { legal } from '@/lib/legal';
@@ -27,16 +27,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script id="intro-before-paint" dangerouslySetInnerHTML={{ __html: introBootstrap }} />
       </head>
       <body>
-        <a className="skip-link" href="#main">
-          Skip to content
-        </a>
         <CartProvider>
           <Motion />
-          <Header showCart={getBooks().some((book) => book.purchaseMode === 'stripe')} />
-          <main id="main" tabIndex={-1}>
-            {children}
-          </main>
-          <Footer email={site.email} socials={site.socials} />
+          <div id="site-content" suppressHydrationWarning>
+            <a className="skip-link" href="#main">
+              Skip to content
+            </a>
+            <Header showCart={getBooks().some((book) => book.purchaseMode === 'stripe')} />
+            <main id="main" tabIndex={-1}>
+              {children}
+            </main>
+            <Footer email={site.email} socials={site.socials} />
+          </div>
         </CartProvider>
         <JsonLd
           data={[
@@ -45,7 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               '@type': 'Organization',
               '@id': `${siteUrl}/#organization`,
               name: site.name,
-              url: siteUrl,
+              url: canonicalUrl('/'),
               logo: `${siteUrl}/brand/logo.webp`,
               email: site.email,
               ...(legal.operatorLegalName ? { legalName: legal.operatorLegalName } : {}),
@@ -57,14 +59,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               '@type': 'Person',
               '@id': `${siteUrl}/#author`,
               name: site.author,
-              url: `${siteUrl}/about`,
+              url: canonicalUrl('/about'),
               ...(site.biography ? { description: site.biography } : {}),
             },
             {
               '@context': 'https://schema.org',
               '@type': 'WebSite',
               name: site.name,
-              url: siteUrl,
+              url: canonicalUrl('/'),
               publisher: { '@id': `${siteUrl}/#organization` },
             },
           ]}

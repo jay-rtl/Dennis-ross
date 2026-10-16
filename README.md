@@ -43,17 +43,19 @@ GitHub Pages serves static files. This deployment uses direct email contact and 
 
 ## What is implemented
 
-The homepage opens with an author-focused editorial spread, a typographic “What if…” poster, and the official logo as an offset bookplate. A collection spread below the introduction presents real book imagery and existing edition details. Navigation stays visible while scrolling on desktop and mobile.
+The local redesign opens with a full-width navy author masthead, followed by a collection spread using the actual book cover. Desktop and mobile use different name compositions. A full-width discovery index, typographic author panel, reading margin, journal, and colophon retain the existing content. The official logo appears in the header and cinematic introduction; repeated logo plates are removed. Navigation stays visible while scrolling.
 
-The visual system uses midnight navy, deep blue, warm ivory, muted gold, and charcoal. Large Cormorant serif typography contrasts with Inter captions and body text. Numbered navigation, ruled indexes, alternating book layouts, a navy author spread, staggered reading notes, and an oversized footer masthead replace repeated card layouts. GSAP provides restrained masking, typography and image reveals, and a subtle pointer response on the bookplate. Reduced-motion visitors receive the complete static composition. See `docs/editorial-design.md` for the visual audit and implementation notes.
+The visual system uses midnight navy, deep blue, warm ivory, muted gold, and charcoal. Cormorant display type contrasts with larger Inter body text and captions. Interior pages use navy editorial frontispieces and layouts specific to their content. GSAP provides restrained type and image reveals; live reduced-motion changes revert animation and reveal the complete content. The intro makes the underlying site inert, keeps keyboard focus on Skip, supports Escape, and restores focus afterward. See `docs/fjr-local-review.md` for the current audit and review instructions.
 
 The homepage newsletter section and its signup links have been removed. The Press & Media page is removed from public routes, navigation, footer, contact, and sitemap. Inquiries use `/contact`. The standalone reader-list integration remains unlinked for possible future use; its existing provider and legal setup requirements still apply.
 
 U.S.-focused Privacy, Terms, and Accessibility pages are included. See `docs/us-legal-readiness.md` for the implementation and remaining operator/account details. Legal business details are editable in `content/legal.json` and the CMS. Newsletter activation requires a verified mailing address as well as provider settings. A website implementation alone is not a certification of legal compliance.
 
 - Home, author, catalog, book detail, journal, article, contact, cart, standalone campaign signup, privacy, terms, accessibility, checkout return, and custom 404 pages.
-- Official logo in navigation, the opening bookplate, the author identity panel, the session-only welcome intro, icons, manifest, and social preview.
-- GSAP intro with skip button, a CSS failsafe, storage failure fallback, and reduced-motion support. Content is present in server-rendered HTML. Masked type and image reveals, fine-rule hovers, and controlled bookplate movement.
+- Official logo in navigation, the session-only welcome intro, icons, manifest, and social preview.
+- GSAP intro with Skip, Escape, focus containment/restoration, pre-hydration inert protection, timeouts, and live reduced-motion support. Content is present in server-rendered HTML. Masked type/image reveals and fine-rule hovers.
+- An email-first contact view when provider delivery is disabled. The existing form and server integration are retained for configured deployments.
+- GitHub Pages canonical, sitemap, breadcrumb, and schema URLs share a trailing-slash policy. Run `npm run test:pages` after `npm run build:pages` to verify the exported artifacts.
 - Persistent browser cart, format selection, quantity changes, removal, subtotal, and server-validated Stripe Checkout.
 - Resend contact delivery and Brevo double opt-in signup routes with validation, origin checks, size limits, honeypots, Cloudflare Turnstile verification, and durable production rate limiting.
 - Decap CMS configuration for authenticated GitHub editing, image uploads, drafts, books, formats/prices, featured books, biographies, articles, press releases, and contact settings.

@@ -29,7 +29,26 @@ export default function Contact() {
             <ArrowUpRight size={17} />
           </a>
         </aside>
-        <ContactForm enabled={contactEnabled()} />
+        {contactEnabled() ? (
+          <ContactForm enabled />
+        ) : (
+          <div className="contact-correspondence">
+            <span className="eyebrow">READER CORRESPONDENCE</span>
+            <p className="correspondence-title">
+              A question, an idea,
+              <br />
+              <em>or a simple hello.</em>
+            </p>
+            <p>For reader questions, publishing opportunities, and everything in between.</p>
+            <a className="button" href={`mailto:${site.email}?subject=Reader%20inquiry`}>
+              Write to Dennis <ArrowUpRight size={18} />
+            </a>
+            <p className="contact-instructions">
+              Opens your email application. You can also copy the address shown here and use your
+              usual email service.
+            </p>
+          </div>
+        )}
       </section>
       <JsonLd data={breadcrumbs([{ name: 'Contact', path: '/contact' }])} />
     </>

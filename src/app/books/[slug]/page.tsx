@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getBooks, publicBook } from '@/lib/content';
-import { seo, JsonLd, siteUrl, breadcrumbs } from '@/lib/seo';
+import { seo, JsonLd, siteUrl, breadcrumbs, canonicalUrl } from '@/lib/seo';
 import { BookCard } from '@/components/editorial';
 import { Purchase } from '@/components/cart';
 import { Share } from '@/components/share';
@@ -59,7 +59,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
           </div>
           {book.isbn && <p className="small muted">ISBN: {book.isbn}</p>}
           <Purchase book={publicBook(book)} />
-          <Share title={book.title} url={`${siteUrl}/books/${slug}`} />
+          <Share title={book.title} url={canonicalUrl(`/books/${slug}`)} />
         </div>
       </section>
       {related.length > 0 && (
@@ -85,7 +85,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
             image: siteUrl + book.cover,
             genre: book.genre,
             ...(book.isbn ? { isbn: book.isbn } : {}),
-            url: `${siteUrl}/books/${slug}`,
+            url: canonicalUrl(`/books/${slug}`),
           },
           ...book.formats
             .filter((f) => f.price !== undefined)
@@ -109,7 +109,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
                 url:
                   book.purchaseMode === 'external' && f.purchaseUrl
                     ? f.purchaseUrl
-                    : `${siteUrl}/books/${slug}`,
+                    : canonicalUrl(`/books/${slug}`),
               },
             })),
           breadcrumbs([

@@ -1,15 +1,24 @@
 import type { Metadata } from 'next';
 export const siteUrl = (process.env.SITE_URL || 'http://localhost:3000').replace(/\/$/, '');
+export function canonicalUrl(pathname: string) {
+  const path =
+    process.env.STATIC_EXPORT === 'true' &&
+    pathname !== '/' &&
+    !pathname.split('/').at(-1)?.includes('.')
+      ? pathname.replace(/\/?$/, '/')
+      : pathname;
+  return `${siteUrl}${path}`;
+}
 export function seo(title: string, description: string, pathname: string, index = true): Metadata {
   return {
     title,
     description,
-    alternates: { canonical: `${siteUrl}${pathname}` },
+    alternates: { canonical: canonicalUrl(pathname) },
     robots: { index, follow: true },
     openGraph: {
       title: `${title} | Dennis Ross Books`,
       description,
-      url: `${siteUrl}${pathname}`,
+      url: canonicalUrl(pathname),
       type: 'website',
       siteName: 'Dennis Ross Books',
       locale: 'en_US',
@@ -46,7 +55,7 @@ export function breadcrumbs(items: { name: string; path: string }[]) {
       '@type': 'ListItem',
       position: i + 1,
       name: item.name,
-      item: siteUrl + item.path,
+      item: canonicalUrl(item.path),
     })),
   };
 }

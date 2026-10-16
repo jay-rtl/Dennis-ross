@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getArticles } from '@/lib/content';
-import { seo, JsonLd, siteUrl, breadcrumbs } from '@/lib/seo';
+import { seo, JsonLd, siteUrl, breadcrumbs, canonicalUrl } from '@/lib/seo';
 import { Share } from '@/components/share';
 export function generateStaticParams() {
   return getArticles().map((a) => ({ slug: a.slug }));
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           title: a.title,
           description: a.excerpt,
           publishedTime: a.date,
-          url: `${siteUrl}/news/${slug}`,
+          url: canonicalUrl(`/news/${slug}`),
           images: [a.image || '/brand/social.jpg'],
         },
       }
@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <p key={i}>{p}</p>
           ))}
         </div>
-        <Share title={a.title} url={`${siteUrl}/news/${slug}`} />
+        <Share title={a.title} url={canonicalUrl(`/news/${slug}`)} />
         <Link href="/news" className="text-link">
           ← Back to the journal
         </Link>
@@ -81,7 +81,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             datePublished: a.date,
             author: { '@id': `${siteUrl}/#author` },
             publisher: { '@id': `${siteUrl}/#organization` },
-            mainEntityOfPage: `${siteUrl}/news/${slug}`,
+            mainEntityOfPage: canonicalUrl(`/news/${slug}`),
             image: `${siteUrl}${a.image || '/brand/social.jpg'}`,
           },
           breadcrumbs([

@@ -115,6 +115,7 @@ const result = spawnSync(
     env: {
       ...process.env,
       SITE_URL: siteUrl,
+      STATIC_EXPORT: 'true',
       ADMIN_GITHUB_REPO: '',
       ADMIN_OAUTH_URL: '',
       CONTENT_DIRECTORY: '',

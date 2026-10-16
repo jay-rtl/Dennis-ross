@@ -23,7 +23,7 @@ test('home renders branded content, healthy assets, and a single-session skippab
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Discover theworld ofDennis Ross.',
+    /Discover the\s*world of\s*Dennis\s*Ross\./,
   );
   const intro = page.getByRole('dialog', { name: 'Welcome to Dennis Ross Books' });
   await expect(intro).toBeVisible();
@@ -264,8 +264,12 @@ test('unavailable stale cart entries can be removed and contact stays honest', a
   await page.getByRole('button', { name: 'Remove book', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Your next chapter is waiting.' })).toBeVisible();
   await page.goto('/contact');
-  await expect(page.getByRole('button', { name: 'Send message' })).toBeDisabled();
-  await expect(page.getByText('Online messaging is being configured.')).toBeVisible();
+  await expect(page.locator('.contact-form input, .contact-form textarea')).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Write to Dennis', exact: true })).toHaveAttribute(
+    'href',
+    /^mailto:readdennisross@gmail\.com/,
+  );
+  await expect(page.getByText('Opens your email application.', { exact: false })).toBeVisible();
 });
 test('primary content works without JavaScript and reduced motion skips intro', async ({
   browser,

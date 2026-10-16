@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit",
     "test": "playwright test",
     "test:content": "node scripts/test-content.mjs",
+    "test:pages": "node scripts/check-pages.mjs",
     "format": "prettier --write ."
   },
   "dependencies": {

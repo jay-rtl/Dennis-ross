@@ -29,13 +29,15 @@ export function PageHeading({
   description: string;
 }) {
   return (
-    <div className="page-heading container">
-      <span className="eyebrow">
-        <i />
-        {eyebrow}
-      </span>
-      <h1>{title}</h1>
-      <p>{description}</p>
+    <div className="page-heading-shell">
+      <div className="page-heading container">
+        <span className="eyebrow">
+          <i />
+          {eyebrow}
+        </span>
+        <h1>{title}</h1>
+        <p>{description}</p>
+      </div>
     </div>
   );
 }
@@ -165,6 +167,7 @@ export function FeaturedBooks() {
           <Image
             src={book.cover}
             alt={`${book.title} by Dennis Ross, front cover`}
+            loading="eager"
             fill
             sizes="(max-width: 600px) 80vw, 40vw"
           />

@@ -19,15 +19,17 @@ export function Brand({ footer = false }: { footer?: boolean }) {
       aria-label="Dennis Ross Books home"
       className={`brand ${footer ? 'brand-footer' : ''}`}
     >
-      <span className="brand-logo">
-        <Image
-          src="/brand/logo.webp"
-          alt="Official Dr. Dennis Ross Publication logo"
-          width={70}
-          height={70}
-          priority={!footer}
-        />
-      </span>
+      {!footer && (
+        <span className="brand-logo">
+          <Image
+            src="/brand/logo.webp"
+            alt="Official Dr. Dennis Ross Publication logo"
+            width={70}
+            height={70}
+            priority={!footer}
+          />
+        </span>
+      )}
       <span className="brand-name">
         DENNIS ROSS<span>BOOKS & PUBLICATIONS</span>
       </span>
@@ -59,7 +61,7 @@ export function Header({ showCart = true }: { showCart?: boolean }) {
           id="main-navigation"
           className={open ? 'navigation is-open' : 'navigation'}
         >
-          {links.map(([href, label], index) => (
+          {links.map(([href, label]) => (
             <Link
               key={href}
               href={href}
@@ -70,9 +72,6 @@ export function Header({ showCart = true }: { showCart?: boolean }) {
                   : undefined
               }
             >
-              <span className="nav-index" aria-hidden="true">
-                0{index + 1}
-              </span>
               {label}
             </Link>
           ))}

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Feather, Compass } from 'lucide-react';
 import { ButtonLink, Portrait, FinalCta, EmptyNews, FeaturedBooks } from '@/components/editorial';
 import { StoryArt } from '@/components/story-art';
@@ -15,61 +14,57 @@ export default function Home() {
   return (
     <div className="home-page">
       <section className="hero">
-        <div className="hero-running-head container">
+        <div className="container hero-running-head">
           <span>DENNIS ROSS / BOOKS & PUBLICATIONS</span>
-          <span>BOOKS. IDEAS. NEW POSSIBILITIES.</span>
+          <span>STORIES THAT OPEN NEW WORLDS</span>
         </div>
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <span className="eyebrow">
-              <i /> STORIES THAT OPEN NEW WORLDS
+        <div className="container hero-composition">
+          <h1>
+            <span className="hero-title-lead">Discover the world of</span>
+            <span className="hero-author">
+              <span>Dennis</span> <em>Ross.</em>
             </span>
-            <h1>
-              <span className="hero-title-lead">
-                Discover the
-                <br />
-                world of
-              </span>
-              <em>Dennis Ross.</em>
-            </h1>
+          </h1>
+          <div className="hero-editorial-note">
+            <span className="little-line" />
             <p>
-              A place for storytelling, imagination, and the quiet
-              <br className="desktop-break" /> wonder of discovering your next great read.
+              A place for storytelling, imagination, and the quiet wonder of discovering your next
+              great read.
             </p>
-            <div className="hero-buttons">
-              <ButtonLink href="/books">Explore books</ButtonLink>
-              <Link href="/about" className="text-link">
-                Meet the author <ArrowRight size={17} />
-              </Link>
-            </div>
-            <div className="hero-footnote">
-              <span className="little-line" />A new perspective begins with a page.
-            </div>
           </div>
-          <StoryArt />
+          <div className="hero-buttons">
+            <ButtonLink href="/books">Explore books</ButtonLink>
+            <Link href="/about" className="text-link">
+              Meet the author <ArrowRight size={17} />
+            </Link>
+          </div>
+          <div className="hero-footnote">A new perspective begins with a page.</div>
         </div>
         <div className="hero-bottom container">
           <a href="#discover">
-            SCROLL TO DISCOVER <ArrowDown size={13} />
+            SCROLL TO DISCOVER <ArrowDown size={15} />
           </a>
           <span>BOOKS. IDEAS. NEW POSSIBILITIES.</span>
         </div>
       </section>
       <div className="brand-ribbon">
         <div className="container">
-          <span>
-            <BookOpen size={17} /> A world of stories
-          </span>
-          <i />
-          <span>
-            <Feather size={17} /> A distinct point of view
-          </span>
-          <i />
-          <span>
-            <Compass size={17} /> Something new to discover
-          </span>
+          <span>A world of stories</span>
+          <span>A distinct point of view</span>
+          <span>Something new to discover</span>
         </div>
       </div>
+      <section className="collection-spread section">
+        <div className="container">
+          <div className="spread-running-head">
+            <span>01 / THE COLLECTION</span>
+            <Link href="/books">
+              Explore all books <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          <FeaturedBooks />
+        </div>
+      </section>
       <section id="discover" className="section container discovery-section">
         <div className="section-top" data-reveal>
           <div>
@@ -128,17 +123,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="collection-spread section">
-        <div className="container">
-          <div className="spread-running-head">
-            <span>01 / THE COLLECTION</span>
-            <Link href="/books">
-              Explore all books <ArrowUpRight size={16} />
-            </Link>
-          </div>
-          <FeaturedBooks />
-        </div>
-      </section>
       <section className="author-preview">
         <div className="container author-grid">
           <div data-reveal>
@@ -147,12 +131,13 @@ export default function Home() {
             ) : (
               <div className="author-identity">
                 <span className="eyebrow">THE AUTHOR’S CORNER</span>
-                <Image
-                  src="/brand/logo.webp"
-                  alt="Official Dr. Dennis Ross Publication logo"
-                  width={250}
-                  height={250}
-                />
+                <span className="author-wordmark" aria-hidden="true">
+                  Words
+                  <br />
+                  <em>open</em>
+                  <br />
+                  worlds.
+                </span>
                 <p>Words open worlds.</p>
                 <span className="author-identity-foot">DENNIS ROSS BOOKS & PUBLICATIONS</span>
               </div>
@@ -194,36 +179,39 @@ export default function Home() {
             Leave a little space for discovery.
           </p>
         </div>
-        <div className="values-grid">
-          {[
-            {
-              n: '01',
-              Icon: BookOpen,
-              title: 'A world to step into',
-              text: 'There is a particular joy in opening a book and finding a different way to see the world.',
-            },
-            {
-              n: '02',
-              Icon: Feather,
-              title: 'A voice to discover',
-              text: 'Get to know the perspective behind the pages, with author notes and news as they’re shared.',
-            },
-            {
-              n: '03',
-              Icon: Compass,
-              title: 'A story to stay with',
-              text: 'Follow the next chapter. Explore the collection and return for new announcements.',
-            },
-          ].map(({ n, Icon, title, text }) => (
-            <div className="value" key={n} data-reveal>
-              <div>
-                <span>{n}</span>
-                <Icon size={25} strokeWidth={1} />
+        <div className="reading-composition">
+          <StoryArt />
+          <div className="values-grid">
+            {[
+              {
+                n: '01',
+                Icon: BookOpen,
+                title: 'A world to step into',
+                text: 'There is a particular joy in opening a book and finding a different way to see the world.',
+              },
+              {
+                n: '02',
+                Icon: Feather,
+                title: 'A voice to discover',
+                text: 'Get to know the perspective behind the pages, with author notes and news as they’re shared.',
+              },
+              {
+                n: '03',
+                Icon: Compass,
+                title: 'A story to stay with',
+                text: 'Follow the next chapter. Explore the collection and return for new announcements.',
+              },
+            ].map(({ n, Icon, title, text }) => (
+              <div className="value" key={n} data-reveal>
+                <div>
+                  <span>{n}</span>
+                  <Icon size={25} strokeWidth={1} />
+                </div>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </div>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
       <section className="section container journal-section">
