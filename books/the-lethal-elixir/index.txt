@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-3:"/Dennis-ross/_next/static/chunks/2opod2xp65we0.js"
+3:"/Dennis-ross/_next/static/chunks/17tzj-q1cypca.js"
 4:"/Dennis-ross/_next/static/chunks/39fzwfv3tl-49.js"
-5:"/Dennis-ross/_next/static/chunks/1_sikzluxmjx-.js"
+5:"/Dennis-ross/_next/static/chunks/2o_c7zois-_sj.js"
 6:"/Dennis-ross/_next/static/chunks/3jo-lr_8pei3-.js"
 7:I[84704,["$3","$4","$5","$6"],"CartProvider"]
 8:I[6421,["$3","$4","$5"],"Motion"]
@@ -11,7 +11,7 @@ b:"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js"
 c:I[32403,["$3","$4","$5","$b"],"default"]
 d:I[37457,["$3","$4","$5"],"default"]
 1c:I[68027,["$3","$4","$5"],"default",1]
-:HL["/Dennis-ross/_next/static/chunks/0_1jeto4n1z35.css","style"]
+:HL["/Dennis-ross/_next/static/chunks/1aade6b1r9_4o.css","style"]
 2:T8ae,
 (function () {
   try {
@@ -67,7 +67,7 @@ d:I[37457,["$3","$4","$5"],"default"]
 19:[["children",{"s":"__PAGE__","h":512,"d":{"r":"$L1a","p":false,"v":null}}]]
 17:[["children",{"s":{"n":"slug","t":"d","k":"the-lethal-elixir","s":[]},"h":66048,"d":{"r":"$L18","p":false,"v":"$16"},"c":"$Q19"}]]
 14:[["children",{"s":"books","h":131584,"d":{"r":"$L15","p":false,"v":"$16"},"c":"$Q17"}]]
-0:{"P":null,"c":["","books","the-lethal-elixir",""],"q":"","i":false,"t":{"t":{"s":"","h":131600,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/0_1jeto4n1z35.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/2opod2xp65we0.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Dennis-ross/_next/static/chunks/39fzwfv3tl-49.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/Dennis-ross/_next/static/chunks/1_sikzluxmjx-.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"id":"intro-before-paint","dangerouslySetInnerHTML":{"__html":"$2"}}]}],["$","body",null,{"children":[["$","$L7",null,{"children":[["$","$L8",null,{}],["$","div",null,{"id":"site-content","suppressHydrationWarning":true,"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L9",null,{"showCart":false}],["$","main",null,{"id":"main","tabIndex":-1,"children":["$","$La",null,{"parallelRouterKey":"children","error":"$c","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js","async":true,"nonce":"$undefined"}]],"template":["$","$Ld",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","div",null,{"className":"page-heading-shell","children":["$","div",null,{"className":"page-heading container","children":["$Le","$Lf","$L10"]}]}],"$L11"],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],"$L12"]}]]}],"$L13"]}]]}]]}],"p":false,"v":null},"c":"$Q14"},"h":{"r":"$L1b","p":false,"v":null}},"m":"$undefined","G":["$1c",["$L1d"]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"tYKi9GRSOHK1B0eOr3Mba"}
+0:{"P":null,"c":["","books","the-lethal-elixir",""],"q":"","i":false,"t":{"t":{"s":"","h":131600,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/1aade6b1r9_4o.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/17tzj-q1cypca.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Dennis-ross/_next/static/chunks/39fzwfv3tl-49.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/Dennis-ross/_next/static/chunks/2o_c7zois-_sj.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"id":"intro-before-paint","dangerouslySetInnerHTML":{"__html":"$2"}}]}],["$","body",null,{"children":[["$","$L7",null,{"children":[["$","$L8",null,{}],["$","div",null,{"id":"site-content","suppressHydrationWarning":true,"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L9",null,{"showCart":false}],["$","main",null,{"id":"main","tabIndex":-1,"children":["$","$La",null,{"parallelRouterKey":"children","error":"$c","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js","async":true,"nonce":"$undefined"}]],"template":["$","$Ld",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","div",null,{"className":"page-heading-shell","children":["$","div",null,{"className":"page-heading container","children":["$Le","$Lf","$L10"]}]}],"$L11"],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],"$L12"]}]]}],"$L13"]}]]}]]}],"p":false,"v":null},"c":"$Q14"},"h":{"r":"$L1b","p":false,"v":null}},"m":"$undefined","G":["$1c",["$L1d"]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"f2v0jSh4KP39kozGhvS1q"}
 1e:I[22016,["$3","$4","$5","$6"],""]
 1f:I[97412,["$3","$4","$5"],"Footer"]
 21:I[97367,["$3","$4","$5"],"OutletBoundary"]
@@ -86,7 +86,7 @@ f:["$","h1",null,{"children":"This chapter hasn’t been written."}]
 18:["$","$1","c",{"children":[null,["$","$La",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Ld",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
 1a:["$","$1","c",{"children":["$L20",[["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/3jo-lr_8pei3-.js","async":true,"nonce":"$undefined"}]],["$","$L21",null,{"children":["$","$22",null,{"name":"Next.MetadataOutlet","children":"$@23"}]}]]}]
 1b:["$","$1","h",{"children":[null,["$","$L25",null,{"children":"$L26"}],["$","$L28",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$22",null,{"name":"Next.Metadata","children":"$L29"}]}],null]}],null]}]
-1d:["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/0_1jeto4n1z35.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+1d:["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/1aade6b1r9_4o.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
 2a:I[5500,["$3","$4","$5","$6"],"Image"]
 2b:I[84704,["$3","$4","$5","$6"],"Purchase"]
 2c:I[88490,["$3","$4","$5","$6"],"Share"]
