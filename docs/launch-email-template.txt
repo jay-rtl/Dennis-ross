@@ -1,0 +1,22 @@
+EDITORIAL TEMPLATE — NOT SENT
+
+Audience: confirmed, opted-in readers in the appropriate Brevo segment
+Subject: [Approved book title] — your next chapter is here
+Preheader: [Approved one-sentence announcement]
+
+Hello [first name, if supplied],
+
+[Approved introduction from Dennis Ross.]
+[Verified book description, publication date, and available formats.]
+
+Explore the book: [canonical book URL]
+
+[Approved closing]
+Dennis Ross Books
+
+You received this because you confirmed your subscription to Dennis Ross Books.
+[Brevo unsubscribe link]
+[Required verified sender postal address]
+
+Use a Brevo campaign template, not the website server. Include the provider's
+working unsubscribe tag and required sender information. Send a test first.

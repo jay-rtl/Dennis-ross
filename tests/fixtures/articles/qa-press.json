@@ -1,0 +1,9 @@
+{
+  "slug": "qa-press-fixture",
+  "title": "QA Press Fixture — Not for Distribution",
+  "excerpt": "Isolated press release test content, never included in the public production build.",
+  "body": "This is an isolated automated press release fixture. No announcement has been made and no press release has been distributed.",
+  "category": "Press releases",
+  "date": "2026-10-02",
+  "published": true
+}

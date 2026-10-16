@@ -1,0 +1,30 @@
+{
+  "slug": "the-lethal-elixir",
+  "title": "The Lethal Elixir",
+  "description": "When Alex Williamson, a quiet laboratory employee at Deaconess Hospital, falls ill with a highly contagious and lethal infection, the hospital is thrown into panic.\n\nInfectious diseases specialist Maggie Hamilton discovers that Alex has been infected with a weapons-grade strain of Ebola. With the potential for a worldwide epidemic, Maggie and a newfound FBI ally must travel across the country to find the perpetrators before the elixir is unleashed upon the world.",
+  "tagline": "A deadly infection. A global conspiracy. A race against time.",
+  "genre": "Medical thriller",
+  "cover": "/media/the-lethal-elixir-cover.webp",
+  "published": true,
+  "featured": true,
+  "purchaseMode": "external",
+  "retailer": "Ingram",
+  "formats": [
+    {
+      "id": "paperback",
+      "label": "Paperback",
+      "available": false,
+      "needsShipping": true,
+      "purchaseUrl": "",
+      "availabilityNote": "The paperback purchase link will be added soon."
+    },
+    {
+      "id": "hardback",
+      "label": "Hardback",
+      "available": false,
+      "needsShipping": true,
+      "purchaseUrl": "",
+      "availabilityNote": "The hardback edition is coming later."
+    }
+  ]
+}

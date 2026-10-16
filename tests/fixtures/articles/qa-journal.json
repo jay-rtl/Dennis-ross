@@ -1,0 +1,9 @@
+{
+  "slug": "qa-journal-fixture",
+  "title": "QA Journal Fixture — Not an Announcement",
+  "excerpt": "Isolated automated test content, never included in the public production build.",
+  "body": "This text is exclusively for an isolated automated test. It is not a real announcement or author statement.\n\nA second paragraph exercises server rendered article content and editorial typography.",
+  "category": "Writing updates",
+  "date": "2026-10-01",
+  "published": true
+}

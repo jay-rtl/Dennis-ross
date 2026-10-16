@@ -1,0 +1,28 @@
+{
+  "slug": "qa-catalog-fixture",
+  "title": "QA Catalog Fixture — Not a Publication",
+  "description": "This is isolated automated test data. It is not a real book, cover, price, or publication and is never used by the production build.",
+  "genre": "QA only",
+  "cover": "/brand/logo.webp",
+  "published": true,
+  "featured": true,
+  "formats": [
+    {
+      "id": "paperback",
+      "label": "QA Paperback",
+      "price": 1200,
+      "currency": "USD",
+      "stripePriceId": "price_QAFixture",
+      "available": true,
+      "needsShipping": true
+    },
+    {
+      "id": "digital",
+      "label": "QA Digital",
+      "price": 600,
+      "currency": "USD",
+      "available": false,
+      "needsShipping": false
+    }
+  ]
+}

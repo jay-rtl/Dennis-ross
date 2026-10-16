@@ -1,0 +1,27 @@
+{
+  "slug": "qa-external-fixture",
+  "title": "QA External Fixture — Not a Publication",
+  "description": "Isolated retailer-link test data. This is not a real publication, edition, retailer listing, or price, and it is not used by the public build.",
+  "genre": "QA only",
+  "cover": "/brand/logo.webp",
+  "published": true,
+  "purchaseMode": "external",
+  "retailer": "QA Retailer",
+  "formats": [
+    {
+      "id": "paperback",
+      "label": "Paperback",
+      "available": true,
+      "purchaseUrl": "https://example.com/qa-paperback",
+      "needsShipping": true
+    },
+    {
+      "id": "hardback",
+      "label": "Hardback",
+      "available": false,
+      "purchaseUrl": "",
+      "availabilityNote": "Hardback coming later.",
+      "needsShipping": true
+    }
+  ]
+}
