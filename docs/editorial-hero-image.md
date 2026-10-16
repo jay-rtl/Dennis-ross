@@ -54,8 +54,29 @@ Windows, headless installed Chrome, Next production-mode preview and GitHub Page
 - node .preview/background-contrast.mjs and node .preview/background-contrast-end.mjs ? sampled solid gold glyph pixels against their rendered photographic backdrop at initial/final transforms. This supplements, rather than replaces, visual review and axe.
 - node .preview/background-performance.mjs ? one cold-cache 390?844 local run, CPU 4?, 1.6Mbps down / 0.75Mbps up, 150ms latency, reduced motion and intro skipped. LCP/CLS are lab observations, not Lighthouse scores or field measurements. Node image optimization differs from the static prepared image.
 
+## Publication and live verification
+
+Published to https://jay-rtl.github.io/Dennis-ross/ with explicit user approval.
+Source commit: e582371. GitHub Pages artifact commit: c441e6d.
+
+Implemented: the approved full-bleed background, responsive navy overlays, author signature composition and accessible motion controls. Live screenshots at 1440 and 390px were inspected after publication and match the approved local composition.
+
+| Category                    | Status     | Evidence                                                                                                                                                   |
+| --------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Functionality               | PASS       | Live Explore books navigation, image loading, Pause/Play and live preference switching verified.                                                           |
+| SEO                         | PASS       | Seven live sitemap URLs return 200, match canonical tags and remain indexable.                                                                             |
+| Responsive/Visual           | PASS       | Live Chrome layouts at 320, 390, 768 and 1440px; full hero background bounds match, no horizontal overflow. Desktop/mobile screenshots visually inspected. |
+| Accessibility               | PASS       | Scoped pre-publication axe, keyboard and contrast checks; live reduced-motion and accessible motion controls verified.                                     |
+| Security/Privacy            | PASS       | Scoped change review: no new dependency, credential, tracking or data collection.                                                                          |
+| Performance: live assets    | PASS       | Background and requested assets load without failed responses; no browser exceptions during tested routes.                                                 |
+| Performance: production CWV | NOT TESTED | Local throttled LCP/CLS sample recorded above; no live field/INP dataset or production benchmark.                                                          |
+| Code/Regression             | PASS       | Previously recorded lint, types, builds and tests; source and artifact pushes succeeded; live browser checks passed.                                       |
+
+Commands for publication: git fetch origin; git add the eight approved files; git commit -m "Create immersive editorial homepage background"; git push origin main; npm run publish:pages.
+Final checks: npm run test:pages (seven pages passed); node .preview/live-background-check.mjs (live SEO, four widths, assets, navigation, motion, runtime checks passed). Windows/headless Chrome. Live screenshots: .preview/live-background-WIDTH.png.
+
 ## Outstanding items / launch readiness
 
-READY FOR REVIEW. Preview: http://127.0.0.1:3000. No known failure in the scoped checks. Review the background composition before authorizing publication. Physical devices, Safari/Firefox, screen readers, real email/purchase operations and legal review remain unverified. The live site remains unchanged.
+READY FOR LAUNCH for this approved visual change; publication is complete with no known scoped failure. Physical devices, Safari/Firefox, screen readers, real email/purchase operations, production field performance and professional legal review remain NOT TESTED. These are documented limitations, not certifications.
 
-Next action: review the local desktop and mobile hero, then provide separate publication approval.
+Next action: view the published homepage. No further deployment approval is required for this completed publication.
