@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, ArrowUpRight, BookOpen, Feather, Mail } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpen, Mail } from 'lucide-react';
 import { getBooks, money, type Book } from '@/lib/content';
 
 export function ButtonLink({
@@ -221,7 +221,6 @@ export function FinalCta() {
   return (
     <section className="final-cta">
       <div className="container">
-        <Feather size={28} strokeWidth={1} />
         <span className="eyebrow">THERE’S ALWAYS ANOTHER CHAPTER</span>
         <h2>
           Begin your next

@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Feather, Compass } from 'lucide-react';
-import { ButtonLink, Portrait, FinalCta, EmptyNews } from '@/components/editorial';
+import { ButtonLink, Portrait, FinalCta, EmptyNews, FeaturedBooks } from '@/components/editorial';
 import { StoryArt } from '@/components/story-art';
-import { HeroAtmosphere } from '@/components/hero-atmosphere';
 import { site, getArticles } from '@/lib/content';
 import { seo } from '@/lib/seo';
 export const metadata = seo(
@@ -16,18 +15,21 @@ export default function Home() {
   return (
     <div className="home-page">
       <section className="hero">
-        <HeroAtmosphere />
-        <div className="hero-ambient" aria-hidden="true" />
+        <div className="hero-running-head container">
+          <span>DENNIS ROSS / BOOKS & PUBLICATIONS</span>
+          <span>BOOKS. IDEAS. NEW POSSIBILITIES.</span>
+        </div>
         <div className="container hero-grid">
           <div className="hero-copy">
             <span className="eyebrow">
               <i /> STORIES THAT OPEN NEW WORLDS
             </span>
             <h1>
-              Discover the
-              <br />
-              world of
-              <br />
+              <span className="hero-title-lead">
+                Discover the
+                <br />
+                world of
+              </span>
               <em>Dennis Ross.</em>
             </h1>
             <p>
@@ -124,6 +126,17 @@ export default function Home() {
               </span>
             </Link>
           ))}
+        </div>
+      </section>
+      <section className="collection-spread section">
+        <div className="container">
+          <div className="spread-running-head">
+            <span>01 / THE COLLECTION</span>
+            <Link href="/books">
+              Explore all books <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          <FeaturedBooks />
         </div>
       </section>
       <section className="author-preview">

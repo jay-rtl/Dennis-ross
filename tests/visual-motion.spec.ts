@@ -1,18 +1,23 @@
 import { test, expect } from '@playwright/test';
 
-test('navy homepage background moves and respects reduced motion', async ({ page }) => {
+test('bookplate interaction respects reduced motion', async ({ page }) => {
   await page.addInitScript(() => sessionStorage.setItem('dr-intro', '1'));
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
-  const orb = page.locator('.hero-orb-blue');
-  await expect(orb).toHaveCSS('animation-name', 'navy-orb-drift');
-  const initial = await orb.evaluate((element) => getComputedStyle(element).transform);
+  const imprint = page.locator('.story-imprint');
+  await imprint.scrollIntoViewIfNeeded();
+  await page.locator('.story-art').hover({ position: { x: 20, y: 200 } });
+  const initial = await imprint.evaluate((element) => getComputedStyle(element).transform);
+  await page.locator('.story-art').hover({ position: { x: 150, y: 250 } });
   await expect
-    .poll(() => orb.evaluate((element) => getComputedStyle(element).transform))
+    .poll(() => imprint.evaluate((element) => getComputedStyle(element).transform))
     .not.toBe(initial);
-  await expect(page.locator('.hero-atmosphere')).toHaveAttribute('aria-hidden', 'true');
-  await expect(page.locator('.hero-particles i')).toHaveCount(24);
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await expect(orb).toHaveCSS('animation-name', 'none');
-  await expect(page.locator('.hero-contours')).toHaveCSS('animation-name', 'none');
+  await page.reload();
+  await imprint.scrollIntoViewIfNeeded();
+  const still = await imprint.evaluate((element) => getComputedStyle(element).transform);
+  const reducedBounds = await page.locator('.story-art').boundingBox();
+  await page.mouse.move(reducedBounds!.x + reducedBounds!.width - 10, reducedBounds!.y + 30);
+  await expect(imprint).toHaveCSS('transform', still);
+  await expect(page.locator('.hero-particles, .hero-orb-blue')).toHaveCount(0);
 });

@@ -6,7 +6,8 @@ test('The Lethal Elixir has the supplied cover and honest Ingram edition placeho
 }, testInfo) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  await expect(page.locator('img[src*="the-lethal-elixir"]')).toHaveCount(0);
+  await expect(page.locator('.hero img[src*="the-lethal-elixir"]')).toHaveCount(0);
+  await expect(page.locator('.collection-spread img[src*="the-lethal-elixir"]')).toHaveCount(1);
   await page.getByRole('link', { name: 'Explore books', exact: true }).click();
   await page.getByRole('link', { name: 'View details', exact: true }).click();
   await expect(page.locator('h1')).toHaveText('The Lethal Elixir');

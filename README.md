@@ -43,17 +43,17 @@ GitHub Pages serves static files. This deployment uses direct email contact and 
 
 ## What is implemented
 
-The homepage is author-focused: a custom typographic “What if…” illustration and links to the collection, author, and journal. Individual books and covers appear on the catalog/detail pages, not the homepage. Navigation stays visible while scrolling on desktop and mobile.
+The homepage opens with an author-focused editorial spread, a typographic “What if…” poster, and the official logo as an offset bookplate. A collection spread below the introduction presents real book imagery and existing edition details. Navigation stays visible while scrolling on desktop and mobile.
 
-The dominant visual theme is navy blue with muted gold: dark navigation, a full navy hero, a navy author section, and a navy final CTA/footer. The hero includes drifting blue/gold light, decorative contours, floating particles, cursor ambience, and layered rings. These effects use lightweight CSS/SVG and stop for reduced-motion preferences; mobile displays fewer particles.
+The visual system uses midnight navy, deep blue, warm ivory, muted gold, and charcoal. Large Cormorant serif typography contrasts with Inter captions and body text. Numbered navigation, ruled indexes, alternating book layouts, a navy author spread, staggered reading notes, and an oversized footer masthead replace repeated card layouts. GSAP provides restrained masking, typography and image reveals, and a subtle pointer response on the bookplate. Reduced-motion visitors receive the complete static composition. See `docs/editorial-design.md` for the visual audit and implementation notes.
 
 The homepage newsletter section and its signup links have been removed. The Press & Media page is removed from public routes, navigation, footer, contact, and sitemap. Inquiries use `/contact`. The standalone reader-list integration remains unlinked for possible future use; its existing provider and legal setup requirements still apply.
 
 U.S.-focused Privacy, Terms, and Accessibility pages are included. See `docs/us-legal-readiness.md` for the implementation and remaining operator/account details. Legal business details are editable in `content/legal.json` and the CMS. Newsletter activation requires a verified mailing address as well as provider settings. A website implementation alone is not a certification of legal compliance.
 
 - Home, author, catalog, book detail, journal, article, contact, cart, standalone campaign signup, privacy, terms, accessibility, checkout return, and custom 404 pages.
-- Official logo in navigation, the author identity panel, the session-only welcome intro, icons, manifest, and social preview. The homepage art is typographic and does not display individual books.
-- GSAP intro with skip button, a CSS failsafe, storage failure fallback, and reduced-motion support. Content is present in server-rendered HTML. Subtle hero ambience, floating display, staggered heading, scroll reveals, and hover transitions.
+- Official logo in navigation, the opening bookplate, the author identity panel, the session-only welcome intro, icons, manifest, and social preview.
+- GSAP intro with skip button, a CSS failsafe, storage failure fallback, and reduced-motion support. Content is present in server-rendered HTML. Masked type and image reveals, fine-rule hovers, and controlled bookplate movement.
 - Persistent browser cart, format selection, quantity changes, removal, subtotal, and server-validated Stripe Checkout.
 - Resend contact delivery and Brevo double opt-in signup routes with validation, origin checks, size limits, honeypots, Cloudflare Turnstile verification, and durable production rate limiting.
 - Decap CMS configuration for authenticated GitHub editing, image uploads, drafts, books, formats/prices, featured books, biographies, articles, press releases, and contact settings.

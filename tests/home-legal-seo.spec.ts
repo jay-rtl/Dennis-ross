@@ -1,15 +1,13 @@
 import { test, expect } from '@playwright/test';
 
-test('author homepage has no books and the header remains available after scrolling', async ({
+test('editorial homepage keeps an author-focused hero and the header available after scrolling', async ({
   page,
 }, testInfo) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await expect(page.locator('.story-art')).toBeVisible();
-  await expect(
-    page.locator('.featured-book, .book-card, .book-stage, img[src*="the-lethal-elixir"]'),
-  ).toHaveCount(0);
-  await expect(page.locator('main')).not.toContainText('The Lethal Elixir');
+  await expect(page.locator('.hero img[src*="the-lethal-elixir"]')).toHaveCount(0);
+  await expect(page.locator('.collection-spread')).toContainText('The Lethal Elixir');
   await expect(page.locator('.discovery-path')).toHaveCount(3);
   await page.evaluate(() => scrollTo(0, 1000));
   await expect(page.locator('.header')).toHaveCSS('position', 'sticky');

@@ -59,13 +59,20 @@ export function Header({ showCart = true }: { showCart?: boolean }) {
           id="main-navigation"
           className={open ? 'navigation is-open' : 'navigation'}
         >
-          {links.map(([href, label]) => (
+          {links.map(([href, label], index) => (
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              aria-current={pathname === href ? 'page' : undefined}
+              aria-current={
+                pathname === href || (href !== '/' && pathname.startsWith(href + '/'))
+                  ? 'page'
+                  : undefined
+              }
             >
+              <span className="nav-index" aria-hidden="true">
+                0{index + 1}
+              </span>
               {label}
             </Link>
           ))}
@@ -108,6 +115,9 @@ export function Footer({
 }) {
   return (
     <footer className="footer">
+      <div className="container footer-masthead" aria-hidden="true">
+        Dennis Ross<span>.</span>
+      </div>
       <div className="container footer-main">
         <div>
           <Brand footer />

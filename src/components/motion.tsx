@@ -36,12 +36,12 @@ export function Motion() {
     const context = gsap.context(() => {
       gsap
         .timeline({ onComplete: finishIntro, defaults: { ease: 'power2.inOut' } })
-        .to('.intro-logo', { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 1.5 })
-        .to('.intro-line', { scaleX: 1, duration: 0.9 }, '-=.2')
-        .to('.intro-welcome', { opacity: 1, y: 0, duration: 0.9 }, '-=.3')
-        .to({}, { duration: 1.5 })
+        .to('.intro-logo', { opacity: 1, y: 0, duration: 1.2 })
+        .to('.intro-line', { scaleX: 1, duration: 0.8 }, '-=.2')
+        .to('.intro-welcome', { opacity: 1, y: 0, duration: 0.7 }, '-=.3')
+        .to({}, { duration: 1.2 })
         .call(() => setRevealing(true))
-        .to(overlay.current, { opacity: 0, duration: 0.9 });
+        .to(overlay.current, { clipPath: 'inset(0 0 100% 0)', duration: 1 });
     }, overlay);
     return () => {
       clearTimeout(failSafe);
@@ -54,44 +54,77 @@ export function Motion() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     gsap.registerPlugin(ScrollTrigger);
     const context = gsap.context(() => {
-      gsap.from('.hero-copy > *', {
-        y: 22,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.12,
-        delay: 0.05,
-        clearProps: 'all',
-      });
-      gsap.from('.story-art', {
-        y: 28,
-        opacity: 0,
-        duration: 1.3,
-        delay: 0.25,
-        ease: 'power2.out',
-        clearProps: 'all',
-      });
+      const headings = document.querySelectorAll('.hero h1 > *, .page-heading h1');
+      if (headings.length)
+        gsap.from(headings, {
+          y: 22,
+          clipPath: 'inset(0 0 100% 0)',
+          opacity: 0,
+          duration: 1.2,
+          stagger: 0.16,
+          ease: 'power3.out',
+          clearProps: 'all',
+        });
+      const poster = document.querySelector('.story-art');
+      if (poster)
+        gsap.from(poster, {
+          clipPath: 'inset(0 0 100% 0)',
+          duration: 1.3,
+          delay: 0.2,
+          ease: 'power3.inOut',
+          clearProps: 'clipPath',
+        });
+      gsap.utils
+        .toArray<HTMLElement>('.featured-book-cover, .book-cover, .detail-cover')
+        .forEach((element) =>
+          gsap.from(element, {
+            clipPath: 'inset(0 0 15% 0)',
+            opacity: 0,
+            duration: 1.1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: element, start: 'top 92%', once: true },
+            clearProps: 'clipPath,opacity',
+          }),
+        );
       gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((element) =>
         gsap.from(element, {
-          y: 28,
+          y: 18,
           opacity: 0,
-          duration: 0.7,
+          duration: 0.9,
           scrollTrigger: { trigger: element, start: 'top 94%', once: true },
           clearProps: 'all',
         }),
       );
     });
-    const hero = document.querySelector<HTMLElement>('.hero');
+    const hero = document.querySelector<HTMLElement>('.story-art');
+    const imprint = hero?.querySelector<HTMLElement>('.story-imprint');
+    const moveX = imprint
+      ? gsap.quickTo(imprint, 'x', { duration: 0.8, ease: 'power2.out' })
+      : null;
+    const moveY = imprint
+      ? gsap.quickTo(imprint, 'y', { duration: 0.8, ease: 'power2.out' })
+      : null;
     const move = (event: PointerEvent) => {
       if (event.pointerType === 'mouse' && hero) {
         const rect = hero.getBoundingClientRect();
-        hero.style.setProperty('--pointer-x', `${event.clientX - rect.left}px`);
-        hero.style.setProperty('--pointer-y', `${event.clientY - rect.top}px`);
+        moveX?.(((event.clientX - rect.left) / rect.width - 0.5) * 6);
+        moveY?.(((event.clientY - rect.top) / rect.height - 0.5) * 6);
       }
     };
     hero?.addEventListener('pointermove', move);
+    const reset = () => {
+      moveX?.(0);
+      moveY?.(0);
+    };
+    hero?.addEventListener('pointerleave', reset);
     return () => {
       context.revert();
       hero?.removeEventListener('pointermove', move);
+      hero?.removeEventListener('pointerleave', reset);
+      if (imprint) {
+        gsap.killTweensOf(imprint);
+        gsap.set(imprint, { clearProps: 'transform' });
+      }
     };
   }, [pathname, pageReady]);
   if (!intro) return null;
@@ -103,7 +136,6 @@ export function Motion() {
       aria-label="Welcome to Dennis Ross Books"
       aria-modal="false"
     >
-      <div className="intro-orb" />
       <Image
         className="intro-logo"
         src="/brand/logo.webp"
