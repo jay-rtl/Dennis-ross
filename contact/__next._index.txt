@@ -1,0 +1,77 @@
+1:"$Sreact.fragment"
+3:"/Dennis-ross/_next/static/chunks/2opod2xp65we0.js"
+4:"/Dennis-ross/_next/static/chunks/39fzwfv3tl-49.js"
+5:"/Dennis-ross/_next/static/chunks/1_sikzluxmjx-.js"
+6:I[84704,["$3","$4","$5"],"CartProvider"]
+7:I[6421,["$3","$4","$5"],"Motion"]
+8:I[97412,["$3","$4","$5"],"Header"]
+9:I[39756,["$3","$4","$5"],"default"]
+a:"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js"
+b:I[32403,["$3","$4","$5","$a"],"default"]
+c:I[37457,["$3","$4","$5"],"default"]
+:HL["/Dennis-ross/_next/static/chunks/0_1jeto4n1z35.css","style"]
+2:T8ae,
+(function () {
+  try {
+    var replay = new URLSearchParams(location.search).get('intro') === '1';
+    var preference = matchMedia('(prefers-reduced-motion: reduce)');
+    if ((location.pathname !== '/Dennis-ross/' && location.pathname !== '/Dennis-ross') || preference.matches || (!replay && sessionStorage.getItem('dr-intro'))) return;
+    document.documentElement.dataset.intro = 'pending';
+    var content = function () { return document.getElementById('site-content'); };
+    var gate = new MutationObserver(function () {
+      var region = content();
+      if (region) {
+        region.inert = !!document.documentElement.dataset.intro;
+        gate.disconnect();
+      }
+    });
+    gate.observe(document.documentElement, { childList: true, subtree: true });
+    var release = function () {
+      delete document.documentElement.dataset.intro;
+      if (content()) content().inert = false;
+      window.dispatchEvent(new Event('dr:intro-timeout'));
+    };
+    var keys = function (event) {
+      if (!document.documentElement.dataset.intro) return;
+      if (event.key === 'Escape') { event.preventDefault(); release(); }
+      if (event.key === 'Tab') {
+        var skip = document.querySelector('.intro button');
+        if (skip) { event.preventDefault(); skip.focus({ preventScroll: true }); }
+      }
+    };
+    var click = function (event) {
+      if (document.documentElement.dataset.intro === 'pending' && event.target.closest('.intro button')) release();
+    };
+    document.addEventListener('keydown', keys);
+    document.addEventListener('click', click);
+    var motionChanged = function () { if (preference.matches) release(); };
+    preference.addEventListener('change', motionChanged);
+    var cleanup = function () {
+      gate.disconnect();
+      document.removeEventListener('keydown', keys);
+      document.removeEventListener('click', click);
+      preference.removeEventListener('change', motionChanged);
+    };
+    window.addEventListener('dr:intro-finished', cleanup, { once: true });
+    setTimeout(function () {
+      if (document.documentElement.dataset.intro) {
+        release();
+      }
+      cleanup();
+    }, 9000);
+  } catch (_) { /* The readable homepage is the fallback. */ }
+})();
+12:X
+0:{"t":{"t":{"s":"","h":16,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/0_1jeto4n1z35.css","precedence":"next"}],["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/2opod2xp65we0.js","async":true}],["$","script","script-1",{"src":"/Dennis-ross/_next/static/chunks/39fzwfv3tl-49.js","async":true}],["$","script","script-2",{"src":"/Dennis-ross/_next/static/chunks/1_sikzluxmjx-.js","async":true}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"id":"intro-before-paint","dangerouslySetInnerHTML":{"__html":"$2"}}]}],["$","body",null,{"children":[["$","$L6",null,{"children":[["$","$L7",null,{}],["$","div",null,{"id":"site-content","suppressHydrationWarning":true,"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L8",null,{"showCart":false}],["$","main",null,{"id":"main","tabIndex":-1,"children":["$","$L9",null,{"parallelRouterKey":"children","error":"$b","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js","async":true}]],"template":["$","$Lc",null,{}],"notFound":[[["$","div",null,{"className":"page-heading-shell","children":["$","div",null,{"className":"page-heading container","children":[["$","span",null,{"className":"eyebrow","children":[["$","i",null,{}],"404 · A PAGE OUT OF PLACE"]}],["$","h1",null,{"children":"This chapter hasn’t been written."}],"$Ld"]}]}],"$Le"],[]]}]}],"$Lf"]}]]}],"$L10"]}]]}]]}],"p":"$@11","v":null,"s":"$12"}}},"a":"$@13","u":"$@14","b":"tYKi9GRSOHK1B0eOr3Mba"}
+15:"/Dennis-ross/_next/static/chunks/0dze49taatdrp.js"
+16:I[22016,["$3","$4","$5","$15"],""]
+17:I[97412,["$3","$4","$5"],"Footer"]
+d:["$","p",null,{"children":"The page you’re looking for may have moved, or may not be available yet."}]
+e:["$","div",null,{"className":"container checkout-return","children":["$","$L16",null,{"href":"/","className":"button ","children":["Return to the beginning",["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":17,"height":17,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-up-right","children":[["$","path","1tivn9",{"d":"M7 7h10v10"}],["$","path","1vkiza",{"d":"M7 17 17 7"}],"$undefined"]}]]}]}]
+f:["$","$L17",null,{"email":"readdennisross@gmail.com","socials":[]}]
+10:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"[{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://jay-rtl.github.io/Dennis-ross/#organization\",\"name\":\"Dennis Ross Books\",\"url\":\"https://jay-rtl.github.io/Dennis-ross/\",\"logo\":\"https://jay-rtl.github.io/Dennis-ross/brand/logo.webp\",\"email\":\"readdennisross@gmail.com\",\"sameAs\":[]},{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://jay-rtl.github.io/Dennis-ross/#author\",\"name\":\"Dennis Ross\",\"url\":\"https://jay-rtl.github.io/Dennis-ross/about/\"},{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Dennis Ross Books\",\"url\":\"https://jay-rtl.github.io/Dennis-ross/\",\"publisher\":{\"@id\":\"https://jay-rtl.github.io/Dennis-ross/#organization\"}}]"}}]
+12:300
+14:true
+12:C
+13:0
+11:"$undefined"
