@@ -1,0 +1,82 @@
+1:"$Sreact.fragment"
+2:"/Dennis-ross/_next/static/chunks/2opod2xp65we0.js"
+3:"/Dennis-ross/_next/static/chunks/3pz39mun20sb8.js"
+4:"/Dennis-ross/_next/static/chunks/1_sikzluxmjx-.js"
+5:I[84704,["$2","$3","$4"],"CartProvider"]
+6:I[6421,["$2","$3","$4"],"Motion"]
+7:I[97412,["$2","$3","$4"],"Header"]
+8:I[39756,["$2","$3","$4"],"default"]
+9:"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js"
+a:I[32403,["$2","$3","$4","$9"],"default"]
+b:I[37457,["$2","$3","$4"],"default"]
+c:"/Dennis-ross/_next/static/chunks/1npyn-xjzp9un.js"
+d:I[22016,["$2","$3","$4","$c"],""]
+e:I[97412,["$2","$3","$4"],"Footer"]
+30:"ViewportBoundary"
+31:I[97367,["$2","$3","$4"],"$30"]
+32:"MetadataBoundary"
+33:I[97367,["$2","$3","$4"],"$32"]
+34:"$Sreact.suspense"
+:HL["/Dennis-ross/_next/static/chunks/0jktm1ck_ufxv.css","style"]
+10:X
+13:X
+13:C
+14:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[[["$","div",null,{"className":"page-heading container","children":[["$","span",null,{"className":"eyebrow","children":[["$","i",null,{}],"YOUR PRIVACY"]}],["$","h1",null,{"children":"Your trust matters."}],["$","p",null,{"children":"A straightforward explanation of the information this website uses."}]]}],["$","article",null,{"className":"prose privacy-page","children":[["$","p",null,{"className":"policy-date","children":["Last updated: ","$L15"]}],"$L16","$L17","","$L18","$L19","$L1a","$L1b","$L1c","$L1d",false,"$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26","$L27","$L28","$L29","$L2a","$L2b","$L2c"]}]],["$L2d"],"$L2e"]}],"p":"$@2f","v":null,"s":"$10"}}]]
+11:[["children",{"s":"privacy","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","template":["$","$Lb",null,{}]}]]}],"p":"$@12","v":"$13","s":"$10"},"c":"$Q14"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/0jktm1ck_ufxv.css","precedence":"next"}],["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/2opod2xp65we0.js","async":true}],["$","script","script-1",{"src":"/Dennis-ross/_next/static/chunks/3pz39mun20sb8.js","async":true}],["$","script","script-2",{"src":"/Dennis-ross/_next/static/chunks/1_sikzluxmjx-.js","async":true}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"id":"intro-before-paint","dangerouslySetInnerHTML":{"__html":"\n(function () {\n  try {\n    var replay = new URLSearchParams(location.search).get('intro') === '1';\n    if ((location.pathname !== '/Dennis-ross/' && location.pathname !== '/Dennis-ross') || matchMedia('(prefers-reduced-motion: reduce)').matches || (!replay && sessionStorage.getItem('dr-intro'))) return;\n    document.documentElement.dataset.intro = 'pending';\n    setTimeout(function () {\n      if (document.documentElement.dataset.intro) {\n        delete document.documentElement.dataset.intro;\n        window.dispatchEvent(new Event('dr:intro-timeout'));\n      }\n    }, 9000);\n  } catch (_) { /* The readable homepage is the fallback. */ }\n})();\n"}}]}],["$","body",null,{"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L5",null,{"children":[["$","$L6",null,{}],["$","$L7",null,{"showCart":false}],["$","main",null,{"id":"main","tabIndex":-1,"children":["$","$L8",null,{"parallelRouterKey":"children","error":"$a","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js","async":true}]],"template":["$","$Lb",null,{}],"notFound":[[["$","div",null,{"className":"page-heading container","children":[["$","span",null,{"className":"eyebrow","children":[["$","i",null,{}],"404 · A PAGE OUT OF PLACE"]}],["$","h1",null,{"children":"This chapter hasn’t been written."}],["$","p",null,{"children":"The page you’re looking for may have moved, or may not be available yet."}]]}],["$","div",null,{"className":"container checkout-return","children":["$","$Ld",null,{"href":"/","className":"button ","children":["Return to the beginning",["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":17,"height":17,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-up-right","children":[["$","path","1tivn9",{"d":"M7 7h10v10"}],["$","path","1vkiza",{"d":"M7 17 17 7"}],"$undefined"]}]]}]}]],[]]}]}],["$","$Le",null,{"email":"readdennisross@gmail.com","socials":[]}]]}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"[{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://jay-rtl.github.io/Dennis-ross/#organization\",\"name\":\"Dennis Ross Books\",\"url\":\"https://jay-rtl.github.io/Dennis-ross\",\"logo\":\"https://jay-rtl.github.io/Dennis-ross/brand/logo.webp\",\"email\":\"readdennisross@gmail.com\",\"sameAs\":[]},{\"@context\":\"https://schema.org\",\"@type\":\"Person\",\"@id\":\"https://jay-rtl.github.io/Dennis-ross/#author\",\"name\":\"Dennis Ross\",\"url\":\"https://jay-rtl.github.io/Dennis-ross/about\"},{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Dennis Ross Books\",\"url\":\"https://jay-rtl.github.io/Dennis-ross\",\"publisher\":{\"@id\":\"https://jay-rtl.github.io/Dennis-ross/#organization\"}}]"}}]]}]]}]]}],"p":"$@f","v":null,"s":"$10"},"c":"$Q11"},"h":{"r":["$","$1","h",{"children":[null,["$","$L31",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L33",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$34",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Privacy | Dennis Ross Books"}],["$","meta","1",{"name":"description","content":"How Dennis Ross Books handles inquiries, newsletter subscriptions, shopping, and website storage."}],["$","link","2",{"rel":"manifest","href":"/Dennis-ross/manifest.webmanifest"}],["$","meta","3",{"name":"robots","content":"index, follow"}],"$L35","$L36","$L37","$L38","$L39","$L3a","$L3b","$L3c","$L3d","$L3e","$L3f","$L40","$L41","$L42","$L43","$L44","$L45","$L46"]}]}],null]}],null]}],"p":"$@47","v":null,"s":"$10"}},"a":"$@48","u":"$@49","b":"5bKPhdkNy5ql6mgNzQyat"}
+4a:I[49540,["$2","$3","$4","$c"],"PrivacyControls"]
+4b:I[97367,["$2","$3","$4"],"OutletBoundary"]
+4d:I[27201,["$2","$3","$4"],"IconMark"]
+15:["$","time",null,{"dateTime":"2026-10-16","children":"October 16, 2026"}]
+16:["$","h2",null,{"children":"Who to contact"}]
+17:["$","p",null,{"children":["This website is operated under the name ","Dennis Ross Books"," in ","United States",". For questions or a privacy request, contact"," ",["$","a",null,{"href":"mailto:readdennisross@gmail.com?subject=Privacy%20request","children":"readdennisross@gmail.com"}],"."]}]
+18:["$","h2",null,{"children":"Messages and inquiries"}]
+19:["$","p",null,{"children":"If you submit an enabled contact form, we use your name, email address, subject, and message to respond. Messages are delivered using Resend. Please avoid sending sensitive personal or financial information."}]
+1a:["$","h2",null,{"children":"The reader newsletter"}]
+1b:["$","p",null,{"children":"Newsletter signup, when enabled, requires your explicit consent. Brevo manages subscriptions and sends a confirmation email before adding you to the reader list. Your chosen audience segment is used to send relevant book updates. Every marketing email must include an unsubscribe link. You may also email us to request removal."}]
+1c:["$","h2",null,{"children":"Retailer links and purchases"}]
+1d:["$","p",null,{"children":"Edition links may take you to Ingram or another identified retailer. Following a link connects you to that retailer’s website, where its privacy policy and checkout terms apply. The retailer processes the information you provide for payment, shipping, returns, and order support. This website does not collect card details or process orders placed with an external retailer."}]
+1e:["$","h2",null,{"children":"Browser storage and security"}]
+1f:["$","p",null,{"children":"Local storage can keep a book bag between visits if you use a direct-purchase option. Session storage remembers whether you have seen the welcome animation. Enabled online forms use Cloudflare Turnstile to prevent abuse and a rate limiting service to temporarily count submissions using a hashed network identifier. Hosting services may record technical request information for security and operation. The website application does not install advertising or analytics trackers, or use personal information for cross-context behavioral advertising. Fonts and brand images are hosted with the website. Optional tracking would require an updated notice and appropriate choices before activation."}]
+20:["$","div",null,{"className":"policy-table-wrap","children":["$","table",null,{"className":"policy-table","children":[["$","caption",null,{"children":"Website browser storage"}],["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"scope":"col","children":"Item"}],["$","th",null,{"scope":"col","children":"Purpose"}],["$","th",null,{"scope":"col","children":"Duration"}]]}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","th",null,{"scope":"row","children":"dr-intro"}],["$","td",null,{"children":"Remembers the welcome animation"}],["$","td",null,{"children":"Browser session"}]]}],["$","tr",null,{"children":[["$","th",null,{"scope":"row","children":"dennis-ross-bag"}],["$","td",null,{"children":"Stores a bag for direct-purchase books"}],["$","td",null,{"children":"Until you clear it or your browser removes it"}]]}]]}]]}]}]
+21:["$","h2",null,{"children":"How information is used and retained"}]
+22:["$","p",null,{"children":"Inquiry details are used to respond to your message. Newsletter details are used to manage the consent and preferences you provide. Security counters contain a hashed network identifier and expire after 10 minutes. The website application does not maintain its own inquiry or subscriber database; enabled providers and the recipient mailbox retain the records they process. Newsletter providers may keep a suppression record after an unsubscribe to prevent further marketing. Contact us about a specific record or retention request."}]
+23:["$","h2",null,{"id":"your-choices","children":"Your choices and privacy requests"}]
+24:["$","p",null,{"children":"You can clear browser storage, use the unsubscribe link in a newsletter, or contact us about access, correction, or deletion of information you provided. Rights and exceptions depend on applicable law. We may need to verify a request before disclosing or changing records. This website does not sell personal information. Retailer records are managed by the retailer; contact its support team about a purchase made there."}]
+25:["$","$L4a",null,{}]
+26:["$","p",null,{"children":["$","a",null,{"href":"mailto:readdennisross@gmail.com?subject=Privacy%20request","children":"Send a privacy request"}]}]
+27:["$","h2",null,{"children":"Service providers"}]
+28:["$","p",null,{"children":["Service providers only receive the information needed for their role when the corresponding feature is enabled. Their policies explain how they process data:"," ",false,["$","a",null,{"href":"https://resend.com/legal/privacy-policy","children":"Resend"}],","," ",["$","a",null,{"href":"https://www.brevo.com/legal/privacypolicy/","children":"Brevo"}],","," ",["$","a",null,{"href":"https://www.cloudflare.com/privacypolicy/","children":"Cloudflare"}],", and"," ",["$","a",null,{"href":"https://upstash.com/trust/privacy.pdf","children":"Upstash"}],"."]}]
+29:["$","h2",null,{"children":"Children’s privacy"}]
+2a:["$","p",null,{"children":"This is a general-audience author website, not a service directed to children under 13. If you believe a child has provided personal information through this website, contact us so the record can be reviewed and handled appropriately."}]
+2b:["$","h2",null,{"children":"Policy updates"}]
+2c:["$","p",null,{"children":"We will update this notice when the website’s information practices change. The date above identifies the latest version. Please review a retailer’s own notice before using its services."}]
+2d:["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/1npyn-xjzp9un.js","async":true}]
+2e:["$","$L4b",null,{"children":["$","$34",null,{"name":"Next.MetadataOutlet","children":"$@4c"}]}]
+35:["$","link","4",{"rel":"canonical","href":"https://jay-rtl.github.io/Dennis-ross/privacy/"}]
+36:["$","meta","5",{"property":"og:title","content":"Privacy | Dennis Ross Books"}]
+37:["$","meta","6",{"property":"og:description","content":"How Dennis Ross Books handles inquiries, newsletter subscriptions, shopping, and website storage."}]
+38:["$","meta","7",{"property":"og:url","content":"https://jay-rtl.github.io/Dennis-ross/privacy/"}]
+39:["$","meta","8",{"property":"og:site_name","content":"Dennis Ross Books"}]
+3a:["$","meta","9",{"property":"og:locale","content":"en_US"}]
+3b:["$","meta","10",{"property":"og:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}]
+3c:["$","meta","11",{"property":"og:image:width","content":"1200"}]
+3d:["$","meta","12",{"property":"og:image:height","content":"630"}]
+3e:["$","meta","13",{"property":"og:image:alt","content":"Dennis Ross Books — the official author website"}]
+3f:["$","meta","14",{"property":"og:type","content":"website"}]
+40:["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}]
+41:["$","meta","16",{"name":"twitter:title","content":"Privacy | Dennis Ross Books"}]
+42:["$","meta","17",{"name":"twitter:description","content":"How Dennis Ross Books handles inquiries, newsletter subscriptions, shopping, and website storage."}]
+43:["$","meta","18",{"name":"twitter:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}]
+44:["$","link","19",{"rel":"icon","href":"/Dennis-ross/brand/favicon.png"}]
+45:["$","link","20",{"rel":"apple-touch-icon","href":"/Dennis-ross/brand/apple-touch-icon.png"}]
+46:["$","$L4d","21",{}]
+10:300
+4c:null
+49:true
+10:C
+48:0
+12:"$undefined"
+f:"$undefined"
+47:"$undefined"
+2f:"$undefined"
