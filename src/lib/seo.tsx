@@ -15,7 +15,7 @@ export function seo(title: string, description: string, pathname: string, index 
       locale: 'en_US',
       images: [
         {
-          url: '/brand/social.jpg',
+          url: `${siteUrl}/brand/social.jpg`,
           width: 1200,
           height: 630,
           alt: 'Dennis Ross Books — the official author website',
@@ -26,7 +26,7 @@ export function seo(title: string, description: string, pathname: string, index 
       card: 'summary_large_image',
       title: `${title} | Dennis Ross Books`,
       description,
-      images: ['/brand/social.jpg'],
+      images: [`${siteUrl}/brand/social.jpg`],
     },
   };
 }

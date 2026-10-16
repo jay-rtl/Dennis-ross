@@ -27,6 +27,20 @@ npm run build
 npm run start
 ```
 
+## GitHub Pages deployment
+
+The public static site is hosted at https://jay-rtl.github.io/Dennis-ross/ from the `gh-pages` branch. Source stays on `main`.
+
+```sh
+npm ci
+npm run build:pages
+npm run publish:pages
+```
+
+In repository Settings → Pages, use “Deploy from a branch”, `gh-pages`, `/ (root)`. The build creates an isolated copy in `.pages-build/app`, exports HTML with the repository base path, and adds `.nojekyll`. Publishing preserves the existing deployment history and does not force-push.
+
+GitHub Pages serves static files. This deployment uses direct email contact and external Ingram purchase links when supplied. Server APIs, Stripe checkout, and CMS authentication are excluded; newsletter/contact submissions are disabled. Set the real Ingram URLs in the book JSON and rebuild when ready. The original server-capable application remains available for a future hosting change. HTTP security headers are controlled by GitHub Pages. The project-path sitemap is available at `/Dennis-ross/sitemap.xml`; domain-root robots rules belong to the GitHub Pages host.
+
 ## What is implemented
 
 The homepage is author-focused: a custom typographic “What if…” illustration and links to the collection, author, and journal. Individual books and covers appear on the catalog/detail pages, not the homepage. Navigation stays visible while scrolling on desktop and mobile.

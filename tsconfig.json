@@ -29,5 +29,5 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next-qa"]
+  "exclude": ["node_modules", ".next-qa", ".pages-build"]
 }

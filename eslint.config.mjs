@@ -7,6 +7,7 @@ export default tseslint.config(
     ignores: [
       '.next/**',
       '.next-qa/**',
+      '.pages-build/**',
       '.preview/**',
       'test-results/**',
       'test-results-content/**',

@@ -19,9 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     ...metadata,
     openGraph: {
       ...metadata.openGraph,
-      images: [{ url: book.cover, alt: `${book.title} by Dennis Ross` }],
+      images: [{ url: `${siteUrl}${book.cover}`, alt: `${book.title} by Dennis Ross` }],
     },
-    twitter: { ...metadata.twitter, images: [book.cover] },
+    twitter: { ...metadata.twitter, images: [`${siteUrl}${book.cover}`] },
   };
 }
 export default async function BookPage({ params }: { params: Promise<{ slug: string }> }) {
