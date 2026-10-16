@@ -41,6 +41,36 @@ test('intro keeps keyboard focus visible and restores access on Escape', async (
   await expect(page.getByRole('link', { name: 'Explore books', exact: true })).toBeVisible();
 });
 
+test('editorial hero image can pause and respects live reduced motion', async ({ page }) => {
+  await page.addInitScript(() => sessionStorage.setItem('dr-intro', '1'));
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  const image = page.locator('.hero-editorial-image img');
+  await expect(image).toHaveAttribute('alt', '');
+  // The photograph is the full hero background, never a small content thumbnail.
+  const heroBounds = await page.locator('.hero').boundingBox();
+  const imageBounds = await page.locator('.hero-editorial-image').boundingBox();
+  expect(imageBounds).toEqual(heroBounds);
+  await page.locator('.hero-editorial-image').scrollIntoViewIfNeeded();
+  await expect(page.getByRole('button', { name: 'Pause image motion' })).toBeEnabled();
+  const initial = await image.evaluate((element) => getComputedStyle(element).transform);
+  await expect
+    .poll(() => image.evaluate((element) => getComputedStyle(element).transform))
+    .not.toBe(initial);
+  await page.getByRole('button', { name: 'Pause image motion' }).click();
+  await expect(image).toHaveCSS('animation-play-state', 'paused');
+  const paused = await image.evaluate((element) => getComputedStyle(element).transform);
+  await page.waitForTimeout(150);
+  await expect(image).toHaveCSS('transform', paused);
+  await page.getByRole('button', { name: 'Play image motion' }).click();
+  await expect(image).toHaveCSS('animation-play-state', 'running');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(image).toHaveCSS('animation-name', 'none');
+  await expect(
+    page.getByRole('button', { name: 'Image motion disabled by reduced-motion preference' }),
+  ).toBeDisabled();
+});
+
 test('live reduced-motion changes dismiss the intro and restore scroll-revealed content', async ({
   page,
 }) => {

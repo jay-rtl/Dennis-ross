@@ -43,6 +43,8 @@ GitHub Pages serves static files. This deployment uses direct email contact and 
 
 ## What is implemented
 
+The local follow-up adds an edge-to-edge navy/ivory editorial photograph behind the homepage hero, with directional navy overlays and a recomposed author signature. Its restrained 22-second pan/zoom has Pause/Play, live reduced-motion support, and offscreen/hidden-tab pausing. The optimized image is self-hosted; no dependency or tracker was added. See `docs/editorial-hero-image.md` for provenance, the exact prompt, and the scoped review report. The user approved publication of this follow-up to GitHub Pages; see the review report for deployment verification.
+
 The local redesign opens with a full-width navy author masthead, followed by a collection spread using the actual book cover. Desktop and mobile use different name compositions. A full-width discovery index, typographic author panel, reading margin, journal, and colophon retain the existing content. The official logo appears in the header and cinematic introduction; repeated logo plates are removed. Navigation stays visible while scrolling.
 
 The visual system uses midnight navy, deep blue, warm ivory, muted gold, and charcoal. Cormorant display type contrasts with larger Inter body text and captions. Interior pages use navy editorial frontispieces and layouts specific to their content. GSAP provides restrained type and image reveals; live reduced-motion changes revert animation and reveal the complete content. The intro makes the underlying site inert, keeps keyboard focus on Skip, supports Escape, and restores focus afterward. See `docs/fjr-local-review.md` for the current audit and review instructions.

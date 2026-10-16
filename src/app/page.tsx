@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUpRight, BookOpen, Feather, Compass } from 'lucide-react';
 import { ButtonLink, Portrait, FinalCta, EmptyNews, FeaturedBooks } from '@/components/editorial';
 import { StoryArt } from '@/components/story-art';
+import { EditorialImage } from '@/components/editorial-image';
 import { site, getArticles } from '@/lib/content';
 import { seo } from '@/lib/seo';
 export const metadata = seo(
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <div className="home-page">
       <section className="hero">
+        <EditorialImage />
         <div className="container hero-running-head">
           <span>DENNIS ROSS / BOOKS & PUBLICATIONS</span>
           <span>STORIES THAT OPEN NEW WORLDS</span>

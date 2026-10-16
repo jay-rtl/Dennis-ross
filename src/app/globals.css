@@ -336,11 +336,20 @@ main:focus {
 .mobile-contact {
   display: none !important;
 }
-/* Frontispiece: the author name is the artwork. No simulated cover or poster. */
+/* A photographic frontispiece: paper, ink, and the author signature. */
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: var(--navy);
   color: var(--paper);
   padding-top: 28px;
+}
+.hero-running-head,
+.hero-composition,
+.hero-bottom {
+  position: relative;
+  z-index: 1;
 }
 .hero-running-head {
   display: flex;
@@ -348,7 +357,7 @@ main:focus {
   gap: 24px;
   font-size: 0.625rem;
   letter-spacing: 0.14em;
-  color: #c6cbd3;
+  color: #d7dbe1;
   padding-bottom: 25px;
   border-bottom: 1px solid #f7f5f02b;
 }
@@ -356,37 +365,49 @@ main:focus {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 22px;
-  padding-block: 42px 64px;
+  padding-block: clamp(48px, 5vw, 80px) 56px;
+  min-height: 660px;
 }
 .hero h1 {
-  grid-column: 1/-1;
+  grid-column: 1/9;
   color: var(--paper);
   font-weight: 500;
-  letter-spacing: -0.065em;
-  line-height: 0.95;
+  letter-spacing: -0.055em;
+  line-height: 0.9;
 }
 .hero-title-lead {
   display: block;
-  font-size: clamp(42px, 4.1vw, 66px);
-  letter-spacing: -0.035em;
-  margin-bottom: 16px;
+  font-size: clamp(30px, 2.8vw, 44px);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 26px;
 }
 .hero-author {
   display: block;
-  font-size: clamp(140px, 18vw, 282px);
-  white-space: nowrap;
-  line-height: 0.9;
+  font-size: clamp(120px, 11.8vw, 190px);
+  line-height: 0.82;
+}
+.hero-author > span,
+.hero-author > em {
+  display: block;
 }
 .hero-author em {
-  color: var(--gold);
+  margin-left: clamp(65px, 8vw, 128px);
+  color: #c7ab78;
   font-weight: 400;
 }
 .hero-editorial-note {
-  grid-column: 1/5;
+  grid-column: 1/6;
   display: flex;
   gap: 20px;
   align-items: start;
-  margin-top: 44px;
+  margin-top: 35px;
+}
+.hero-editorial-note p {
+  font-size: 0.875rem;
+  line-height: 1.85;
+  color: #e0e3e7;
+  max-width: 350px;
 }
 .little-line {
   display: block;
@@ -396,17 +417,12 @@ main:focus {
   background: var(--gold);
   margin-top: 14px;
 }
-.hero-editorial-note p {
-  font-size: 0.875rem;
-  color: #ced3da;
-  max-width: 350px;
-}
 .hero-buttons {
-  grid-column: 9/-1;
+  grid-column: 1/7;
   display: flex;
   align-items: center;
-  gap: 22px;
-  margin-top: 44px;
+  gap: 28px;
+  margin-top: 28px;
   flex-wrap: wrap;
 }
 .hero-buttons .button {
@@ -423,9 +439,83 @@ main:focus {
 }
 .hero-footnote {
   grid-column: 9/-1;
-  margin-top: 18px;
-  font: italic 19px var(--serif);
-  color: var(--gold);
+  grid-row: 3;
+  align-self: end;
+  justify-self: end;
+  text-align: right;
+  max-width: 240px;
+  font: italic 23px/1.35 var(--serif);
+  color: #e3cfaa;
+  padding-right: 110px;
+  box-sizing: content-box;
+}
+.hero-editorial-image {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  overflow: hidden;
+  background: var(--navy);
+}
+.hero-editorial-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 55%;
+  transform: scale(1.035);
+}
+/* Directional scrims keep the left reading area dark while revealing paper on the right. */
+.hero-editorial-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, #081b33f7 0%, #081b33ed 23%, #081b339c 45%, #081b331a 75%),
+    linear-gradient(0deg, #081b33fa 0%, #081b3370 23%, #081b3300 54%, #081b3399 100%);
+}
+.hero-editorial-image[data-motion-ready='true'] img {
+  animation: editorial-page-drift 22s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.hero-editorial-image[data-motion-ready='true'][data-in-view='true'][data-page-visible='true'][data-paused='false']
+  img {
+  animation-play-state: running;
+}
+.image-motion-control {
+  display: none;
+  position: absolute;
+  right: var(--gutter);
+  bottom: 110px;
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 76px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #f7f5f060;
+  background: var(--navy);
+  color: var(--paper);
+  font-size: 0.6875rem;
+}
+.hero-editorial-image[data-motion-ready='true'] .image-motion-control {
+  display: flex;
+}
+.image-motion-control:disabled {
+  opacity: 1;
+  color: #d0d5dc;
+}
+html[data-intro] .hero-editorial-image img {
+  animation-play-state: paused !important;
+}
+@keyframes editorial-page-drift {
+  from {
+    transform: scale(1.035) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.085) translate3d(-1.1%, -0.5%, 0);
+  }
 }
 .hero-bottom {
   display: flex;
@@ -435,13 +525,112 @@ main:focus {
   padding-block: 20px;
   font-size: 0.625rem;
   letter-spacing: 0.13em;
-  color: #ced3da;
+  color: #d7dbe1;
 }
 .hero-bottom > a {
   display: flex;
   align-items: center;
   gap: 20px;
   min-height: 36px;
+}
+@media (max-width: 900px) {
+  .hero-composition {
+    min-height: 610px;
+    padding-block: 50px;
+  }
+  .hero h1 {
+    grid-column: 1/11;
+  }
+  .hero-author {
+    font-size: clamp(115px, 16vw, 145px);
+  }
+  .hero-editorial-note {
+    grid-column: 1/8;
+  }
+  .hero-buttons {
+    grid-column: 1/9;
+  }
+  .hero-footnote {
+    grid-column: 8/-1;
+    grid-row: 4;
+    padding-right: 105px;
+    font-size: 20px;
+    margin-top: 28px;
+  }
+  .image-motion-control {
+    bottom: 104px;
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 20px;
+  }
+  .hero-composition {
+    display: flex;
+    flex-direction: column;
+    min-height: 700px;
+    padding-block: 40px 32px;
+  }
+  .hero h1 {
+    width: 100%;
+  }
+  .hero-title-lead {
+    font-size: clamp(27px, 7.3vw, 40px);
+    margin-bottom: 25px;
+  }
+  .hero-author {
+    font-size: clamp(100px, 29vw, 165px);
+    line-height: 0.87;
+  }
+  .hero-author em {
+    margin-left: 16%;
+  }
+  .hero-editorial-note {
+    margin-top: auto;
+    padding-top: 160px;
+    gap: 14px;
+    max-width: 335px;
+  }
+  .hero-editorial-note .little-line {
+    width: 24px;
+  }
+  .hero-buttons {
+    margin-top: 24px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .hero-buttons .button {
+    gap: 23px;
+  }
+  .hero-buttons .text-link {
+    font-size: 0.75rem;
+    gap: 12px;
+  }
+  .hero-footnote {
+    padding-right: 100px;
+    margin-top: 28px;
+    text-align: left;
+    font-size: 20px;
+    max-width: 220px;
+  }
+  .hero-editorial-image img {
+    object-position: 65% 50%;
+  }
+  .hero-editorial-image::after {
+    background:
+      linear-gradient(
+        180deg,
+        #081b33e6 0%,
+        #081b33cc 38%,
+        #081b331a 49%,
+        #081b33ed 65%,
+        #081b33ff 88%
+      ),
+      linear-gradient(90deg, #081b3366, #081b3300);
+  }
+  .image-motion-control {
+    bottom: 105px;
+  }
 }
 .brand-ribbon {
   border-bottom: 1px solid var(--line);
@@ -1503,19 +1692,6 @@ html[data-intro] body {
   .header-actions {
     margin-left: 0;
   }
-  .hero-composition {
-    column-gap: 15px;
-  }
-  .hero-editorial-note {
-    grid-column: 1/6;
-  }
-  .hero-buttons,
-  .hero-footnote {
-    grid-column: 8/-1;
-  }
-  .hero-author {
-    font-size: 18vw;
-  }
   .featured-book-cover {
     height: 570px;
   }
@@ -1612,40 +1788,9 @@ html[data-intro] body {
     margin-left: auto;
     gap: 12px;
   }
-  .hero {
-    padding-top: 24px;
-  }
   .hero-running-head {
     font-size: 0.5625rem;
     letter-spacing: 0.1em;
-  }
-  .hero-composition {
-    padding-block: 40px 48px;
-  }
-  .hero-title-lead {
-    font-size: 42px;
-  }
-  .hero-author {
-    font-size: 18.1vw;
-  }
-  .hero-editorial-note {
-    grid-column: 1/7;
-    margin-top: 35px;
-  }
-  .hero-editorial-note p {
-    font-size: 0.875rem;
-  }
-  .hero-buttons,
-  .hero-footnote {
-    grid-column: 8/-1;
-    margin-top: 35px;
-  }
-  .hero-buttons {
-    gap: 6px;
-  }
-  .hero-footnote {
-    margin-top: 16px;
-    font-size: 19px;
   }
   .hero-bottom {
     font-size: 0.625rem;
@@ -1942,9 +2087,6 @@ html[data-intro] body {
     font-size: 0.8125rem;
     gap: 16px;
   }
-  .hero {
-    padding-top: 20px;
-  }
   .hero-running-head {
     font-size: 0.5625rem;
     letter-spacing: 0.06em;
@@ -1957,61 +2099,6 @@ html[data-intro] body {
   .hero-running-head > span:last-child {
     max-width: 115px;
     text-align: right;
-  }
-  .hero-composition {
-    display: flex;
-    flex-direction: column;
-    padding-block: 36px 38px;
-  }
-  .hero h1 {
-    width: 100%;
-  }
-  .hero-title-lead {
-    font-size: clamp(29px, 8vw, 42px);
-    line-height: 1.1;
-    margin-bottom: 14px;
-    max-width: 280px;
-  }
-  .hero-author {
-    font-size: clamp(100px, 32vw, 175px);
-    letter-spacing: -0.065em;
-    line-height: 0.95;
-  }
-  .hero-author > span,
-  .hero-author > em {
-    display: block;
-  }
-  .hero-author > em {
-    margin-left: 18%;
-  }
-  .hero-editorial-note {
-    margin-top: 30px;
-    gap: 15px;
-    max-width: 320px;
-  }
-  .hero-editorial-note .little-line {
-    width: 24px;
-  }
-  .hero-editorial-note p {
-    font-size: 0.875rem;
-    line-height: 1.8;
-  }
-  .hero-buttons {
-    margin-top: 30px;
-    gap: 20px;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-  .hero-buttons .button {
-    gap: 23px;
-  }
-  .hero-buttons .text-link {
-    font-size: 0.75rem;
-    gap: 12px;
-  }
-  .hero-footnote {
-    font-size: 20px;
-    margin-top: 22px;
   }
   .hero-bottom {
     font-size: 0.5625rem;
