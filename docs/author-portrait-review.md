@@ -1,3 +1,5 @@
+> Historical pre-publication review. The user subsequently approved deployment; see [live publication audit](deployment-2026-10-22.md) for current release status and verification.
+
 # Author biography and portrait - local review
 
 READY FOR REVIEW. No push or deployment for this change; the pending dialysis article is preserved.

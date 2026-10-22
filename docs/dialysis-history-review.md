@@ -1,3 +1,5 @@
+> Historical pre-publication review. The user subsequently approved deployment; see [live publication audit](deployment-2026-10-22.md) for current release status and verification.
+
 # The History of Dialysis - review
 
 READY FOR REVIEW. Local only; no push or deployment performed for this update.
