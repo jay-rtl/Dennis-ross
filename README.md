@@ -65,7 +65,7 @@ U.S.-focused Privacy, Terms, and Accessibility pages are included. See `docs/us-
 
 ## Content and indexing rules
 
-Edit `content/site.json`. Biography, portrait, writing background, literary journey, and press information are deliberately empty until approved. The author’s medical credentials or personal history have not been inferred from the logo.
+Edit `content/site.json`. The client-supplied biography and refined portrait are now present. Optional writing background, literary journey, and press information remain empty until supplied. The author’s medical credentials or personal history have not been inferred from the logo.
 
 Put one JSON file per book in `content/books/` and per article in `content/articles/`. Images belong in `public/media/`, with content paths such as `/media/approved-cover.webp`. Use the `/admin` editor after configuring it, or edit files directly. Redeploy after publishing or editing content; public pages are statically generated.
 
@@ -87,7 +87,7 @@ Book shape (replace all bracketed fields with approved source content before set
 }
 ```
 
-Format fields: `id`, `label`, `price` (positive integer cents), `currency` (USD/GBP/EUR/CAD), `stripePriceId`, `available`, and `needsShipping`. Each ID must be unique within a book. Match currency and amount exactly to Stripe. An article requires `slug`, `title`, `excerpt` (20+ characters), `body` (50+ characters), `category`, `date` (`YYYY-MM-DD`), and `published`. Optional `image` must exist. Categories: Book releases, Author news, Writing updates, Press releases. Text is rendered as safe plain text; blank lines separate paragraphs.
+Format fields: `id`, `label`, `price` (positive integer cents), `currency` (USD/GBP/EUR/CAD), `stripePriceId`, `available`, and `needsShipping`. Each ID must be unique within a book. Match currency and amount exactly to Stripe. An article requires `slug`, `title`, `excerpt` (20+ characters), `body` (50+ characters), `category`, `date` (`YYYY-MM-DD`), and `published`. Optional `image` must exist. Categories: Book releases, Author news, Writing updates, Press releases, Medical history. Text is rendered safely; blank lines separate paragraphs and a paragraph beginning with `## ` becomes a section heading. Optional `sources` contains reference objects with a `title` and an HTTPS `url` without credentials.
 
 The empty catalog/journal, incomplete biography/press pages, inactive signup landing page, admin, cart, and checkout return intentionally use `noindex, follow`. This follows the brief’s requirement to exclude incomplete or unsuitable pages. Completing the corresponding approved content automatically makes those editorial pages indexable and adds them to the sitemap. Home, contact, and privacy use `index, follow`. `robots.txt` allows public pages/assets, so crawlers can actually read page-level exclusions. There is no sitewide noindex header.
 
@@ -103,7 +103,7 @@ To enable Paperback, set its `purchaseUrl` to the supplied HTTPS Ingram product 
 
 ### Optional direct Stripe commerce
 
-The author page becomes indexable after biography, writing background, literary journey, and portrait are supplied. The press page becomes indexable after press biography, portrait, and media kit are supplied. Remaining empty editorial sections stay excluded until completed.
+The author page becomes indexable when an approved biography and portrait are supplied. Optional writing-background and literary-journey sections render only when supplied. The press page becomes indexable after press biography, portrait, and media kit are supplied. Remaining empty editorial sections stay excluded until completed.
 
 1. Create a Stripe account. Start in **test mode** and add its secret key to `STRIPE_SECRET_KEY` on the server.
 2. Create the real one-time product prices in Stripe. Enter their IDs and matching minor-unit amounts/currencies into approved book formats. The API retrieves each Stripe price and rejects mismatches, inactive/recurring prices, unpublished books, duplicate items, unknown formats, invalid quantities, and mixed currencies. Browser-supplied totals are never accepted.

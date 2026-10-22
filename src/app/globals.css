@@ -1305,6 +1305,9 @@ html[data-intro] .hero-editorial-image img {
   position: sticky;
   top: calc(var(--header-height) + 24px);
 }
+.portrait-image {
+  object-position: 50% 0%;
+}
 .prose {
   min-width: 0;
 }
@@ -1571,6 +1574,37 @@ html[data-intro] .hero-editorial-image img {
 }
 .article-page > .prose p {
   font-size: 1rem;
+}
+.article-page > .prose h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  margin-block: 52px 22px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  text-wrap: balance;
+}
+.article-sources {
+  margin-block: 48px;
+  padding-block: 26px;
+  border-block: 1px solid var(--line);
+}
+.article-sources h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.article-sources ol {
+  padding-left: 24px;
+}
+.article-sources li {
+  padding-left: 8px;
+  margin-block: 12px;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.article-sources a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
 }
 .newsletter {
   background: var(--navy);
@@ -2056,20 +2090,28 @@ html[data-intro] body {
   .header-inner {
     gap: 14px;
   }
+  .header-inner .brand {
+    min-width: 0;
+    flex-shrink: 1;
+  }
   .brand {
     gap: 10px;
   }
   .brand-logo {
     width: 43px;
     height: 43px;
+    flex-shrink: 0;
   }
   .brand-name {
     font-size: 23px;
+    min-width: 0;
   }
   .brand-name > span {
     font-size: 0.5625rem;
     letter-spacing: 0.1em;
     margin-top: 8px;
+    white-space: normal;
+    line-height: 1.25;
   }
   .menu-button {
     min-width: 44px;

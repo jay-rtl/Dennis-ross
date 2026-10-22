@@ -69,10 +69,28 @@ export const articleSchema = z.object({
   title: z.string().min(1),
   excerpt: z.string().min(20),
   body: z.string().min(50),
-  category: z.enum(['Book releases', 'Author news', 'Writing updates', 'Press releases']),
+  category: z.enum([
+    'Book releases',
+    'Author news',
+    'Writing updates',
+    'Press releases',
+    'Medical history',
+  ]),
   date: z.iso.date(),
   image: asset.optional().or(z.literal('')),
   published: z.boolean().default(false),
+  sources: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        url: z.url().refine((value) => {
+          if (!URL.canParse(value)) return false;
+          const url = new URL(value);
+          return url.protocol === 'https:' && !url.username && !url.password;
+        }, 'References must use HTTPS without credentials'),
+      }),
+    )
+    .optional(),
 });
 export type Book = z.infer<typeof bookSchema>;
 export type BookFormat = z.infer<typeof formatSchema>;
@@ -96,12 +114,7 @@ export const site = z
     ),
   })
   .parse(siteData);
-export const aboutReady = !!(
-  site.biography &&
-  site.writingBackground &&
-  site.literaryJourney &&
-  site.portrait
-);
+export const aboutReady = !!(site.biography && site.portrait);
 
 function readCollection<T extends { published: boolean; slug: string }>(
   folder: string,

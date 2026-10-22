@@ -155,7 +155,7 @@ export default function Home() {
             <div className="gold-rule" />
             <p>
               {site.biography
-                ? site.biography.slice(0, 320)
+                ? site.biography.split('\n\n')[0]
                 : 'Discover the author behind the stories. For reader correspondence, publishing opportunities, and media inquiries, this is the place to begin.'}
             </p>
             <ButtonLink href="/about" secondary>

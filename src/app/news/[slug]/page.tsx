@@ -61,10 +61,24 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           />
         )}
         <div className="prose">
-          {a.body.split('\n\n').map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+          {a.body
+            .split('\n\n')
+            .map((p, i) =>
+              p.startsWith('## ') ? <h2 key={i}>{p.slice(3)}</h2> : <p key={i}>{p}</p>,
+            )}
         </div>
+        {!!a.sources?.length && (
+          <section className="article-sources" aria-labelledby="article-sources-title">
+            <h2 id="article-sources-title">Sources &amp; further reading</h2>
+            <ol>
+              {a.sources.map((source) => (
+                <li key={source.url}>
+                  <a href={source.url}>{source.title}</a>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
         <Share title={a.title} url={canonicalUrl(`/news/${slug}`)} />
         <Link href="/news" className="text-link">
           ← Back to the journal

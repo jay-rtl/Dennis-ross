@@ -49,8 +49,9 @@ export function Portrait({ src, large = false }: { src?: string; large?: boolean
           src={src}
           fill
           sizes="(max-width: 768px) 100vw, 45vw"
-          alt="Dennis Ross, author"
+          alt="Dr. Dennis Ross, author and nephrologist"
           className="portrait-image"
+          loading={large ? 'eager' : 'lazy'}
         />
       ) : (
         <>
@@ -61,7 +62,7 @@ export function Portrait({ src, large = false }: { src?: string; large?: boolean
           <span className="portrait-label">AUTHOR PORTRAIT FORTHCOMING</span>
         </>
       )}
-      <span className="portrait-line" />
+      {!src && <span className="portrait-line" />}
     </div>
   );
 }

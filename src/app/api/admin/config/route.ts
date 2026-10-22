@@ -136,9 +136,19 @@ export async function GET() {
             field('title', 'Title'),
             field('published', 'Approved for publication', 'boolean', { default: false }),
             field('excerpt', 'Short description', 'text'),
-            field('body', 'Article (plain text; blank lines separate paragraphs)', 'text'),
+            field(
+              'body',
+              'Article (blank lines separate paragraphs; start a heading with ##)',
+              'text',
+            ),
             field('category', 'Category', 'select', {
-              options: ['Book releases', 'Author news', 'Writing updates', 'Press releases'],
+              options: [
+                'Book releases',
+                'Author news',
+                'Writing updates',
+                'Press releases',
+                'Medical history',
+              ],
             }),
             field('date', 'Publication date', 'datetime', {
               format: 'YYYY-MM-DD',
@@ -146,6 +156,10 @@ export async function GET() {
               time_format: false,
             }),
             field('image', 'Article image', 'image', { required: false }),
+            field('sources', 'Sources & further reading', 'list', {
+              required: false,
+              fields: [field('title', 'Reference title'), field('url', 'HTTPS reference URL')],
+            }),
           ],
         },
       ],

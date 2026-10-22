@@ -61,6 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: site.author,
               url: canonicalUrl('/about'),
               ...(site.biography ? { description: site.biography } : {}),
+              ...(site.portrait ? { image: `${siteUrl}${site.portrait}` } : {}),
             },
             {
               '@context': 'https://schema.org',

@@ -173,14 +173,14 @@ test('SEO is server rendered, placeholders are excluded, and public pages remain
   expect(html).toContain('application/ld+json');
   expect(html).toContain('index, follow');
   expect(home.headers()['x-robots-tag']).toBeUndefined();
-  for (const route of ['/about', '/news', '/cart', '/admin', '/reading-list', '/checkout/return']) {
+  for (const route of ['/cart', '/admin', '/reading-list', '/checkout/return']) {
     expect(await (await request.get(route)).text(), route).toContain('noindex');
   }
   const sitemap = await (await request.get('/sitemap.xml')).text();
   expect(sitemap).toContain('http://localhost:3000/contact');
   expect(sitemap).not.toContain('/cart');
   expect(sitemap).not.toContain('/press');
-  expect(sitemap).not.toContain('/about');
+  expect(sitemap).toContain('/about');
   expect(sitemap).toContain('/books/the-lethal-elixir');
   const bookHtml = await (await request.get('/books/the-lethal-elixir')).text();
   expect(bookHtml).toContain('index, follow');

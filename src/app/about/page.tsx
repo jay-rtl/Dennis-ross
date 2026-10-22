@@ -9,7 +9,7 @@ import { site, aboutReady } from '@/lib/content';
 import { seo, breadcrumbs, JsonLd } from '@/lib/seo';
 export const metadata = seo(
   'Meet Dennis Ross',
-  'Get to know Dennis Ross, the author behind the pages, and connect for literary and publishing inquiries.',
+  'Meet Dr. Dennis Ross, a nephrologist in Wichita, Kansas, clinical professor, and author of The Perfect Match.',
   '/about',
   aboutReady,
 );
@@ -41,16 +41,18 @@ export default function About() {
               </p>
             </div>
           )}
-          <h3>Writing background</h3>
-          <p>
-            {site.writingBackground ||
-              'An introduction to Dennis’s writing background is forthcoming.'}
-          </p>
-          <h3>The literary journey</h3>
-          <p>
-            {site.literaryJourney ||
-              'Details about the author’s literary journey will be added alongside official book announcements.'}
-          </p>
+          {site.writingBackground && (
+            <>
+              <h3>Writing background</h3>
+              <p>{site.writingBackground}</p>
+            </>
+          )}
+          {site.literaryJourney && (
+            <>
+              <h3>The literary journey</h3>
+              <p>{site.literaryJourney}</p>
+            </>
+          )}
           <ButtonLink href="/contact">Connect with Dennis</ButtonLink>
         </div>
       </section>
