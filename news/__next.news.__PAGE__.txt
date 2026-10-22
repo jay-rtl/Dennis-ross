@@ -5,25 +5,82 @@
 6:I[39756,["$3","$4","$5"],"default"]
 7:I[37457,["$3","$4","$5"],"default"]
 c:"/Dennis-ross/_next/static/chunks/2n6-9g63klp9d.js"
-d:I[22016,["$3","$4","$5","$c"],""]
-e:I[97367,["$3","$4","$5"],"OutletBoundary"]
-f:"$Sreact.suspense"
-12:"ViewportBoundary"
-13:I[97367,["$3","$4","$5"],"$12"]
-14:"MetadataBoundary"
-15:I[97367,["$3","$4","$5"],"$14"]
-16:I[27201,["$3","$4","$5"],"IconMark"]
+d:I[91243,["$3","$4","$5","$c"],"ArticleList"]
+13:"ViewportBoundary"
+14:I[97367,["$3","$4","$5"],"$13"]
+15:"MetadataBoundary"
+16:I[97367,["$3","$4","$5"],"$15"]
+17:"$Sreact.suspense"
+18:I[27201,["$3","$4","$5"],"IconMark"]
 9:X
 9:C
 a:X
-b:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[[["$","div",null,{"className":"page-heading-shell","children":["$","div",null,{"className":"page-heading container","children":[["$","span",null,{"className":"eyebrow","children":[["$","i",null,{}],"THE JOURNAL"]}],["$","h1",null,{"children":"The story beyond the book."}],["$","p",null,{"children":"Notes from the author, news from the bookshelf, and a look at what’s coming next."}]]}]}],["$","section",null,{"className":"container catalog-section","children":["$","div",null,{"className":"empty-news","children":[["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":28,"height":28,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":1,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-book-open","children":[["$","path","1akyts",{"d":"M12 7v14"}],["$","path","ruj8y",{"d":"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"}],"$undefined"]}],["$","div",null,{"children":[["$","h3",null,{"children":"The story is still unfolding."}],["$","p",null,{"children":"Book announcements, writing updates, and news from Dennis Ross will be published here."}]]}],["$","$Ld",null,{"href":"/contact","className":"text-link","children":["Get in touch ",["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-up-right","children":[["$","path","1tivn9",{"d":"M7 7h10v10"}],["$","path","1vkiza",{"d":"M7 17 17 7"}],"$undefined"]}]]}]]}]}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://jay-rtl.github.io/Dennis-ross/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"The journal\",\"item\":\"https://jay-rtl.github.io/Dennis-ross/news/\"}]}"}}]],[["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/2n6-9g63klp9d.js","async":true}]],["$","$Le",null,{"children":["$","$f",null,{"name":"Next.MetadataOutlet","children":"$@10"}]}]]}],"p":"$@11","v":null,"s":"$a"}}]]
+e:T1921,Adapted from "The History of Dialysis," a presentation by Dennis Ross, M.D., F.A.C.P., F.A.S.N. This account follows the people, membranes, machines and access devices that shaped hemodialysis and peritoneal dialysis.
+
+## The foundations: diffusion and membranes
+
+The story begins with the movement of dissolved substances across a membrane. Thomas Graham explored osmotic forces in his 1854 paper, "On Osmotic Force." His later work, "Liquid Diffusion Applied to Analysis," appeared in 1861. Together, these studies helped establish the scientific basis for dialysis as a method of separation. [1]
+
+Early experiments used biological membranes, including animal bladder. Collodion offered another possibility: a liquid that formed a porous film as it dried. The choice of membrane became central to the development of an artificial kidney.
+
+## 1913: the artificial kidney takes shape
+
+At Johns Hopkins, John J. Abel, Leonard G. Rowntree and B. B. Turner developed an experimental apparatus that passed blood through collodion tubes outside the body. They called the process "vividiffusion." Their work was presented in 1913, following an animal demonstration in 1912. It was an experimental artificial kidney, not yet a practical long-term treatment for people. [2]
+
+## 1943-1967: a changing dialyzer
+
+Willem Kolff and Hendrik Berk developed a rotating-drum artificial kidney in 1943. Further improvements followed, and Kolff's first successfully treated survivor was reported in 1945. The development of the device and its later clinical success were distinct milestones. [3]
+
+The presentation traces the next generation of equipment through the Skeggs-Leonards parallel-plate dialyzer in 1948, the disposable Travenol twin-coil dialyzer in 1956, and hollow-fiber artificial kidneys in the 1964-1967 period. Each design represents a different way of bringing blood and dialysis fluid into contact across a membrane.
+
+## Making repeated treatment possible
+
+A dialyzer alone was not enough. Repeated treatment also required dependable access to the circulation. The Scribner shunt, introduced in 1960, became a major turning point in the development of maintenance hemodialysis. [3]
+
+The lecture also introduces internal jugular catheters, arteriovenous fistulas and arteriovenous grafts. The fistula work associated with Michael Brescia, James Cimino, Keith Appel and Baruch Hurwich was published in 1966. A fistula connects an artery and a vein using the patient's own vessels; a graft provides a connection through an implanted conduit. These access approaches are part of the history of making dialysis repeatable, rather than a single experimental procedure. [4]
+
+## The peritoneum: another route to dialysis
+
+Peritoneal dialysis followed a different path, using the lining of the abdominal cavity as the exchange membrane. The presentation looks back to an eighteenth-century account of treatment for ascites associated with Christopher Warrick and Stephen Hales. That early account belongs to the history of abdominal fluid treatment; it should not be described as established dialysis for kidney failure.
+
+In 1877, G. Wegner investigated transport across the peritoneum in animals. Ernest Henry Starling and Alfred Herbert Tubby published their work on absorption and secretion in serous cavities in 1894. These experiments helped build an understanding of fluid exchange across the body's internal membranes. [5]
+
+In 1923, Georg Ganter investigated peritoneal treatment for uremia, including a patient whose kidney failure followed ureteral obstruction. The lecture then follows the intermittent use of peritoneal dialysis in Germany and the United States between 1923 and 1938. Access to the abdomen remained a recurring difficulty.
+
+## 1952-1978: catheters, bags and connections
+
+The presentation identifies Arthur Grollman's flexible catheter work in 1952 and Paul Doolan's polyethylene catheter in 1959 as steps toward more workable peritoneal access. In 1968, Henry Tenckhoff introduced a silicone catheter designed to remain in place. Its cuffs and indwelling design helped move the field beyond repeatedly replacing access for each treatment.
+
+Equipment outside the abdomen mattered as well. Glass solution containers and repeated connections created practical challenges. The lecture credits Dimitrios Oreopoulos with introducing disposable plastic bags and Umberto Buoncristiani with developing the Y-system. These changes focused attention on a crucial problem: making fluid exchanges easier while limiting opportunities for contamination.
+
+## CAPD: a continuous approach
+
+In the mid-1970s, Jack Moncrief and Robert Popovich developed the concept that became continuous ambulatory peritoneal dialysis, or CAPD. Instead of relying only on short treatment sessions, their approach used repeated fluid exchanges with solution remaining in the abdomen between exchanges. [6]
+
+A clinical report by Popovich, Moncrief and colleagues appeared in 1978. This period marked an important step in establishing CAPD as a practical approach. The historical exchange schedules in the presentation describe that development; they are not individual treatment instructions. [7]
+
+## From early cyclers to automated treatment
+
+The lecture traces cycler therapy to Fred Boen's work in the early 1960s and describes Tenckhoff's subsequent efforts to simplify the process. Automated equipment offered another way to perform repeated fluid exchanges.
+
+In 1981, Jose A. Diaz-Buxo and colleagues published a preliminary report on continuous cyclic peritoneal dialysis, or CCPD. Their approach organized exchanges around overnight cycler treatment, with fluid remaining in the abdomen during the day. The presentation closes this part of the story by contrasting early cyclers with later machines. [8]
+
+## A history of connected advances
+
+The progress described in this presentation was never the story of one machine alone. Membranes, dialyzers, vascular access, peritoneal catheters, solution containers and cyclers developed together. Each advance addressed a practical limit encountered by patients and the people caring for them.
+
+Dr. Ross closes by recognizing the substantial improvements in dialysis while emphasizing that the work of improving the lives of people with kidney failure continues. This article presents the history covered in his lecture; treatment decisions and current prescriptions require individual clinical care.b:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[[["$","div",null,{"className":"page-heading-shell","children":["$","div",null,{"className":"page-heading container","children":[["$","span",null,{"className":"eyebrow","children":[["$","i",null,{}],"THE JOURNAL"]}],["$","h1",null,{"children":"The story beyond the book."}],["$","p",null,{"children":"Notes from the author, news from the bookshelf, and a look at what’s coming next."}]]}]}],["$","section",null,{"className":"container catalog-section","children":["$","$Ld",null,{"articles":[{"slug":"the-history-of-dialysis","title":"The History of Dialysis","excerpt":"From early membrane experiments to artificial kidneys, vascular access and peritoneal dialysis: a historical presentation by Dennis Ross adapted for the Journal.","body":"$e","category":"Medical history","date":"2026-10-22","published":true,"sources":[{"title":"Thomas Graham - Liquid Diffusion Applied to Analysis (1861), Royal Society archive","url":"https://makingscience.royalsociety.org/items/pt_63_10/paper-liquid-diffusion-applied-to-analysis-by-thomas-graham"},{"title":"Abel, Rowntree and Turner - On the removal of diffusible substances from circulating blood, Wellcome Collection","url":"https://wellcomecollection.org/works/szws845z"},{"title":"The Kidney Project, UCSF - Chronology of kidney failure treatment","url":"https://pharm.ucsf.edu/kidney/need/chronology"},{"title":"American Society of Nephrology - Michael Brescia and the 1966 fistula publication","url":"https://www.asn-online.org/about/memoriam.aspx?ID=240"},{"title":"Starling and Tubby - On Absorption from and Secretion into the Serous Cavities (1894)","url":"https://pubmed.ncbi.nlm.nih.gov/16992158/"},{"title":"Moncrief - The Birth and Development of Continuous Ambulatory Peritoneal Dialysis","url":"https://pubmed.ncbi.nlm.nih.gov/27951554/"},{"title":"Popovich, Moncrief and colleagues - Continuous ambulatory peritoneal dialysis (1978)","url":"https://pubmed.ncbi.nlm.nih.gov/637423/"},{"title":"Diaz-Buxo and colleagues - Continuous cyclic peritoneal dialysis: a preliminary report (1981)","url":"https://pubmed.ncbi.nlm.nih.gov/7271529/"}]}]}]}],"$Lf"],["$L10"],"$L11"]}],"p":"$@12","v":null,"s":"$a"}}]]
 1:[["children",{"s":"news","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","template":["$","$L7",null,{}]}]]}],"p":"$@8","v":"$9","s":"$a"},"c":"$Qb"}]]
-0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L13",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L15",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$f",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"The Journal | Dennis Ross Books"}],["$","meta","1",{"name":"description","content":"Book announcements, author notes, writing updates, and publishing news from Dennis Ross."}],["$","link","2",{"rel":"manifest","href":"/Dennis-ross/manifest.webmanifest"}],["$","meta","3",{"name":"robots","content":"noindex, follow"}],["$","link","4",{"rel":"canonical","href":"https://jay-rtl.github.io/Dennis-ross/news/"}],["$","meta","5",{"property":"og:title","content":"The Journal | Dennis Ross Books"}],["$","meta","6",{"property":"og:description","content":"Book announcements, author notes, writing updates, and publishing news from Dennis Ross."}],["$","meta","7",{"property":"og:url","content":"https://jay-rtl.github.io/Dennis-ross/news/"}],["$","meta","8",{"property":"og:site_name","content":"Dennis Ross Books"}],["$","meta","9",{"property":"og:locale","content":"en_US"}],["$","meta","10",{"property":"og:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}],["$","meta","11",{"property":"og:image:width","content":"1200"}],["$","meta","12",{"property":"og:image:height","content":"630"}],["$","meta","13",{"property":"og:image:alt","content":"Dennis Ross Books — the official author website"}],["$","meta","14",{"property":"og:type","content":"website"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"The Journal | Dennis Ross Books"}],["$","meta","17",{"name":"twitter:description","content":"Book announcements, author notes, writing updates, and publishing news from Dennis Ross."}],["$","meta","18",{"name":"twitter:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}],["$","link","19",{"rel":"icon","href":"/Dennis-ross/brand/favicon.png"}],["$","link","20",{"rel":"apple-touch-icon","href":"/Dennis-ross/brand/apple-touch-icon.png"}],["$","$L16","21",{}]]}]}],null]}],null]}],"p":"$@17","v":null,"s":"$a"}},"a":"$@18","u":"$@19","b":"f2v0jSh4KP39kozGhvS1q"}
-10:null
-19:true
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L14",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L16",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$17",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"The Journal | Dennis Ross Books"}],["$","meta","1",{"name":"description","content":"Book announcements, author notes, writing updates, and publishing news from Dennis Ross."}],["$","link","2",{"rel":"manifest","href":"/Dennis-ross/manifest.webmanifest"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","link","4",{"rel":"canonical","href":"https://jay-rtl.github.io/Dennis-ross/news/"}],["$","meta","5",{"property":"og:title","content":"The Journal | Dennis Ross Books"}],["$","meta","6",{"property":"og:description","content":"Book announcements, author notes, writing updates, and publishing news from Dennis Ross."}],["$","meta","7",{"property":"og:url","content":"https://jay-rtl.github.io/Dennis-ross/news/"}],["$","meta","8",{"property":"og:site_name","content":"Dennis Ross Books"}],["$","meta","9",{"property":"og:locale","content":"en_US"}],["$","meta","10",{"property":"og:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}],["$","meta","11",{"property":"og:image:width","content":"1200"}],["$","meta","12",{"property":"og:image:height","content":"630"}],["$","meta","13",{"property":"og:image:alt","content":"Dennis Ross Books — the official author website"}],["$","meta","14",{"property":"og:type","content":"website"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"The Journal | Dennis Ross Books"}],["$","meta","17",{"name":"twitter:description","content":"Book announcements, author notes, writing updates, and publishing news from Dennis Ross."}],["$","meta","18",{"name":"twitter:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}],["$","link","19",{"rel":"icon","href":"/Dennis-ross/brand/favicon.png"}],["$","link","20",{"rel":"apple-touch-icon","href":"/Dennis-ross/brand/apple-touch-icon.png"}],["$","$L18","21",{}]]}]}],null]}],null]}],"p":"$@19","v":null,"s":"$a"}},"a":"$@1a","u":"$@1b","b":"tZWE4SIiOZyq4hcF3_Bn3"}
+1c:I[97367,["$3","$4","$5"],"OutletBoundary"]
+f:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://jay-rtl.github.io/Dennis-ross/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"The journal\",\"item\":\"https://jay-rtl.github.io/Dennis-ross/news/\"}]}"}}]
+10:["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/2n6-9g63klp9d.js","async":true}]
+11:["$","$L1c",null,{"children":["$","$17",null,{"name":"Next.MetadataOutlet","children":"$@1d"}]}]
+1b:true
 a:300
+1d:null
 a:C
-18:0
+1a:0
 8:"$undefined"
-17:"$undefined"
-11:"$undefined"
+19:"$undefined"
+12:"$undefined"
