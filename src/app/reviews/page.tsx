@@ -37,7 +37,7 @@ export default function ReviewsPage() {
           </article>
         ))}
       </div>
-      <p className="review-source-note">Reviews transcribed from the supplied eBookFairs book review screenshots. Several supplied screenshots repeat the same reviews; duplicate copies are not counted as separate reader reviews. Reviewer names were not provided.</p>
+
       <Link className="text-link" href="/books/the-lethal-elixir">Explore The Lethal Elixir <ArrowUpRight size={16}/></Link>
     </main>
   );
