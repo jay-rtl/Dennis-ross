@@ -1,54 +1,126 @@
-// Excerpts transcribed from the supplied eBookFairs review screenshots.
-// The review forms do not show reviewer names, so none are attributed.
 export const readerReviews = [
-  {
-    id: 'medical-mystery',
-    quote: "The Lethal Elixir by Dennis Ross grabs the readers interest with the ambulance ride and sustains that interest with this medical mystery.",
-    detail: "The story comes to life in a manner that looks into lives and death issues revolving around infectious disease infection and offers a well-researched fictional drama. The development of characters is rather diversified and therefore recognizable. Dr. Maggie Hamilton is depicted as intelligent and hardworking; that makes it incredibly easy to support her throughout the novel.",
-  },
-  {
-    id: 'maggie',
-    quote: "What really appeals to me is the character of Dr. Maggie Hamilton. Her work involving infectious diseases and, moreover, her central role in addressing the bioterrorism plot, make the book's science and medicine aspects so engaging.",
-    detail: "Hamilton is indeed truly an inspiration due to her intelligence and dedication, as well as her extraordinary capacity to solve intricate medical enigmas. Her interactions with other characters, such as Mack, further establish her as both a mentor and leader in her field.",
-  },
-  {
-    id: 'suspense',
-    quote: "The Lethal Elixir hits the running mark from the very first page truly action-packed adventure. Fast-paced and full of relentless suspense, the novel traces a race against time.",
-    detail: "The cinematic flavor and great descriptions transport readers to somewhat intense journeys, increasingly exposing them to conflicts in each chapter. If one wants a story filled with adrenaline, then delivers a true ride into a world where the stakes couldn't be higher.",
-  },
-  {
-    id: 'romance',
-    quote: "I would give more than 5 stars to this novel if I could. It is a complete confluence of romance and suspense.",
-    detail: "The chemistry between the characters is palpable, which makes the great story even more emotional. Ross carries an extraordinary ability to write romantic tension that feels authentic and from the heart. The romantic subplot combines with the thrilling storyline elegantly, with moments of warmth in a grueling suspense ride.",
-  },
-  {
-    id: 'thrilling-movie',
-    quote: "I really loved the book and found it interesting. It's so interesting and feels like a thrilling movie.",
-    detail: "This is a fictional story. It's easy to understand and written in simple language. The book teaches a lot about what you should do in case of an outbreak of ebola; it offers an insight about the disease that you would not easily know. My favorite character is Maggie.",
-  },
-  {
-    id: 'five-stars',
-    quote: "I gave this book 5 out of 5 stars because Dennis Ross delivers a really exciting adventure that grabs you right from page one onward.",
-    detail: "Ross's graphic depiction and relentless pace combine to create an intoxicating experience. The action passages are brilliant, hitting the mark, page after page, leaving the reader wanting more.",
-  },
-  {
-    id: 'complex-characters',
-    quote: "The novel burrows into the psyches of its characters, wherein such personal connections can complicate yet enrich the battle against an impending threat.",
-    detail: "This romantic subplot balances beautifully with the high-stakes action in which the humans are put in crisis to show their resilient yet helpless hearts.",
-  },
-  {
-    id: 'science-mystery',
-    quote: "I recommend this novel to anyone interested in novels, preferably a blend of science and mystery with powerful characters.",
-    detail: "The author is successful in describing medical aspects while the main story is quite simple and engaging. Readers will feel the tension in the isolation unit of the hospital and understand the need to get to the root of the problem before it progresses.",
-  },
-  {
-    id: 'page-turner',
-    quote: "The suspense about Frank makes him feel at an even keener pitch, dogged at each step by this fear of possible discovery stakes so much greater and his story just more appropriate.",
-    detail: "Frank does a great job with this book, marrying complex plotting with heart-stopping excitement that makes it impossible to put down.",
-  },
-  {
-    id: 'reading-experience',
-    quote: "The narrative point of view that the author adopts is third person limited, and this narrative strategy is effective.",
-    detail: "The descriptions are engaging, especially while depicting the medical sequences. I therefore recommend The Lethal Elixir to adults and older teens who enjoy suspense, science, mystery, and human drama.",
-  },
+{
+id:'review-01',
+full:`The Lethal Elixir by Dennis Ross is a fictional book that talks about a disease that crops up in the United States, a tropical disease that somehow shows up in the US and was spreading fast.
+
+A guy that worked in the hospital called Alex was found by his landlords after not being seen leaving his apartment for days. He was rushed to the hospital, and staff noticed that he might be suffering from a viral infection, so they immediately took him into the quarantine ward, and soon tests started by Dr. Maggie as she also tried to find his family.
+
+Soon they learned that Alex's girlfriend also got the same symptoms. Alex dies in the hospital while Maggie tries saving his girlfriend. They find out the disease is actually Ebola, and that sets the state in a panic, and it was all actually preplanned by some people.
+
+This is a fictional story. It's easy to understand and written in simple language that means even kids can read it and find it entertaining. I would recommend this book to anyone who loves a good story. I really loved the book and found it interesting. It's so interesting and feels like a thrilling movie.
+
+The book teaches a lot about what you should do in case of an outbreak of ebola; it offers an insight about the disease that you would not easily know. I would recommend it, and it has good information. My favorite character is Maggie.`
+},
+{
+id:'review-02',
+full:`The book indeed opens one's imagination to the exciting and perilous world of bioterrorism, showing us the result of scientific developments when applied negatively. The novel is founded on a suspenseful and intricate plot which its characters sail through; one of the important protagonists in this novel is Dr. Maggie Hamilton.
+
+The story brings out thought-provoking issues on the responsibility of scientists and how technology can be misused by exploring the thin line between protection and destruction. Challenging plot and characters build up a test for the readers of moral implication entwined with knowledge and power, adding weight to the tale. The Lethal Elixir is a book that will keep readers pondering long after finishing the last page.
+
+What really appeals to me is the character of Dr. Maggie Hamiltonshe injects a scientific verve into the storyline. Her work involving infectious diseases and, moreover, her central role in addressing the bioterrorism plot, make the book's science and medicine aspects so engaging. Dr. Hamilton is indeed truly an inspiration due to her intelligence and dedication, as well as her extraordinary capacity to solve intricate medical enigmas.
+
+Her interactions with other characters, such as Mack, further establish her as both a mentor and leader in her field. She lends credibility to the scientific aspects of the story; thus, she is indispensable in this novel dealing with bioterrorism and its wide ramifications.
+
+I gave this book 5 out of 5 stars because Dennis Ross delivers a really exciting adventure that grabs you right from page one onward. From the teeming streets of Chicago to the high-stakes world of bioterrorism, Ross's graphic depiction and relentless pace combine to create an intoxicating experience. The action passages are brilliant, hitting the mark, page after page, leaving the reader wanting more. Ross combines heart-stopping thrills with a riveting storyline in this novel, providing an unforgettable journey into a world of hazards and intrigue. If you're a fan of fast-paced adventures, this book is a must-read!`
+},
+{
+id:'review-03',
+full:`A deep dive into The Lethal Elixirs opening reveals much about the story's core and the intriguing characters we will encounter in the upcoming pages. The narrative begins with two people of different nationalities who sit down for a drink in a bar one night and later go home together, hinting at a romance to come. However, there is more at play than meets the eye. By listening to their conversation, we catch hints of a potential biological threat, a terrorist attack, or even the beginning of romantic deception. Whichever the case, this scene serves as an engaging introduction, which is why I chose to read the book to the end.
+
+In my opinion, one of the advantages of a third-person point of view is its ability to provide insight into the minds of multiple characters, making the reading experience both fun and engaging. Regarding The Lethal Elixir, Dennis Ross skillfully navigates through his characters' perspectives. We first meet Jason and Susan, who stand out due to their unique backgrounds, flaws, and strengths. Jason's failure to recognize the danger he is walking into escalates the tension, but ultimately, his ability to confront the woman he loves later brings the story to a satisfying conclusion. Meanwhile, Maggie and Marc form a compelling duo, excelling in their respective fields and adding an interesting dynamic to the plot.
+
+Another aspect I love about this book is the dialogue. Throughout the story, characters reveal their personalities during conversations, further heightening the tension. For instance, when Tom Simpson and Sally Schneider find themselves in a light conversation, we learn about their plans, professions, life habits, and, more shockingly, the imminent evil that is sneaking its way into the general public.
+
+Lastly, I became deeply immersed in the story, captivated by the budding romance, the thriller elements, the FBI investigation, and the looming fear of the worlds most dangerous virus. While the enemy is well-prepared, the complications of a pregnancy derail their plans. The journey to Washington DC from Chicago leads to a thrilling climax, making this book a must-read for fans of thrillers, romance, and pandemic sagas.`
+},
+{
+id:'review-04',
+full:`If I were to describe this book storyline in 3 words, it would be romance, bioterrorism, and suspense. "The Lethal Elixir" is an exciting medical thriller novel without regrets to read it. Jason Turley is a lonely and unhappy man residing in Chicago who meets a mystery woman called Susan. Their contact leads to a dark conspiracy involving a deadly virus. FBI agent Mack and infectious disease doctor Maggie Hamilton also get readers hooked by the plot turnover as they go through an interesting world where science meets curiosity and human emotions. Issues of love and betrayal, the tradition of honoring commitments, and the evil outcomes behind todays technology encompass general outlines by which this narrative is genuinely painted.
+
+I agree regarding the fact that the pacing of the book is well controlled and the shocking but satisfying plot is among the reasons why I think that readers will stay glued to this book from start to finish. I enjoy the ways that ethical duty is threaded in a way to make people contemplate the moral consequences of technological breakthroughs and bioterrorism. The book also points to the value of trust and collaboration, as Maggie and Mack must rely on one another and their unique abilities to piece together the mystery and prevent a tragedy.
+
+For my honest review, I love that the story made me lookout for the actions of the characters, allowing me to sense their fears, hopes, and determination. The surprising plot twists were not just clich to me, and then the underlying theme of love and loyalty in the face of hardship is why I would always remember the book storyline. Thank you for this great piece, Dennis.`
+},
+{
+id:'review-05',
+full:`romance intermingles with suspense in "The Lethal Elixir" as characters struggle to work out their personal relationships while tussling with chaos. Lonely analyst Jason Turley falls unintentionally and finds passion with Susan, who has secrets of her own. Their relationship brought along a layer of complication into the unfolding drama because, through it, love and loyalty had been tested against danger.
+
+In it, the novel burrows into the psyches of its characters, wherein such personal connections can complicate yet enrich the battle against an impending threat. This romantic subplot balances beautifully with the high-stakes action in which the humans are put in crisis to show their resilient yet helpless hearts.
+
+What I believe really makes the book different is the character of Frank Lee, who represents friction that holds together the dynamics of a thriller. He is placed very interestingly in this plot concerning terrorism and bioterrorism, able to balance a double life so well with all the danger and deception involved. The way Frank conceives the event lays out a plan for deployment of the elixir and proceeds accordingly maintains excitement in readership; besides, in interaction with Susan, one catches sight of layers beneath man caught between the poles of duty and human affections.
+
+The suspense about Frank makes him feel at an even keener pitch, dogged at each step by this fear of possible discovery stakes so much greater and his story just more appropriate. Frank does a great job with this book, marrying complex plotting with heart-stopping excitement that makes it impossible to put down.
+
+Dennis Ross's book is a combination of suspense and intellect. He has woven a tale that is as stimulating as it is engaging. The concept of bioterrorism and the way it is played out is done with a deft touch-so thrilling, yet instructive. Rich layering in Ross's character development, full of complex traits and motivations that add tectonic depth to his story. The pacing itself is masterful, latching onto me from prologue to final chapter without ever letting go. Well-deserved 5-star testament to his storytelling: moving, well-written, an instant classic.`
+},
+{
+id:'review-06',
+full:`In fact, "The Lethal Elixir" is a novel about characters: who they are and the lines that separate their personalities. From determined Dr. Margaret Hagan to mysterious Susan Lee, each character is crafted so carefully with concern that one can catch up on motivations and struggles with all due detail. The themes of identity, loyalty, and morals surface throughout the story since characters must at some point face their own convictions and desires. The story reveals to the readers that humanity is complex because good and evil are not cut and dry in most cases. The rich tapestry of emotions and conflict lends the novel a compelling journey into the human condition.
+
+Mack Johnson is the action hero that this book throws at the reader, and his dynamic presence makes this book re-readable infinitum. Mack, being an FBI agent, brings an entire page of excitement and urgency to what he's doing. His endeavor to bring truth and stop a bioterrorism plot is very inspiring and enthralling.
+
+Beyond his superior investigation skills, partnering with Maggie was what reflected a more vulnerable, human side of him, which brought emotional depth to the high-stakes action. What sets Mack apart is his unwavering composure under pressure and razor-sharp instincts, making him a very remarkable character. The heart-pounding action sequences and his steadfast dedication to mission success keep me hooked every time I revisit the story.
+
+I would give more than 5 stars to this novel if I could. It is a complete confluence of romance and suspense. The chemistry between the characters is palpable, which makes the great story even more emotional. Ross carries an extraordinary ability to write romantic tension that feels authentic and from the heart.
+
+The romantic subplot combines with the thrilling storyline elegantly, with moments of warmth in a grueling suspense ride. The perfect balance between romance and mystery demonstrates the versatility of the writer in Ross. This must-read book is a treasure for anyone who loves a captivating love story marinated with an exciting mystery.`
+},
+{
+id:'review-07',
+full:`The Lethal Elixir, written by Dennis Ross, commenced in an ambulance and follows Alex Williamsona young man having a disease that proves fatal. From there it comes to Deaconess Hospital, where pediatric infectious diseases specialist Dr. Maggie Hamilton is sought to help unravel Alex health status.
+
+The author is successful in describing medical aspects while the main story is quite simple and engaging.
+
+Readers will feel the tension in the isolation unit of the hospital and understand the need to get to the root of the problem before it progresses.
+
+This novel is particularly suited for readers of 18 years and above, particularly those who enjoy thrillers but with a mark of science. The language used is simple to understand, and due to this, the events that happen at high speed are well explained.
+
+The conversations are concrete and serve a clear dramatic function, which enriches the characters and the plot. Discussions are realistic and introduce important facts without boring the reader with too many details.
+
+That cover is perfect and appropriate; it gives the vibe of the medical novel's suspense involved. The font type and arrangement of the text are chosen well so that the reader has no discomfort while reading, and the font is common and comfortable for the majority of readers.
+
+The author does not abuse the readers attention by intimidating them with unessential information but provides only that which is necessary for the readers to follow the plot and understand the atmosphere.
+
+I recommend this novel to anyone interested in novels, preferably a blend of science and mystery with powerful characters.`
+},
+{
+id:'review-08',
+full:`The Lethal Elixir hits the running mark from the very first page truly action-packed adventure. Fast-paced and full of relentless suspense, the novel traces a race against time where all hangs in the balance of not being able to stop an appalling bioterrorism attack. Explosive scenes, daring escapes, and truly high-stakes confrontations move along this story replete with dangers and deceptions.
+
+The cinematic flavor and great descriptions transport readers to somewhat intense journeys, increasingly exposing them to conflicts in each chapter. If one wants a story filled with adrenaline, then delivers a true ride into a world where the stakes couldn't be higher.
+
+I just love this book because Jason Turley's character brings an incredible emotional depth to the narrative. His troubled and tense relationship with Susan Lee is mired in uncertainty and offers an emotionally charged subplot. Jason's journey to find out who Susan really is, along with his place in a bioterrorism plot, shows a character of complexity.
+
+Adding to the poignancy of this story, undeniable risk is at play in regard to his desire to be part of his child's life. Internal conflicts and choices he had to make, which could make or break him, kept the plot thick with dramatic tension; it was for this reason that Jason's journey was so fascinating and unforgettable.
+
+Full of twists and turns, the plot kept me guessing right up until the final page. Ross reveals his unmatched ability to build suspense while paying attention to minute detail, which enhances every aspect of the narrative. I gave this book 5 out of 5 stars because Dennis Ross has given a masterclass in writing mysteries. The plot, so intricately interwoven, makes sure that each clue leads to a deeply satisfying and unexpected conclusion. The characters are well-developed, with secrets and motives, adding much depth and complexity to the mystery. This is a must-read for anyone craving a modern whodunit done to perfection.`
+},
+{
+id:'review-09',
+full:`This book is a ride into the world of espionage, where international intrigue and covert operations are the name of the game. Frank and Susan Lee-they seemed to be just any ordinary married couple-walked into a web that could shift the balance in world power. The closer FBI agent Mack Johnson and his lady love, Dr. Maggie Hamilton, get to unravel the conspiracy, the more they realize that spies and double agents are everywhere. In Lethal Elixir, the elements of espionage have been woven together deftly, with all the tension and deception characteristic of intelligence worlds. It is quite a thriller with its secret meetings, messages in cyphers, and high-risk operations where one wrong move could mean the difference between success and disaster.
+
+Susan Lee is such an enigmatic character, and I really like the way her plot unravels in this novel. This creates such intrigue that one wonders, indeed, what she would do because she had a dual identity and involvement in the plot of bioterrorism. The interactions that Susan has with Jason Turley make her more complex, showing a woman torn between her mission and personal desires.
+
+Her pregnancy is another mystery to be unraveled, as it remains unclear how it would affect her plans. Indeed, the fact that Susan kept her cover during this dangerous mission is impressive and also chilling in some sense. Her character represents the book's theme: hidden identity and secret agenda. She is therefore an interesting character in the book.
+
+I am a science enthusiast, and hence, Dennis Ross's book was quite an exciting read! The way Ross has used medical science and bioterrorism in the plot is quite accurate and interesting. The protagonist is a smart woman physician who is portrayed in a very realistic and three-dimensional way, which makes her journey through the complex medical puzzle quite believable and captivating. This speaks volumes to the level of attention Ross has for minute details and the capability of presenting scientific ideas in simple, easy-to-understand ways. The book will be exciting, as well as knowledgeable, reading for any person interested in science and fiction, and that is the reason why I gave this 5 stars.`
+},
+{
+id:'review-10',
+full:`The Lethal Elixir by Dennis Ross grabs the readers interest with the ambulance ride and sustains that interest with this medical mystery.
+
+The story comes to life in a manner that looks into lives and death issues revolving around infectious disease infection and offers a well-researched fictional drama.
+
+It is also centered around Dr. Maggie Hamilton, an infectious disease specialist, who tries to find the cause of the disease threatening Alex Williamson.
+
+The development of characters is rather diversified and therefore recognizable. Dr. Maggie Hamilton is depicted as intelligent and hardworking; that makes it incredibly easy to support her throughout the novel.
+
+The font and layout are simple and easy on the eyes, with no clutter; its all about the content. The chapters are divided systematically to ease understanding. Then the descriptions are engaging, especially while depicting the medical sequences.
+
+The narrative point of view that the author adopts is third person limited, and this narrative strategy is effective, often giving the reader both an engagement with the characters feelings and a more global view of the developing emergency.
+
+I therefore recommend The Lethal Elixir to adults and older teens who enjoy suspense, science, mystery, and human drama. Also ideal for those who like such intriguing and emotional narratives as well.`
+},
 ] as const;
+
+export const reviewPreview = (full: string) => full.split(/\n\n/)[0];
