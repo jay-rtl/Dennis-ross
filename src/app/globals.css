@@ -313,6 +313,7 @@ main:focus {
   align-items: center;
   gap: 22px;
   font-size: 0.8125rem;
+  font-weight: 700;
   min-height: 44px;
 }
 .header-contact svg {
