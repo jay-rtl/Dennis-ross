@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
-import { readerReviews } from '@/lib/reviews';
+import { readerReviews, reviewPreview } from '@/lib/reviews';
 import { seo } from '@/lib/seo';
 
 export const metadata = seo(
@@ -24,13 +24,20 @@ export default function ReviewsPage() {
             <span className="review-index">{String(index + 1).padStart(2, '0')}</span>
             <div>
               <span className="eyebrow">READER REVIEW</span>
-              <blockquote>“{review.quote}”</blockquote>
-              <p>{review.detail}</p>
+              <blockquote>“{reviewPreview(review.full)}”</blockquote>
+              <details className="review-expand">
+                <summary>See more <span aria-hidden="true">+</span></summary>
+                <div className="review-full">
+                  {review.full.split('\n\n').map((paragraph, part) => (
+                    <p key={part}>{paragraph}</p>
+                  ))}
+                </div>
+              </details>
             </div>
           </article>
         ))}
       </div>
-      <p className="review-source-note">Reviews excerpted from the supplied eBookFairs book review forms. Reviewer names were not provided. Quotations retain the original review wording.</p>
+      <p className="review-source-note">Reviews transcribed from the supplied eBookFairs book review screenshots. Several supplied screenshots repeat the same reviews; duplicate copies are not counted as separate reader reviews. Reviewer names were not provided.</p>
       <Link className="text-link" href="/books/the-lethal-elixir">Explore The Lethal Elixir <ArrowUpRight size={16}/></Link>
     </main>
   );
