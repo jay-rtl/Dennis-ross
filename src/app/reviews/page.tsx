@@ -21,7 +21,7 @@ export default function ReviewsPage() {
     <div className="dr-reviews">
       <div className="container dr-reviews-inner">
         <Link className="dr-back" href="/">
-          <ArrowLeft size={16} aria-hidden="true" /> Back to the journal
+          <ArrowLeft size={16} aria-hidden="true" /> Back to home
         </Link>
         <header className="dr-reviews-hero" data-reveal>
           <div className="dr-hero-copy">
