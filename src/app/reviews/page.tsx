@@ -24,9 +24,11 @@ export default function ReviewsPage() {
             <span className="review-index">{String(index + 1).padStart(2, '0')}</span>
             <div>
               <span className="eyebrow">READER REVIEW</span>
-              <blockquote>“{reviewPreview(review.full)}”</blockquote>
               <details className="review-expand">
-                <summary>See more <span aria-hidden="true">+</span></summary>
+                <summary>
+                  <span className="review-teaser">“{reviewPreview(review.full)}”</span>
+                  <span className="review-toggle"><span className="label-more">Read full review</span><span className="label-less">Show less</span><span className="review-toggle-icon" aria-hidden="true">+</span></span>
+                </summary>
                 <div className="review-full">
                   {review.full.split('\n\n').map((paragraph, part) => (
                     <p key={part}>{paragraph}</p>
