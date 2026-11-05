@@ -8,5 +8,10 @@
   "portrait": "/media/dennis-ross-portrait.webp",
   "pressBiography": "",
   "mediaKit": "",
-  "socials": []
+  "socials": [
+    {
+      "label": "Facebook",
+      "url": "https://www.facebook.com/profile.php?id=61596407635211"
+    }
+  ]
 }
