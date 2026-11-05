@@ -9,7 +9,7 @@ import { site, aboutReady } from '@/lib/content';
 import { seo, breadcrumbs, JsonLd } from '@/lib/seo';
 export const metadata = seo(
   'Meet Dennis Ross',
-  'Meet Dr. Dennis Ross, a nephrologist in Wichita, Kansas, clinical professor, and author of The Perfect Match.',
+  'Meet Dr. Dennis Ross, a physician, entrepreneur, arts leader, philanthropist, and author of The Perfect Match and The Lethal Elixir.',
   '/about',
   aboutReady,
 );
@@ -19,7 +19,7 @@ export default function About() {
       <PageHeading
         eyebrow="THE AUTHOR"
         title="Behind every page, a perspective."
-        description="An introduction to Dennis Ross and the stories still to come."
+        description="Physician, Entrepreneur, Arts Leader, and Philanthropist."
       />
       <section className="container about-layout">
         <Portrait src={site.portrait} large />
@@ -31,7 +31,15 @@ export default function About() {
             <em>behind the words.</em>
           </h2>
           {site.biography ? (
-            site.biography.split('\n\n').map((p, i) => <p key={i}>{p}</p>)
+            site.biography.split('\n\n').map((p, i) => (
+              <p key={i}>
+                {p.split(/(\*[^*]+\*)/g).map((part, j) =>
+                  part.startsWith('*') && part.endsWith('*')
+                    ? <em key={j}>{part.slice(1, -1)}</em>
+                    : part
+                )}
+              </p>
+            ))
           ) : (
             <div className="editorial-placeholder">
               <span className="eyebrow">BIOGRAPHY FORTHCOMING</span>
