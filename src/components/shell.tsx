@@ -11,7 +11,7 @@ const links = [
   ['/books', 'The Books'],
   ['/about', 'The Author'],
   ['/news', 'Journal'],
-  ['/reviews', 'Reviews'],
+  ['/reviews', 'Reviews And Testimonial'],
 ];
 export function Brand({ footer = false }: { footer?: boolean }) {
   return (
