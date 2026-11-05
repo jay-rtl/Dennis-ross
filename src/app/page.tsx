@@ -261,7 +261,7 @@ export default function Home() {
           {readerReviews.slice(0, 5).map((review, index) => (
             <article className="review-preview-item" key={review.id} data-reveal>
               <span className="review-index">{String(index + 1).padStart(2, '0')} / READER REVIEW</span>
-              <blockquote>“{reviewPreview(review.full)}”</blockquote>
+              <blockquote className="review-teaser">“{reviewPreview(review.full)}”</blockquote>
               <Link className="text-link" href={`/reviews#${review.id}`}>See more <ArrowUpRight size={16}/></Link>
             </article>
           ))}
