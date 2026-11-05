@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, ShoppingBag, Menu, X, Mail } from 'lucide-react';
+import { ArrowUpRight, ShoppingBag, Menu, X, Mail, Facebook } from 'lucide-react';
 import { useCart } from './cart';
 
 const links = [
@@ -143,7 +143,7 @@ export function Footer({
             .filter((s) => /^https:\/\//.test(s.url))
             .map((s) => (
               <a key={s.url} href={s.url} rel="me noopener noreferrer" target="_blank">
-                {s.label} <ArrowUpRight size={12} />
+                {s.label.toLowerCase() === "facebook" ? <Facebook size={17} aria-hidden="true" /> : <ArrowUpRight size={12} aria-hidden="true" />} {s.label}
               </a>
             ))}
         </div>
