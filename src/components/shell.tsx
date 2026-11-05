@@ -11,6 +11,7 @@ const links = [
   ['/books', 'The Books'],
   ['/about', 'The Author'],
   ['/news', 'Journal'],
+  ['/reviews', 'Reviews'],
 ];
 export function Brand({ footer = false }: { footer?: boolean }) {
   return (
@@ -130,6 +131,7 @@ export function Footer({
           <Link href="/books">The books</Link>
           <Link href="/about">Meet Dennis Ross</Link>
           <Link href="/news">The journal</Link>
+          <Link href="/reviews">Reader reviews</Link>
         </div>
         <div>
           <h2>Let’s connect</h2>
