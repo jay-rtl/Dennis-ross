@@ -5,6 +5,7 @@ import { StoryArt } from '@/components/story-art';
 import { EditorialImage } from '@/components/editorial-image';
 import { site, getArticles } from '@/lib/content';
 import { seo } from '@/lib/seo';
+import { readerReviews } from '@/lib/reviews';
 export const metadata = seo(
   'Discover the World of Dennis Ross',
   'Welcome to the official home of Dennis Ross Books. Discover literary stories, author updates, and your next reading journey.',
@@ -247,6 +248,24 @@ export default function Home() {
         ) : (
           <EmptyNews />
         )}
+      </section>
+      <section className="section container reviews-preview" aria-labelledby="reader-reviews-title">
+        <div className="section-top" data-reveal>
+          <div>
+            <span className="eyebrow">THE LETHAL ELIXIR / READER REVIEWS</span>
+            <h2 id="reader-reviews-title">What readers <em>are saying.</em></h2>
+          </div>
+          <Link href="/reviews" className="text-link">View all reviews <ArrowUpRight size={17} /></Link>
+        </div>
+        <div className="review-preview-grid">
+          {readerReviews.slice(0, 5).map((review, index) => (
+            <article className="review-preview-item" key={review.id} data-reveal>
+              <span className="review-index">{String(index + 1).padStart(2, '0')} / READER REVIEW</span>
+              <blockquote>“{review.quote}”</blockquote>
+              <Link className="text-link" href={`/reviews#${review.id}`}>See more <ArrowUpRight size={16}/></Link>
+            </article>
+          ))}
+        </div>
       </section>
       <FinalCta />
     </div>
