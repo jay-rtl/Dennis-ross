@@ -2835,3 +2835,27 @@ html[data-intro] body {
   font-weight: 100 900;
   font-display: swap;
 }
+
+/* Reader reviews: quiet editorial quotations, aligned with the existing site. */
+.reviews-preview { border-top: 1px solid var(--line); }
+.review-preview-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 46px; }
+.review-preview-item { border-top: 1px solid var(--line); padding: 32px 0; }
+.review-preview-item:last-child { grid-column: 1 / -1; }
+.review-index { display:block; font: 500 0.6875rem/1.5 var(--sans); letter-spacing: .13em; color: var(--gold-dark); }
+.review-preview-item blockquote, .review-list-item blockquote { margin: 18px 0 16px; font: 500 clamp(23px, 2.6vw, 34px)/1.26 var(--serif); color: var(--navy); }
+.review-preview-item .text-link { color: var(--navy); }
+.reviews-page { padding-top: 46px; padding-bottom: 110px; }
+.reviews-intro { max-width: 850px; padding: 65px 0 70px; }
+.reviews-intro h1 { margin: 18px 0 22px; font-size: clamp(62px,8vw,112px); line-height: .92; }
+.reviews-intro h1 em { color: var(--gold-dark); }
+.reviews-intro p { max-width: 570px; color: var(--muted); }
+.review-list-item { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 30px; border-top: 1px solid var(--line); padding: 42px 0; }
+.review-list-item > div { max-width: 880px; }
+.review-list-item p { max-width: 740px; color: var(--muted); line-height: 1.8; }
+.review-source-note { font-size: .8rem; color: var(--muted); max-width: 680px; margin: 30px 0; }
+@media (max-width: 700px) {
+ .review-preview-grid { grid-template-columns: 1fr; }
+ .review-preview-item:last-child { grid-column: auto; }
+ .review-list-item { grid-template-columns: 1fr; gap: 8px; }
+ .reviews-intro { padding: 40px 0; }
+}
