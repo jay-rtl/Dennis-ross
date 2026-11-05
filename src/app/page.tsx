@@ -5,7 +5,7 @@ import { StoryArt } from '@/components/story-art';
 import { EditorialImage } from '@/components/editorial-image';
 import { site, getArticles } from '@/lib/content';
 import { seo } from '@/lib/seo';
-import { readerReviews } from '@/lib/reviews';
+import { readerReviews, reviewPreview } from '@/lib/reviews';
 export const metadata = seo(
   'Discover the World of Dennis Ross',
   'Welcome to the official home of Dennis Ross Books. Discover literary stories, author updates, and your next reading journey.',
@@ -261,7 +261,7 @@ export default function Home() {
           {readerReviews.slice(0, 5).map((review, index) => (
             <article className="review-preview-item" key={review.id} data-reveal>
               <span className="review-index">{String(index + 1).padStart(2, '0')} / READER REVIEW</span>
-              <blockquote>“{review.quote}”</blockquote>
+              <blockquote>“{reviewPreview(review.full)}”</blockquote>
               <Link className="text-link" href={`/reviews#${review.id}`}>See more <ArrowUpRight size={16}/></Link>
             </article>
           ))}
