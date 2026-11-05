@@ -1,0 +1,100 @@
+1:"$Sreact.fragment"
+3:"/Dennis-ross/_next/static/chunks/17tzj-q1cypca.js"
+4:"/Dennis-ross/_next/static/chunks/10uhnygbzrjrf.js"
+5:"/Dennis-ross/_next/static/chunks/2o_c7zois-_sj.js"
+6:I[84704,["$3","$4","$5"],"CartProvider"]
+7:I[6421,["$3","$4","$5"],"Motion"]
+8:I[97412,["$3","$4","$5"],"Header"]
+9:I[39756,["$3","$4","$5"],"default"]
+a:"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js"
+b:I[32403,["$3","$4","$5","$a"],"default"]
+c:I[37457,["$3","$4","$5"],"default"]
+19:I[68027,["$3","$4","$5"],"default",1]
+:HL["/Dennis-ross/_next/static/chunks/2imfzdntp8rpl.css","style"]
+2:T8ae,
+(function () {
+  try {
+    var replay = new URLSearchParams(location.search).get('intro') === '1';
+    var preference = matchMedia('(prefers-reduced-motion: reduce)');
+    if ((location.pathname !== '/Dennis-ross/' && location.pathname !== '/Dennis-ross') || preference.matches || (!replay && sessionStorage.getItem('dr-intro'))) return;
+    document.documentElement.dataset.intro = 'pending';
+    var content = function () { return document.getElementById('site-content'); };
+    var gate = new MutationObserver(function () {
+      var region = content();
+      if (region) {
+        region.inert = !!document.documentElement.dataset.intro;
+        gate.disconnect();
+      }
+    });
+    gate.observe(document.documentElement, { childList: true, subtree: true });
+    var release = function () {
+      delete document.documentElement.dataset.intro;
+      if (content()) content().inert = false;
+      window.dispatchEvent(new Event('dr:intro-timeout'));
+    };
+    var keys = function (event) {
+      if (!document.documentElement.dataset.intro) return;
+      if (event.key === 'Escape') { event.preventDefault(); release(); }
+      if (event.key === 'Tab') {
+        var skip = document.querySelector('.intro button');
+        if (skip) { event.preventDefault(); skip.focus({ preventScroll: true }); }
+      }
+    };
+    var click = function (event) {
+      if (document.documentElement.dataset.intro === 'pending' && event.target.closest('.intro button')) release();
+    };
+    document.addEventListener('keydown', keys);
+    document.addEventListener('click', click);
+    var motionChanged = function () { if (preference.matches) release(); };
+    preference.addEventListener('change', motionChanged);
+    var cleanup = function () {
+      gate.disconnect();
+      document.removeEventListener('keydown', keys);
+      document.removeEventListener('click', click);
+      preference.removeEventListener('change', motionChanged);
+    };
+    window.addEventListener('dr:intro-finished', cleanup, { once: true });
+    setTimeout(function () {
+      if (document.documentElement.dataset.intro) {
+        release();
+      }
+      cleanup();
+    }, 9000);
+  } catch (_) { /* The readable homepage is the fallback. */ }
+})();
+15:X
+16:[["children",{"s":"__PAGE__","h":512,"d":{"r":"$L17","p":false,"v":null}}]]
+13:[["children",{"s":"reviews","h":512,"d":{"r":"$L14","p":false,"v":"$15"},"c":"$Q16"}]]
+0:{"P":null,"c":["","reviews",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/2imfzdntp8rpl.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/17tzj-q1cypca.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/Dennis-ross/_next/static/chunks/10uhnygbzrjrf.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/Dennis-ross/_next/static/chunks/2o_c7zois-_sj.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"id":"intro-before-paint","dangerouslySetInnerHTML":{"__html":"$2"}}]}],["$","body",null,{"children":[["$","$L6",null,{"children":[["$","$L7",null,{}],["$","div",null,{"id":"site-content","suppressHydrationWarning":true,"children":[["$","a",null,{"className":"skip-link","href":"#main","children":"Skip to content"}],["$","$L8",null,{"showCart":false}],["$","main",null,{"id":"main","tabIndex":-1,"children":["$","$L9",null,{"parallelRouterKey":"children","error":"$b","errorStyles":[],"errorScripts":[["$","script","script-0",{"src":"/Dennis-ross/_next/static/chunks/3c0i54-3k52g5.js","async":true,"nonce":"$undefined"}]],"template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","div",null,{"className":"page-heading-shell","children":["$","div",null,{"className":"page-heading container","children":[["$","span",null,{"className":"eyebrow","children":["$Ld","404 · A PAGE OUT OF PLACE"]}],"$Le","$Lf"]}]}],"$L10"],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],"$L11"]}]]}],"$L12"]}]]}]]}],"p":false,"v":null},"c":"$Q13"},"h":{"r":"$L18","p":false,"v":null}},"m":"$undefined","G":["$19",["$L1a"]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"QCsi8xOS2zq4MnPKhr90-"}
+1b:I[22016,["$3","$4","$5"],""]
+1c:I[97412,["$3","$4","$5"],"Footer"]
+27:"ViewportBoundary"
+28:I[97367,["$3","$4","$5"],"$27"]
+2a:"MetadataBoundary"
+2b:I[97367,["$3","$4","$5"],"$2a"]
+2c:"$Sreact.suspense"
+d:["$","i",null,{}]
+e:["$","h1",null,{"children":"This chapter hasn’t been written."}]
+f:["$","p",null,{"children":"The page you’re looking for may have moved, or may not be available yet."}]
+10:["$","div",null,{"className":"container checkout-return","children":["$","$L1b",null,{"href":"/","className":"button ","children":["Return to the beginning",["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":17,"height":17,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-up-right","children":[["$","path","1tivn9",{"d":"M7 7h10v10"}],["$","path","1vkiza",{"d":"M7 17 17 7"}],"$undefined"]}]]}]}]
+11:["$","$L1c",null,{"email":"readdennisross@gmail.com","socials":[]}]
+1d:T467,[{"@context":"https://schema.org","@type":"Organization","@id":"https://jay-rtl.github.io/Dennis-ross/#organization","name":"Dennis Ross Books","url":"https://jay-rtl.github.io/Dennis-ross/","logo":"https://jay-rtl.github.io/Dennis-ross/brand/logo.webp","email":"readdennisross@gmail.com","sameAs":[]},{"@context":"https://schema.org","@type":"Person","@id":"https://jay-rtl.github.io/Dennis-ross/#author","name":"Dennis Ross","url":"https://jay-rtl.github.io/Dennis-ross/about/","description":"Dr. Dennis Ross is a respected nephrologist in Wichita, Kansas, and the author of The Perfect Match.\n\nHe is a clinical professor with the University of Kansas Medical Center in Wichita and has published extensively in scientific journals.\n\nHe and his wife have received several awards for their philanthropy supporting their church and the arts.","image":"https://jay-rtl.github.io/Dennis-ross/media/dennis-ross-portrait.webp"},{"@context":"https://schema.org","@type":"WebSite","name":"Dennis Ross Books","url":"https://jay-rtl.github.io/Dennis-ross/","publisher":{"@id":"https://jay-rtl.github.io/Dennis-ross/#organization"}}]12:["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$1d"}}]
+14:["$","$1","c",{"children":[null,["$","$L9",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+17:["$","$1","c",{"children":[["$","main",null,{"className":"container reviews-page","children":[["$","$L1b",null,{"href":"/","className":"text-link","children":[["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-left","children":[["$","path","1l729n",{"d":"m12 19-7-7 7-7"}],["$","path","x3x0zl",{"d":"M19 12H5"}],"$undefined"]}]," Back to home"]}],["$","div",null,{"className":"reviews-intro","children":[["$","span",null,{"className":"eyebrow","children":"READER PERSPECTIVES / THE LETHAL ELIXIR"}],["$","h1",null,{"children":["In the words ",["$","em",null,{"children":"of readers."}]]}],["$","p",null,{"children":["Selected excerpts from reader reviews of ",["$","cite",null,{"children":"The Lethal Elixir"}]," by Dennis Ross."]}]]}],["$","div",null,{"className":"review-list","children":[["$","article","medical-mystery",{"className":"review-list-item","id":"medical-mystery","children":[["$","span",null,{"className":"review-index","children":"01"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","The Lethal Elixir by Dennis Ross grabs the readers interest with the ambulance ride and sustains that interest with this medical mystery.","”"]}],["$","p",null,{"children":"The story comes to life in a manner that looks into lives and death issues revolving around infectious disease infection and offers a well-researched fictional drama. The development of characters is rather diversified and therefore recognizable. Dr. Maggie Hamilton is depicted as intelligent and hardworking; that makes it incredibly easy to support her throughout the novel."}]]}]]}],["$","article","maggie",{"className":"review-list-item","id":"maggie","children":[["$","span",null,{"className":"review-index","children":"02"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","What really appeals to me is the character of Dr. Maggie Hamilton. Her work involving infectious diseases and, moreover, her central role in addressing the bioterrorism plot, make the book's science and medicine aspects so engaging.","”"]}],["$","p",null,{"children":"Hamilton is indeed truly an inspiration due to her intelligence and dedication, as well as her extraordinary capacity to solve intricate medical enigmas. Her interactions with other characters, such as Mack, further establish her as both a mentor and leader in her field."}]]}]]}],["$","article","suspense",{"className":"review-list-item","id":"suspense","children":[["$","span",null,{"className":"review-index","children":"03"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","The Lethal Elixir hits the running mark from the very first page truly action-packed adventure. Fast-paced and full of relentless suspense, the novel traces a race against time.","”"]}],["$","p",null,{"children":"The cinematic flavor and great descriptions transport readers to somewhat intense journeys, increasingly exposing them to conflicts in each chapter. If one wants a story filled with adrenaline, then delivers a true ride into a world where the stakes couldn't be higher."}]]}]]}],["$","article","romance",{"className":"review-list-item","id":"romance","children":[["$","span",null,{"className":"review-index","children":"04"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","I would give more than 5 stars to this novel if I could. It is a complete confluence of romance and suspense.","”"]}],["$","p",null,{"children":"The chemistry between the characters is palpable, which makes the great story even more emotional. Ross carries an extraordinary ability to write romantic tension that feels authentic and from the heart. The romantic subplot combines with the thrilling storyline elegantly, with moments of warmth in a grueling suspense ride."}]]}]]}],"$L1e","$L1f","$L20","$L21","$L22","$L23"]}],"$L24","$L25"]}],null,"$L26"]}]
+18:["$","$1","h",{"children":[null,["$","$L28",null,{"children":"$L29"}],["$","$L2b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$2c",null,{"name":"Next.Metadata","children":"$L2d"}]}],null]}],null]}]
+1a:["$","link","0",{"rel":"stylesheet","href":"/Dennis-ross/_next/static/chunks/2imfzdntp8rpl.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+2e:I[97367,["$3","$4","$5"],"OutletBoundary"]
+15:C
+1e:["$","article","thrilling-movie",{"className":"review-list-item","id":"thrilling-movie","children":[["$","span",null,{"className":"review-index","children":"05"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","I really loved the book and found it interesting. It's so interesting and feels like a thrilling movie.","”"]}],["$","p",null,{"children":"This is a fictional story. It's easy to understand and written in simple language. The book teaches a lot about what you should do in case of an outbreak of ebola; it offers an insight about the disease that you would not easily know. My favorite character is Maggie."}]]}]]}]
+1f:["$","article","five-stars",{"className":"review-list-item","id":"five-stars","children":[["$","span",null,{"className":"review-index","children":"06"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","I gave this book 5 out of 5 stars because Dennis Ross delivers a really exciting adventure that grabs you right from page one onward.","”"]}],["$","p",null,{"children":"Ross's graphic depiction and relentless pace combine to create an intoxicating experience. The action passages are brilliant, hitting the mark, page after page, leaving the reader wanting more."}]]}]]}]
+20:["$","article","complex-characters",{"className":"review-list-item","id":"complex-characters","children":[["$","span",null,{"className":"review-index","children":"07"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","The novel burrows into the psyches of its characters, wherein such personal connections can complicate yet enrich the battle against an impending threat.","”"]}],["$","p",null,{"children":"This romantic subplot balances beautifully with the high-stakes action in which the humans are put in crisis to show their resilient yet helpless hearts."}]]}]]}]
+21:["$","article","science-mystery",{"className":"review-list-item","id":"science-mystery","children":[["$","span",null,{"className":"review-index","children":"08"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","I recommend this novel to anyone interested in novels, preferably a blend of science and mystery with powerful characters.","”"]}],["$","p",null,{"children":"The author is successful in describing medical aspects while the main story is quite simple and engaging. Readers will feel the tension in the isolation unit of the hospital and understand the need to get to the root of the problem before it progresses."}]]}]]}]
+22:["$","article","page-turner",{"className":"review-list-item","id":"page-turner","children":[["$","span",null,{"className":"review-index","children":"09"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","The suspense about Frank makes him feel at an even keener pitch, dogged at each step by this fear of possible discovery stakes so much greater and his story just more appropriate.","”"]}],["$","p",null,{"children":"Frank does a great job with this book, marrying complex plotting with heart-stopping excitement that makes it impossible to put down."}]]}]]}]
+23:["$","article","reading-experience",{"className":"review-list-item","id":"reading-experience","children":[["$","span",null,{"className":"review-index","children":"10"}],["$","div",null,{"children":[["$","span",null,{"className":"eyebrow","children":"READER REVIEW"}],["$","blockquote",null,{"children":["“","The narrative point of view that the author adopts is third person limited, and this narrative strategy is effective.","”"]}],["$","p",null,{"children":"The descriptions are engaging, especially while depicting the medical sequences. I therefore recommend The Lethal Elixir to adults and older teens who enjoy suspense, science, mystery, and human drama."}]]}]]}]
+24:["$","p",null,{"className":"review-source-note","children":"Reviews excerpted from the supplied eBookFairs book review forms. Reviewer names were not provided. Quotations retain the original review wording."}]
+25:["$","$L1b",null,{"className":"text-link","href":"/books/the-lethal-elixir","children":["Explore The Lethal Elixir ",["$","svg",null,{"ref":"$undefined","xmlns":"http://www.w3.org/2000/svg","width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"lucide lucide-arrow-up-right","children":[["$","path","1tivn9",{"d":"M7 7h10v10"}],["$","path","1vkiza",{"d":"M7 17 17 7"}],"$undefined"]}]]}]
+26:["$","$L2e",null,{"children":["$","$2c",null,{"name":"Next.MetadataOutlet","children":"$@2f"}]}]
+29:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+30:I[27201,["$3","$4","$5"],"IconMark"]
+2d:[["$","title","0",{"children":"Reader Reviews | The Lethal Elixir | Dennis Ross Books"}],["$","meta","1",{"name":"description","content":"Read feedback from readers of The Lethal Elixir by Dennis Ross."}],["$","link","2",{"rel":"manifest","href":"/Dennis-ross/manifest.webmanifest","crossOrigin":"$undefined"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","link","4",{"rel":"canonical","href":"https://jay-rtl.github.io/Dennis-ross/reviews/"}],["$","meta","5",{"property":"og:title","content":"Reader Reviews | The Lethal Elixir | Dennis Ross Books"}],["$","meta","6",{"property":"og:description","content":"Read feedback from readers of The Lethal Elixir by Dennis Ross."}],["$","meta","7",{"property":"og:url","content":"https://jay-rtl.github.io/Dennis-ross/reviews/"}],["$","meta","8",{"property":"og:site_name","content":"Dennis Ross Books"}],["$","meta","9",{"property":"og:locale","content":"en_US"}],["$","meta","10",{"property":"og:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}],["$","meta","11",{"property":"og:image:width","content":"1200"}],["$","meta","12",{"property":"og:image:height","content":"630"}],["$","meta","13",{"property":"og:image:alt","content":"Dennis Ross Books — the official author website"}],["$","meta","14",{"property":"og:type","content":"website"}],["$","meta","15",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","16",{"name":"twitter:title","content":"Reader Reviews | The Lethal Elixir | Dennis Ross Books"}],["$","meta","17",{"name":"twitter:description","content":"Read feedback from readers of The Lethal Elixir by Dennis Ross."}],["$","meta","18",{"name":"twitter:image","content":"https://jay-rtl.github.io/Dennis-ross/brand/social.jpg"}],["$","link","19",{"rel":"icon","href":"/Dennis-ross/brand/favicon.png"}],["$","link","20",{"rel":"apple-touch-icon","href":"/Dennis-ross/brand/apple-touch-icon.png"}],["$","$L30","21",{}]]
+2f:null
