@@ -283,6 +283,7 @@ main:focus {
 .navigation > a {
   position: relative;
   font-size: 0.8125rem;
+  font-weight: 700;
   padding: 15px 0;
 }
 .navigation > a:after {
@@ -1797,7 +1798,7 @@ html[data-intro] body {
     gap: 0;
   }
   .navigation > a {
-    font: 500 36px var(--serif);
+    font: 700 36px var(--serif);
     padding: 17px 0;
     border-bottom: 1px solid #ffffff30;
   }
