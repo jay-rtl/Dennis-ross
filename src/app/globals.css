@@ -2868,3 +2868,29 @@ html[data-intro] body {
 .review-expand .review-full { margin-top:20px; border-left:2px solid var(--gold); padding-left:clamp(14px,2vw,24px); }
 .review-expand .review-full p { margin:0 0 18px; }
 .review-expand .review-full p:first-child { margin-top:0; }
+
+/* 2026-11 review refinement: compact high-end editorial previews */
+.reviews-page { max-width: 1220px; }
+.reviews-intro { padding: 36px 0 48px; }
+.reviews-intro h1 { font-size: clamp(52px, 6.2vw, 82px); line-height: 1; }
+.review-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(24px, 4vw, 64px); align-items: start; }
+.review-list-item { grid-template-columns: 36px minmax(0, 1fr); gap: 16px; padding: 30px 0 28px; scroll-margin-top: calc(var(--header-height) + 28px); }
+.review-list-item > div { min-width: 0; }
+.review-list-item .eyebrow { font-size: .625rem; letter-spacing: .13em; }
+.review-expand > summary { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; text-decoration: none; }
+.review-expand > summary .review-teaser { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; font: 500 clamp(20px, 2vw, 27px)/1.31 var(--serif); letter-spacing: -.012em; color: var(--navy); }
+.review-toggle { display: inline-flex; align-items: center; gap: 10px; font: 600 .75rem/1.5 var(--sans); color: var(--navy); border-bottom: 1px solid var(--gold-dark); padding-bottom: 4px; }
+.review-expand .review-toggle-icon { font-size: 1rem; line-height: 1; }
+.review-expand .label-less { display: none; }
+.review-expand[open] .label-more { display: none; }
+.review-expand[open] .label-less { display: inline; }
+.review-expand[open] .review-teaser { display: none; }
+.review-expand .review-full { margin-top: 22px; padding-left: 18px; }
+.review-expand .review-full p { font-size: .875rem; line-height: 1.8; }
+.review-preview-item blockquote.review-teaser { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; font-size: clamp(20px, 2vw, 27px); line-height: 1.3; }
+.review-preview-item { padding: 26px 0; }
+@media (max-width: 760px) {
+ .review-list { grid-template-columns: 1fr; }
+ .review-list-item { padding: 24px 0; }
+ .reviews-intro h1 { font-size: clamp(50px, 11vw, 68px); }
+}
