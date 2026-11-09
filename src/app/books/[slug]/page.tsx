@@ -1,11 +1,9 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
-import { getBooks, publicBook } from '@/lib/content';
+import { getBooks } from '@/lib/content';
 import { seo, JsonLd, siteUrl, breadcrumbs, canonicalUrl } from '@/lib/seo';
 import { BookCard } from '@/components/editorial';
-import { Purchase } from '@/components/cart';
-import { Share } from '@/components/share';
+import { IngramBookstore } from '@/components/ingram-bookstore';
 export const dynamicParams = true;
 export function generateStaticParams() {
   return getBooks().map((book) => ({ slug: book.slug }));
@@ -37,31 +35,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
         <span>/</span>
         <span>{book.title}</span>
       </div>
-      <section className="container book-detail">
-        <div className="detail-cover">
-          <Image
-            src={book.cover}
-            alt={`${book.title} by Dennis Ross, book cover`}
-            fill
-            sizes="(max-width: 768px) 90vw, 40vw"
-            priority
-          />
-        </div>
-        <div className="book-detail-copy">
-          <span className="eyebrow">{book.genre}</span>
-          <h1>{book.title}</h1>
-          <p className="byline">By Dennis Ross</p>
-          {book.tagline && <p className="book-tagline detail-tagline">{book.tagline}</p>}
-          <div className="prose">
-            {book.description.split('\n\n').map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-          {book.isbn && <p className="small muted">ISBN: {book.isbn}</p>}
-          <Purchase book={publicBook(book)} />
-          <Share title={book.title} url={canonicalUrl(`/books/${slug}`)} />
-        </div>
-      </section>
+      <div className="container"><IngramBookstore book={book} /></div>
       {related.length > 0 && (
         <section className="section container">
           <div className="section-top">
