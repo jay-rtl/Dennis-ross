@@ -289,3 +289,7 @@
   .dr-reviews .dr-hero-jump svg,
   .dr-reviews .dr-review-button svg { transition: none !important; }
 }
+
+/* Preserve the editorial button appearance while review expansion is frozen. */
+.dr-reviews .dr-review-button:disabled { opacity: 1; cursor: default; }
+.dr-reviews .dr-review-button:disabled svg { transform: none; }
