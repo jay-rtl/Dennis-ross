@@ -77,7 +77,7 @@ export function IngramBookstore({book}:{book:Book}){
           <details><summary>About the book <Plus size={17}/></summary><div>{book.description.split('\n\n').map((p,i)=><p key={i}>{p}</p>)}</div></details>
           <details><summary>Book information <Plus size={17}/></summary><div><p>Author: Dennis Ross</p><p>Genre: {book.genre}</p>{book.isbn&&<p>ISBN: {book.isbn}</p>}<p>Editions: {book.formats.map(f=>f.label).join(', ')}</p><p>Other edition details are pending verification.</p></div></details>
           <details><summary>Ordering and delivery <Plus size={17}/></summary><div><p>Purchases are completed on IngramSpark, which confirms shipping, availability, and final pricing.</p></div></details>
-          <details><summary>Read a sample <Plus size={17}/></summary><div><p>Explore the author-provided preview pages with the interactive PDF reader.</p><Link className="dr-store-outline" href="/sample/the-lethal-elixir/">Open sample flipbook <ArrowUpRight size={17}/></Link></div></details>
+          
           <details><summary>Reader reviews <Plus size={17}/></summary><div><p>Read existing reviews from readers of The Lethal Elixir.</p><Link href="/reviews">Explore reader reviews <ArrowUpRight size={15}/></Link></div></details>
         </div>
       </div>
