@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Lethal Elixir | Sample Flipbook</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f3ee;color:#142e42;font-family:Arial,sans-serif}
+main{max-width:1350px;margin:auto;padding:25px clamp(14px,4vw,52px)}header{display:flex;justify-content:space-between;gap:15px;align-items:center;border-bottom:1px solid #c6c9ca;padding-bottom:20px}
+h1{font:400 clamp(36px,5vw,72px)/1.04 Georgia,serif;margin:12px 0}.sub{font-size:11px;letter-spacing:.14em;color:#997c54}p{color:#61707b;font-size:13px;line-height:1.6}
+.reader{background:#e8e9e7;border:1px solid #d7d8d7;margin-top:30px;padding:clamp(12px,3vw,34px)}
+.toolbar{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:20px}.toolbar div{display:flex;align-items:center;gap:8px}
+button,a.control{min-width:45px;min-height:44px;background:#fff;border:1px solid #b7bfc4;padding:10px 14px;color:#142e42;cursor:pointer;font-size:14px;text-decoration:none}
+button:disabled{opacity:.3;cursor:default}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #b88b43;outline-offset:4px}
+#spread{position:relative;display:flex;justify-content:center;perspective:1200px;transition:transform .23s;min-height:490px}
+#spread.turn{transform:rotateY(-8deg);opacity:.75}.leaf{height:min(72vh,700px);aspect-ratio:2/3;background:#fff;box-shadow:0 13px 22px #142e421a}
+canvas{width:100%;height:100%;display:block}#loading{position:absolute;top:40%;background:white;border:1px solid #ccc;padding:18px;z-index:2}
+.bottom{display:flex;align-items:center;gap:15px;margin-top:22px}.bottom input{flex:1;accent-color:#142e42}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(max-width:820px){#spread .leaf:last-child{display:none}header{display:block}.leaf{height:min(65vh,590px)}}
+@media(max-width:460px){.leaf{width:100%;height:auto;aspect-ratio:2/3}#spread{min-height:0}.reader{padding:8px}}
+@media(prefers-reduced-motion:reduce){#spread{transition:none}}
+</style></head>
+<body><main><header><div><span class="sub">DENNIS ROSS / READER PREVIEW</span><h1>The Lethal Elixir</h1><p>Original author-supplied 19-page preview · Book interior design preserved</p></div><a href="../../books/the-lethal-elixir/" style="color:inherit;font-size:13px">Back to the book ↗</a></header>
+<section class="reader" aria-label="Interactive sample flipbook">
+<div class="toolbar"><div><button id="prev" aria-label="Previous pages">←</button><button id="next" aria-label="Next pages">→</button><span id="count" aria-live="polite">Loading…</span></div><div><button id="minus" aria-label="Zoom out">−</button><button id="plus" aria-label="Zoom in">+</button><button id="fullscreen" aria-label="Fullscreen">⛶</button><a class="control" href="the-lethal-elixir-sample.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a></div></div>
+<div id="spread"><div class="leaf"><canvas id="first"></canvas></div><div class="leaf"><canvas id="second"></canvas></div><div id="loading" role="status">Preparing PDF…</div></div>
+<div class="bottom"><span class="sub">PAGE</span><input aria-label="Jump to page" type="range" id="seek" min="1" max="19" value="1"><span id="pagecount">1 / 19</span></div></section>
+<p style="text-align:center">Preview pages only. Arrow keys turn pages. On mobile, one page is displayed at a time.</p></main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+(async function(){
+const el=id=>document.getElementById(id),single=()=>innerWidth<=820;
+const loading=el('loading'),spread=el('spread');let pdf,page=1,zoom=1,token=0;
+async function display(n,canvas,t){if(n>pdf.numPages){canvas.style.visibility='hidden';return;}canvas.style.visibility='visible';const p=await pdf.getPage(n);if(t!==token)return;const native=p.getViewport({scale:1});const factor=Math.min(devicePixelRatio||1,2)*470*zoom/native.width;const viewport=p.getViewport({scale:factor});canvas.width=viewport.width;canvas.height=viewport.height;await p.render({canvasContext:canvas.getContext('2d'),viewport}).promise;}
+async function draw(){if(!pdf)return;const t=++token;loading.style.display='block';loading.textContent='Rendering pages…';try{await Promise.all([display(page,el('first'),t),display(single()?pdf.numPages+1:page+1,el('second'),t)]);if(t!==token)return;el('count').textContent=page+(single()||page===pdf.numPages?'':'–'+(page+1))+' / '+pdf.numPages;el('pagecount').textContent=page+' / '+pdf.numPages;el('seek').value=page;el('prev').disabled=page===1;el('next').disabled=page===pdf.numPages;loading.style.display='none';}catch(e){loading.textContent='Page rendering failed.';}}
+function turn(d){if(!pdf)return;const to=Math.min(pdf.numPages,Math.max(1,page+d*(single()?1:2)));if(to===page)return;page=to;spread.classList.add('turn');setTimeout(()=>{spread.classList.remove('turn');draw();},100);}
+el('next').onclick=()=>turn(1);el('prev').onclick=()=>turn(-1);el('minus').onclick=()=>{zoom=Math.max(.6,zoom-.2);draw();};el('plus').onclick=()=>{zoom=Math.min(2,zoom+.2);draw();};el('fullscreen').onclick=()=>document.fullscreenElement?document.exitFullscreen():spread.requestFullscreen?.();el('seek').oninput=e=>{page=+e.target.value;draw();};
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;if(e.key==='ArrowLeft')turn(-1);if(e.key==='ArrowRight')turn(1);});
+let was=single();window.addEventListener('resize',()=>{if(was!==single()){was=single();draw();}});
+try{if(!window.pdfjsLib)throw Error('PDF renderer unavailable');pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';pdf=await pdfjsLib.getDocument('the-lethal-elixir-sample.pdf').promise;el('seek').max=pdf.numPages;draw();}catch(err){loading.textContent='Sample PDF has not been uploaded yet, or the reader could not load it.';}
+})();
+</script></body></html>
