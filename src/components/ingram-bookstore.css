@@ -59,3 +59,22 @@
 @media(max-width:800px){.dr-store-grid{grid-template-columns:1fr;gap:32px}.dr-store-gallery{position:static}.dr-store-cover{max-height:570px}.dr-store-info h1{font-size:clamp(3.4rem,12vw,5.7rem)}}
 @media(max-width:500px){.dr-store-editions{grid-template-columns:1fr}.dr-store-gallery-caption{flex-direction:column;gap:3px}.dr-store-gallery-caption span:last-child{text-align:left}.dr-store{padding-bottom:65px}.dr-store-actions>*{width:100%}}
 @media(prefers-reduced-motion:reduce){.dr-store-cover img{transition:none}}
+
+/* Direct sample preview action under the edition purchase controls. */
+.dr-store-sample-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font: 600 .82rem/1.45 var(--sans,Arial,sans-serif);
+  text-decoration: none;
+  transition: background .2s ease,color .2s ease;
+}
+.dr-store-sample-button:hover { background: var(--ink); color: #fff; }
+@media (max-width: 500px) { .dr-store-sample-button { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .dr-store-sample-button { transition: none; } }
