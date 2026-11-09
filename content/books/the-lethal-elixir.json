@@ -13,10 +13,10 @@
     {
       "id": "paperback",
       "label": "Paperback",
-      "available": false,
+      "available": true,
       "needsShipping": true,
-      "purchaseUrl": "",
-      "availabilityNote": "The paperback purchase link will be added soon."
+      "purchaseUrl": "https://shop.ingramspark.com/b/084?params=K0KvmdqJ6kXnRo54B4cKyj2RPFYoUiwOecMtQc2DnPw",
+      "availabilityNote": "Purchase the paperback edition securely through IngramSpark."
     },
     {
       "id": "hardback",
