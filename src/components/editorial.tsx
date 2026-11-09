@@ -125,9 +125,6 @@ export function BookCard({ book }: { book: Book }) {
         {book.description.length > 150 ? '…' : ''}
       </p>
       <div className="book-card-links">
-        <Link className="text-link" href={`/books/${book.slug}`}>
-          View details <ArrowRight size={15} />
-        </Link>
         {(book.purchaseMode === 'external' || book.formats.some((f) => f.available && f.stripePriceId)) && (
           <Link className="text-link" href={`/books/${book.slug}#purchase`}>
             {book.purchaseMode === 'external' ? 'Choose edition' : 'Buy now'} <ShoppingIcon />
