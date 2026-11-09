@@ -97,7 +97,6 @@ export function EmptyBooks({ compact = false }: { compact?: boolean }) {
 }
 export function BookCard({ book }: { book: Book }) {
   const format = book.formats[0];
-  const retailerFormat = book.formats.find((f) => f.available && f.purchaseUrl);
   return (
     <article className="book-card" data-reveal>
       <Link href={`/books/${book.slug}`} className="book-cover">
@@ -129,24 +128,10 @@ export function BookCard({ book }: { book: Book }) {
         <Link className="text-link" href={`/books/${book.slug}`}>
           View details <ArrowRight size={15} />
         </Link>
-        {book.purchaseMode === 'external' && retailerFormat ? (
-          <a
-            className="text-link"
-            href={retailerFormat.purchaseUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Buy on {book.retailer}
-            <ShoppingIcon />
-            <span className="sr-only"> (opens a new tab)</span>
-          </a>
-        ) : (
-          (book.purchaseMode === 'external' ||
-            book.formats.some((f) => f.available && f.stripePriceId)) && (
-            <Link className="text-link" href={`/books/${book.slug}#purchase`}>
-              {book.purchaseMode === 'external' ? 'View editions' : 'Buy now'} <ShoppingIcon />
-            </Link>
-          )
+        {(book.purchaseMode === 'external' || book.formats.some((f) => f.available && f.stripePriceId)) && (
+          <Link className="text-link" href={`/books/${book.slug}#purchase`}>
+            {book.purchaseMode === 'external' ? 'Choose edition' : 'Buy now'} <ShoppingIcon />
+          </Link>
         )}
       </div>
     </article>
@@ -161,8 +146,7 @@ export function FeaturedBooks() {
   const selection = (featured.length ? featured : books).slice(0, 3);
   if (selection.length === 1) {
     const book = selection[0];
-    const retailerFormat = book.formats.find((f) => f.available && f.purchaseUrl);
-    return (
+      return (
       <article className="featured-book" data-reveal>
         <Link href={`/books/${book.slug}`} className="featured-book-cover">
           <Image
@@ -185,23 +169,10 @@ export function FeaturedBooks() {
           </div>
           <div className="featured-book-actions">
             <ButtonLink href={`/books/${book.slug}`}>Discover the book</ButtonLink>
-            {book.purchaseMode === 'external' && retailerFormat ? (
-              <a
-                className="text-link"
-                href={retailerFormat.purchaseUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Buy on {book.retailer}
-                <ArrowUpRight size={16} />
-                <span className="sr-only"> (opens a new tab)</span>
-              </a>
-            ) : (
-              <Link href={`/books/${book.slug}#purchase`} className="text-link">
-                View editions
-                <ArrowUpRight size={16} />
-              </Link>
-            )}
+            <Link href={`/books/${book.slug}#purchase`} className="text-link">
+              Choose edition
+              <ArrowUpRight size={16} />
+            </Link>
           </div>
           {book.purchaseMode === 'external' &&
             !book.formats.some((f) => f.available && f.purchaseUrl) && (
