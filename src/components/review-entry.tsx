@@ -1,6 +1,7 @@
 'use client';
 
-import { ArrowUpRight, Plus } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowUpRight, Minus, Plus } from 'lucide-react';
 import type { readerReviews } from '@/lib/reviews';
 
 type ReaderReview = (typeof readerReviews)[number];
@@ -40,8 +41,7 @@ export function ReviewEntry({
   number: number;
   featured?: boolean;
 }) {
-  // Keep the full original text in ReviewBody, but freeze the preview as requested.
-  const expanded = false;
+  const [expanded, setExpanded] = useState(false);
   return (
     <article
       id={review.id}
@@ -63,11 +63,11 @@ export function ReviewEntry({
           type="button"
           aria-expanded={expanded}
           aria-controls={`panel-${review.id}`}
-          disabled
-          aria-label="Read full review (currently unavailable)"
+          onClick={() => setExpanded((current) => !current)}
+          aria-label={expanded ? "Collapse full review" : "Read full review"}
         >
-          <span>Read full review</span>
-          <Plus aria-hidden="true" size={17} />
+          <span>{expanded ? "Show less" : "Read full review"}</span>
+          {expanded ? <Minus aria-hidden="true" size={17} /> : <Plus aria-hidden="true" size={17} />}
         </button>
         <ReviewBody review={review} expanded={expanded} />
       </div>
