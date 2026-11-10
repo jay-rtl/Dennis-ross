@@ -1,7 +1,4 @@
-'use client';
-
-import { useState } from 'react';
-import { ArrowUpRight, Minus, Plus } from 'lucide-react';
+import { ArrowUpRight, Plus } from 'lucide-react';
 import type { readerReviews } from '@/lib/reviews';
 
 type ReaderReview = (typeof readerReviews)[number];
@@ -13,25 +10,6 @@ function excerpt(text: string, limit = 155) {
   return opening.slice(0, cut > 65 ? cut : limit).trimEnd() + '…';
 }
 
-function ReviewBody({ review, expanded }: { review: ReaderReview; expanded: boolean }) {
-  return (
-    <div
-      className={`dr-review-panel ${expanded ? 'is-open' : ''}`}
-      id={`panel-${review.id}`}
-      aria-hidden={!expanded}
-      inert={!expanded}
-    >
-      <div className="dr-review-panel-inner">
-        <div className="dr-review-prose">
-          {review.full.split('\n\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function ReviewEntry({
   review,
   number,
@@ -41,7 +19,6 @@ export function ReviewEntry({
   number: number;
   featured?: boolean;
 }) {
-  const [expanded, setExpanded] = useState(false);
   return (
     <article
       id={review.id}
@@ -58,18 +35,18 @@ export function ReviewEntry({
         <blockquote className={featured ? 'dr-feature-quote' : 'dr-review-excerpt'}>
           “{excerpt(review.full, featured ? 205 : 150)}”
         </blockquote>
-        <button
-          className="dr-review-button"
-          type="button"
-          aria-expanded={expanded}
-          aria-controls={`panel-${review.id}`}
-          onClick={() => setExpanded((current) => !current)}
-          aria-label={expanded ? "Collapse full review" : "Read full review"}
-        >
-          <span>{expanded ? "Show less" : "Read full review"}</span>
-          {expanded ? <Minus aria-hidden="true" size={17} /> : <Plus aria-hidden="true" size={17} />}
-        </button>
-        <ReviewBody review={review} expanded={expanded} />
+        <details className="dr-review-expand">
+          <summary className="dr-review-button">
+            <span className="dr-review-expand-label">Read full review</span>
+            <span className="dr-review-collapse-label">Show less</span>
+            <Plus aria-hidden="true" size={17} />
+          </summary>
+          <div className="dr-review-prose">
+            {review.full.split('\n\n').map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+        </details>
       </div>
       {!featured && <ArrowUpRight className="dr-review-corner" aria-hidden="true" size={16} />}
     </article>
