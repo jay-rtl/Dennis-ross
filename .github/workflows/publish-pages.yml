@@ -29,6 +29,10 @@ jobs:
         run: npm ci
       - name: Check TypeScript
         run: npm run typecheck
+      - name: Extract official trailer screenshot for Coming Soon background
+        run: |
+          ffmpeg -hide_banner -loglevel error -ss 20 -i public/media/the-lethal-elixir-trailer.mp4 -frames:v 1 -q:v 3 -y public/media/the-lethal-elixir-trailer-still.jpg
+          test -s public/media/the-lethal-elixir-trailer-still.jpg
       - name: Build static GitHub Pages site
         run: npm run build:pages
       - name: Verify static pages
