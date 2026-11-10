@@ -22,24 +22,17 @@ export const introBootstrap = `
       window.dispatchEvent(new Event('dr:intro-timeout'));
     };
     var keys = function (event) {
-      if (!document.documentElement.dataset.intro) return;
-      if (event.key === 'Escape') { event.preventDefault(); release(); }
-      if (event.key === 'Tab') {
-        var skip = document.querySelector('.intro button');
-        if (skip) { event.preventDefault(); skip.focus({ preventScroll: true }); }
+      if (event.key === 'Escape' && document.documentElement.dataset.intro) {
+        event.preventDefault();
+        release();
       }
     };
-    var click = function (event) {
-      if (document.documentElement.dataset.intro === 'pending' && event.target.closest('.intro button')) release();
-    };
     document.addEventListener('keydown', keys);
-    document.addEventListener('click', click);
     var motionChanged = function () { if (preference.matches) release(); };
     preference.addEventListener('change', motionChanged);
     var cleanup = function () {
       gate.disconnect();
       document.removeEventListener('keydown', keys);
-      document.removeEventListener('click', click);
       preference.removeEventListener('change', motionChanged);
     };
     window.addEventListener('dr:intro-finished', cleanup, { once: true });
@@ -48,7 +41,7 @@ export const introBootstrap = `
         release();
       }
       cleanup();
-    }, 9000);
+    }, 3200);
   } catch (_) { /* The readable homepage is the fallback. */ }
 })();
 `;
