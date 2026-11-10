@@ -68,6 +68,30 @@ export default function Home() {
           <FeaturedBooks />
         </div>
       </section>
+      <section className="home-trailer-section" aria-labelledby="home-trailer-title">
+        <div className="container">
+          <div className="home-trailer-top" data-reveal>
+            <div>
+              <span className="eyebrow">FEATURED FILM-STYLE BOOK TRAILER</span>
+              <h2 id="home-trailer-title">A story of suspense.<br /><em>Now in motion.</em></h2>
+              <p>Enter the world of <cite>The Lethal Elixir</cite>, a medical thriller by Dennis Ross. Experience the official book trailer.</p>
+            </div>
+            <Link className="home-trailer-link" href="/books/the-lethal-elixir/#purchase">
+              Explore the book <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="home-trailer-video-wrap" data-reveal>
+            <video controls preload="metadata" playsInline aria-label="The Lethal Elixir official book trailer">
+              <source src="media/the-lethal-elixir-trailer.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div className="home-trailer-foot">
+            <span>THE LETHAL ELIXIR &nbsp; / &nbsp; OFFICIAL BOOK TRAILER</span>
+            <Link href="/books/the-lethal-elixir/#watch-trailer">View trailer on book page <ArrowRight size={15} aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
       <section id="discover" className="section container discovery-section">
         <div className="section-top" data-reveal>
           <div>
