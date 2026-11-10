@@ -33,6 +33,8 @@ jobs:
         run: npm run build:pages
       - name: Verify static pages
         run: npm run test:pages
+      - name: Package Hostinger-ready website ZIP
+        run: python3 scripts/package-hostinger.py
       - name: Publish to existing gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
