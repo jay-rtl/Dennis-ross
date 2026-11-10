@@ -67,9 +67,12 @@ export function IngramBookstore({book}:{book:Book}){
             {href?<a className="dr-store-primary" target="_blank" rel="noopener noreferrer" href={href}>Buy {format?.label} on IngramSpark <ArrowUpRight size={18}/></a>:<button className="dr-store-primary" disabled type="button">Buy Now — Edition link unverified</button>}
             <button className="dr-store-outline" type="button" disabled={!loaded||!format} onClick={addBag}><ShoppingBag size={18}/> Save selection ({bag.length})</button>
           </div>
+          <div className="dr-store-media-links">
+          <a className="dr-store-sample-button" href="#watch-trailer">Watch Book Trailer <ArrowUpRight size={17} aria-hidden="true" /></a>
           <Link className="dr-store-sample-button" href="/sample/the-lethal-elixir/">
             Read a Sample <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
+          </div>
           <p className="dr-store-price-note">Secure checkout through IngramSpark. This selection bag is not a payment cart; quantities and payment are finalized on IngramSpark.</p>
           <p className="dr-store-live" role="status">{message}</p>
         </div>
