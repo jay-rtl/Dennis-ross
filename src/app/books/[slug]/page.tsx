@@ -37,7 +37,7 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
       </div>
       <div className="container"><IngramBookstore book={book} /></div>
       {book.slug === 'the-lethal-elixir' && (
-        <section className="container dennis-trailer-section" aria-labelledby="dennis-trailer-title">
+        <section id="watch-trailer" className="container dennis-trailer-section" aria-labelledby="dennis-trailer-title">
           <div className="dennis-trailer-heading">
             <span className="eyebrow">A CINEMATIC BOOK PREVIEW</span>
             <h2 id="dennis-trailer-title">Watch the <em>official trailer.</em></h2>
