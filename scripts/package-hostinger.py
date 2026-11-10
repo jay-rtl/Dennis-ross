@@ -108,7 +108,9 @@ def main():
         if not all(n in names for n in needed + ["index.html"]):
             raise SystemExit("ZIP validation failed: required files missing.")
         book = check.read("books/the-lethal-elixir/index.html")
-        assert b'/media/the-lethal-elixir-trailer.mp4' in book
+        # The trailer is intentionally a non-playable Coming Soon panel.
+        assert b'Trailer' in book and b'coming soon' in book.lower()
+        assert b'<video' not in book
         assert b'id="dr-edition-fallback"' in book
         homepage = check.read("index.html")
         assert b'/brand/logo.webp' in homepage
