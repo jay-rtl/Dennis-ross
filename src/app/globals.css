@@ -2923,3 +2923,22 @@ html[data-intro] body {
 .home-trailer-foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:20px;align-items:center;color:#9caeb9;font-size:.69rem;letter-spacing:.12em}
 .home-trailer-foot a{display:inline-flex;align-items:center;gap:8px;color:#efebe3;text-decoration:none;letter-spacing:.03em}
 @media(max-width:720px){.home-trailer-top{display:block}.home-trailer-link{margin-top:25px}.home-trailer-foot{line-height:1.6}}
+
+/* Intro must remain legible even if client-side animation fails to hydrate. */
+@keyframes intro-static-fallback {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+html[data-intro="pending"] .intro-logo {
+  opacity: 1;
+  transform: translateY(0);
+  animation: intro-static-fallback 1s ease-out both;
+}
+html[data-intro="pending"] .intro-welcome {
+  opacity: 1;
+  transform: translateY(0);
+  animation: intro-static-fallback 1s ease-out .2s both;
+}
+html[data-intro="pending"] .intro-line {
+  transform: scaleX(1);
+}
