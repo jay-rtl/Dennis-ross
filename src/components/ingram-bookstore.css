@@ -78,3 +78,8 @@
 .dr-store-sample-button:hover { background: var(--ink); color: #fff; }
 @media (max-width: 500px) { .dr-store-sample-button { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .dr-store-sample-button { transition: none; } }
+
+/* Book trailer and sample preview shortcuts */
+.dr-store-media-links { display:flex;flex-wrap:wrap;gap:12px;margin:15px 0; }
+.dr-store-media-links .dr-store-sample-button { flex:1 1 180px; }
+@media(max-width:500px){.dr-store-media-links{flex-direction:column;}}
