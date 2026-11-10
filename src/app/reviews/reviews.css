@@ -293,3 +293,22 @@
 /* Preserve the editorial button appearance while review expansion is frozen. */
 .dr-reviews .dr-review-button:disabled { opacity: 1; cursor: default; }
 .dr-reviews .dr-review-button:disabled svg { transform: none; }
+
+/* Native review disclosure: works without React hydration or client-side JS. */
+.dr-reviews .dr-review-expand { width: fit-content; max-width: 100%; }
+.dr-reviews .dr-review-expand[open] { width: 100%; }
+.dr-reviews .dr-review-expand > summary {
+  list-style: none;
+  width: fit-content;
+  user-select: none;
+}
+.dr-reviews .dr-review-expand > summary::-webkit-details-marker { display: none; }
+.dr-reviews .dr-review-expand > summary::marker { content: ''; }
+.dr-reviews .dr-review-expand .dr-review-collapse-label { display: none; }
+.dr-reviews .dr-review-expand[open] .dr-review-expand-label { display: none; }
+.dr-reviews .dr-review-expand[open] .dr-review-collapse-label { display: inline; }
+.dr-reviews .dr-review-expand[open] > summary svg { transform: rotate(45deg); }
+.dr-reviews .dr-review-expand > summary:focus-visible {
+  outline: 3px solid #bc8d3a;
+  outline-offset: 5px;
+}
