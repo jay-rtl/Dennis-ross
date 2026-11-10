@@ -68,7 +68,7 @@ export function IngramBookstore({book}:{book:Book}){
             <button className="dr-store-outline" type="button" disabled={!loaded||!format} onClick={addBag}><ShoppingBag size={18}/> Save selection ({bag.length})</button>
           </div>
           <div className="dr-store-media-links">
-          <a className="dr-store-sample-button" href="#watch-trailer">Watch Book Trailer <ArrowUpRight size={17} aria-hidden="true" /></a>
+          <a className="dr-store-sample-button" href="#watch-trailer">Trailer Coming Soon <ArrowUpRight size={17} aria-hidden="true" /></a>
           <Link className="dr-store-sample-button" href="/sample/the-lethal-elixir/">
             Read a Sample <ArrowUpRight size={17} aria-hidden="true" />
           </Link>
