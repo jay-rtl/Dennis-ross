@@ -1656,7 +1656,7 @@ html[data-intro] .hero-editorial-image img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  animation: intro-failsafe 9s forwards;
+  animation: intro-failsafe 2s forwards;
 }
 html[data-intro] .intro {
   display: flex;
@@ -2941,4 +2941,30 @@ html[data-intro="pending"] .intro-welcome {
 }
 html[data-intro="pending"] .intro-line {
   transform: scaleX(1);
+}
+
+/* Trailer is intentionally not published for playback yet. */
+.trailer-coming-soon {
+  position: relative; isolation:isolate; width:100%; height:100%; min-height:260px;
+  display:grid;place-items:center; overflow:hidden;
+  background:radial-gradient(ellipse at 70% 30%,#23415a 0%,#112d43 40%,#061421 85%);
+  color:#f7f3e9; text-align:center; padding:clamp(24px,5vw,55px);
+}
+.trailer-coming-soon::before {
+  content:"";position:absolute;inset:5.5%;border:1px solid rgba(195,165,115,.26);pointer-events:none;
+}
+.trailer-coming-soon-copy { position:relative;z-index:1; }
+.trailer-coming-soon-copy span {
+  display:block;font:600 .7rem/1.5 var(--sans,Arial,sans-serif);
+  letter-spacing:.22em;color:#d6b987;margin-bottom:clamp(16px,3vw,30px);
+}
+.trailer-coming-soon-copy strong {
+  display:block;font:400 clamp(2.6rem,6.5vw,6rem)/1.03 var(--serif,Georgia,serif);
+  letter-spacing:-.035em;
+}
+.trailer-coming-soon-copy strong em { color:#d6b987;font-weight:400; }
+.trailer-coming-soon-copy p {color:#d2d9df;letter-spacing:.03em;margin:clamp(18px,3vw,30px) 0 0;}
+@media (max-width:600px) {
+  .trailer-coming-soon { min-height:220px; }
+  .trailer-coming-soon-copy span { letter-spacing:.12em;font-size:.6rem; }
 }
