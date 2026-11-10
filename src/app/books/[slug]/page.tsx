@@ -36,6 +36,22 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
         <span>{book.title}</span>
       </div>
       <div className="container"><IngramBookstore book={book} /></div>
+      {book.slug === 'the-lethal-elixir' && (
+        <section className="container dennis-trailer-section" aria-labelledby="dennis-trailer-title">
+          <div className="dennis-trailer-heading">
+            <span className="eyebrow">A CINEMATIC BOOK PREVIEW</span>
+            <h2 id="dennis-trailer-title">Watch the <em>official trailer.</em></h2>
+            <p>Step into the suspense and danger of <cite>The Lethal Elixir</cite>, a medical thriller by Dennis Ross.</p>
+          </div>
+          <div className="dennis-trailer-frame">
+            <video controls preload="metadata" playsInline aria-label="The Lethal Elixir official book trailer">
+              <source src="../../media/the-lethal-elixir-trailer.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <p className="dennis-trailer-caption">THE LETHAL ELIXIR &nbsp; / &nbsp; DENNIS ROSS &nbsp; / &nbsp; OFFICIAL BOOK TRAILER</p>
+        </section>
+      )}
       {related.length > 0 && (
         <section className="section container">
           <div className="section-top">
