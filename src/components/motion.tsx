@@ -44,18 +44,18 @@ export function Motion() {
       if (preference.matches) finishIntro();
     };
     preference.addEventListener('change', preferenceChanged);
-    const failSafe = setTimeout(finishIntro, 3200);
+    const failSafe = setTimeout(finishIntro, 2000);
     window.addEventListener('dr:intro-timeout', finishIntro);
     const context = gsap.context(() => {
       gsap.timeline({ onComplete: finishIntro, defaults: { ease: 'power2.out' } })
         .fromTo('.intro-logo',
           { y: 12, opacity: 0, clipPath: 'inset(0 0 100% 0)' },
-          { y: 0, opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 0.65 })
-        .to('.intro-line', { scaleX: 1, duration: 0.35 }, '-=0.25')
-        .to('.intro-welcome', { opacity: 1, y: 0, duration: 0.4 }, '-=0.15')
-        .to({}, { duration: 0.95 })
+          { y: 0, opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 0.55 })
+        .to('.intro-line', { scaleX: 1, duration: 0.25 }, '-=0.2')
+        .to('.intro-welcome', { opacity: 1, y: 0, duration: 0.3 }, '-=0.1')
+        .to({}, { duration: 0.65 })
         .call(() => setRevealing(true))
-        .to(overlay.current, { clipPath: 'inset(0 0 100% 0)', duration: 0.45 });
+        .to(overlay.current, { clipPath: 'inset(0 0 100% 0)', duration: 0.4 });
     }, overlay);
     return () => {
       clearTimeout(failSafe);
