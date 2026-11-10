@@ -35,7 +35,6 @@ export function Motion() {
     document.documentElement.dataset.intro = 'active';
     const content = document.getElementById('site-content');
     if (content) content.inert = true;
-    overlay.current.querySelector<HTMLButtonElement>('button')?.focus({ preventScroll: true });
     try {
       sessionStorage.setItem('dr-intro', '1');
     } catch {
@@ -45,21 +44,18 @@ export function Motion() {
       if (preference.matches) finishIntro();
     };
     preference.addEventListener('change', preferenceChanged);
-    const failSafe = setTimeout(finishIntro, 7000);
+    const failSafe = setTimeout(finishIntro, 3200);
     window.addEventListener('dr:intro-timeout', finishIntro);
     const context = gsap.context(() => {
-      gsap
-        .timeline({ onComplete: finishIntro, defaults: { ease: 'power3.inOut' } })
-        .fromTo(
-          '.intro-logo',
-          { y: 18, opacity: 0, clipPath: 'inset(0 0 100% 0)' },
-          { y: 0, opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 1.4 },
-        )
-        .to('.intro-line', { scaleX: 1, duration: 1 }, '-=.35')
-        .to('.intro-welcome', { opacity: 1, y: 0, duration: 0.8 }, '-=.45')
-        .to({}, { duration: 1.2 })
+      gsap.timeline({ onComplete: finishIntro, defaults: { ease: 'power2.out' } })
+        .fromTo('.intro-logo',
+          { y: 12, opacity: 0, clipPath: 'inset(0 0 100% 0)' },
+          { y: 0, opacity: 1, clipPath: 'inset(0 0 0% 0)', duration: 0.65 })
+        .to('.intro-line', { scaleX: 1, duration: 0.35 }, '-=0.25')
+        .to('.intro-welcome', { opacity: 1, y: 0, duration: 0.4 }, '-=0.15')
+        .to({}, { duration: 0.95 })
         .call(() => setRevealing(true))
-        .to(overlay.current, { clipPath: 'inset(0 0 100% 0)', duration: 1.1 });
+        .to(overlay.current, { clipPath: 'inset(0 0 100% 0)', duration: 0.45 });
     }, overlay);
     return () => {
       clearTimeout(failSafe);
@@ -132,9 +128,7 @@ export function Motion() {
         <span className="intro-line" />
         <p className="intro-welcome">Welcome to Dennis Ross Books.</p>
       </div>
-      <button type="button" onClick={finishIntro}>
-        Skip introduction →
-      </button>
+
     </div>
   );
 }
