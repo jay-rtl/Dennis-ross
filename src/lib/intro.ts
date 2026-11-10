@@ -41,7 +41,7 @@ export const introBootstrap = `
         release();
       }
       cleanup();
-    }, 3200);
+    }, 2000);
   } catch (_) { /* The readable homepage is the fallback. */ }
 })();
 `;
