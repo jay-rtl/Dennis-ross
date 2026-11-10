@@ -40,16 +40,19 @@ export default async function BookPage({ params }: { params: Promise<{ slug: str
         <section id="watch-trailer" className="container dennis-trailer-section" aria-labelledby="dennis-trailer-title">
           <div className="dennis-trailer-heading">
             <span className="eyebrow">A CINEMATIC BOOK PREVIEW</span>
-            <h2 id="dennis-trailer-title">Watch the <em>official trailer.</em></h2>
+            <h2 id="dennis-trailer-title">The trailer <em>is coming soon.</em></h2>
             <p>Step into the suspense and danger of <cite>The Lethal Elixir</cite>, a medical thriller by Dennis Ross.</p>
           </div>
           <div className="dennis-trailer-frame">
-            <video controls preload="metadata" playsInline aria-label="The Lethal Elixir official book trailer">
-              <source src="../../media/the-lethal-elixir-trailer.mp4" type="video/mp4" />
-              Your browser does not support HTML5 video.
-            </video>
+            <div className="trailer-coming-soon" role="img" aria-label="The Lethal Elixir trailer coming soon">
+              <div className="trailer-coming-soon-copy">
+                <span>DENNIS ROSS / THE LETHAL ELIXIR</span>
+                <strong>Trailer <em>coming soon.</em></strong>
+                <p>A medical thriller. A story still unfolding.</p>
+              </div>
+            </div>
           </div>
-          <p className="dennis-trailer-caption">THE LETHAL ELIXIR &nbsp; / &nbsp; DENNIS ROSS &nbsp; / &nbsp; OFFICIAL BOOK TRAILER</p>
+          <p className="dennis-trailer-caption">THE LETHAL ELIXIR &nbsp; / &nbsp; DENNIS ROSS &nbsp; / &nbsp; BOOK TRAILER COMING SOON</p>
         </section>
       )}
       {related.length > 0 && (
