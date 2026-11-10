@@ -29,6 +29,10 @@ jobs:
         run: npm ci
       - name: Check TypeScript
         run: npm run typecheck
+      - name: Install FFmpeg for trailer screenshot
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
       - name: Extract official trailer screenshot for Coming Soon background
         run: |
           ffmpeg -hide_banner -loglevel error -ss 20 -i public/media/the-lethal-elixir-trailer.mp4 -frames:v 1 -q:v 3 -y public/media/the-lethal-elixir-trailer-still.jpg
