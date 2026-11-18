@@ -1,20 +1,15 @@
 #!/usr/bin/env python3
-"""Create an extract-directly-to-public_html ZIP from the verified GitHub Pages export.
+"""Create a static export ZIP for the Hostinger public_html directory.
 
-No credentials, remote access, or external dependencies required.
-The source export is left unchanged; only ZIP entries are rewritten.
+Build for the production domain so Next.js paths are compiled for the site root.
 """
 from pathlib import Path
-from io import BytesIO
+from subprocess import run
 from zipfile import ZipFile, ZIP_DEFLATED
 import re
 
-SOURCE = Path(".pages-build/app/out")
-DEST = SOURCE / "downloads" / "dennisross-hostinger-ready.zip"
-TEXT_EXTS = {".html", ".htm", ".css", ".js", ".json", ".txt", ".xml",
-             ".svg", ".webmanifest", ".map", ".rsc"}
-OLD_URL = b"https://jay-rtl.github.io/Dennis-ross"
-NEW_URL = b"https://dennisrosspublications.com"
+SOURCE = Path(".pages-build/hostinger/out")
+DEST = Path(".pages-build/app/out/downloads/dennisross-hostinger-ready.zip")
 BASE = b"/Dennis-ross"
 
 # Small, dependency-free enhancement for the Hostinger static export.
@@ -60,6 +55,7 @@ EDITION_FALLBACK = r"""<script id="dr-edition-fallback">
 </script>"""
 
 def main():
+    run(["node", "scripts/build-pages.mjs", "--hostinger"], check=True)
     if not (SOURCE / "index.html").is_file() or not (SOURCE / "_next").is_dir():
         raise SystemExit("Missing exported homepage or _next assets; ZIP not created.")
     needed = [
@@ -78,28 +74,15 @@ def main():
     bytes_written = 0
     with ZipFile(DEST, "w", ZIP_DEFLATED, compresslevel=6) as archive:
         for item in sorted(SOURCE.rglob("*")):
-            if not item.is_file() or item == DEST:
+            if not item.is_file():
                 continue
             rel = item.relative_to(SOURCE).as_posix()
             content = item.read_bytes()
-            if item.suffix.lower() in TEXT_EXTS:
-                content = content.replace(OLD_URL, NEW_URL)
-                content = content.replace(BASE, b"")
-                # The video on nested book paths must resolve from the custom-domain root.
-                content = content.replace(
-                    b'../../media/the-lethal-elixir-trailer.mp4',
-                    b'/media/the-lethal-elixir-trailer.mp4')
-                # The homepage source should use the same root-relative media link.
-                content = content.replace(
-                    b'src="media/the-lethal-elixir-trailer.mp4"',
-                    b'src="/media/the-lethal-elixir-trailer.mp4"')
-                if rel == "books/the-lethal-elixir/index.html":
-                    content = content.replace(b"</body>", EDITION_FALLBACK.encode("utf-8") + b"</body>")
-                    if b'id="dr-edition-fallback"' not in content:
-                        raise SystemExit("Missing static edition-selection fallback")
-                if rel in {"index.html", "books/the-lethal-elixir/index.html",
-                           "reviews/index.html"} and (BASE in content or OLD_URL in content):
-                    raise SystemExit("Unconverted path in " + rel)
+            if rel == "books/the-lethal-elixir/index.html":
+                content = content.replace(b"</body>", EDITION_FALLBACK.encode("utf-8") + b"</body>")
+            if rel in {"index.html", "books/the-lethal-elixir/index.html",
+                       "reviews/index.html"} and BASE in content:
+                raise SystemExit("Unexpected GitHub Pages path in " + rel)
             archive.writestr(rel, content)
             count += 1
             bytes_written += len(content)
@@ -108,11 +91,15 @@ def main():
         if not all(n in names for n in needed + ["index.html"]):
             raise SystemExit("ZIP validation failed: required files missing.")
         book = check.read("books/the-lethal-elixir/index.html")
-        # The trailer is intentionally a non-playable Coming Soon panel.
-        assert b'Trailer' in book and b'coming soon' in book.lower()
-        assert b'<video' not in book
-        assert b'id="dr-edition-fallback"' in book
         homepage = check.read("index.html")
+        for page, source in (
+            (homepage, b"media/the-lethal-elixir-trailer.mp4"),
+            (book, b"../../media/the-lethal-elixir-trailer.mp4"),
+        ):
+            assert re.search(rb'<video\b[^>]*\bcontrols(?:=""|\s|>)', page)
+            assert b'src="' + source + b'"' in page
+            assert b'trailer-coming-soon' not in page
+        assert b'id="dr-edition-fallback"' in book
         assert b'/brand/logo.webp' in homepage
     print(f"Hostinger ZIP created: {DEST} ({count} files, {bytes_written:,} uncompressed bytes)")
     print("Upload ZIP to domain public_html and extract there (index.html at root).")

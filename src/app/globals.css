@@ -799,6 +799,17 @@ html[data-intro] .hero-editorial-image img {
   margin-bottom: 40px;
   flex-wrap: wrap;
 }
+.book-card-links a[href$='#purchase'] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 1px solid currentColor;
+  font-size: 16px;
+  font-weight: 600;
+}
 /* Contents: a full-width, ruled literary index, not three cards. */
 .discovery-section {
   border-top: 1px solid var(--line);
@@ -2897,7 +2908,7 @@ html[data-intro] body {
  .reviews-intro h1 { font-size: clamp(50px, 11vw, 68px); }
 }
 
-/* Official book trailer — editorial, responsive and restricted to the book detail page. */
+/* Official book trailer on the book detail page. */
 .dennis-trailer-section { padding-top:clamp(65px,9vw,130px); padding-bottom:clamp(70px,9vw,130px); }
 .dennis-trailer-heading { max-width:850px; margin:0 0 clamp(24px,4vw,45px); }
 .dennis-trailer-heading h2 { font:500 clamp(3rem,5.8vw,6rem)/1.02 var(--serif,Georgia,serif); letter-spacing:-.04em; color:#112c42; margin:18px 0 20px; }
@@ -2941,40 +2952,4 @@ html[data-intro="pending"] .intro-welcome {
 }
 html[data-intro="pending"] .intro-line {
   transform: scaleX(1);
-}
-
-/* Trailer is intentionally not published for playback yet. */
-.trailer-coming-soon {
-  position: relative; isolation:isolate; width:100%; height:100%; min-height:260px;
-  display:grid;place-items:center; overflow:hidden;
-  background:#071726;
-  color:#f7f3e9; text-align:center; padding:clamp(24px,5vw,55px);
-}
-/* Official book artwork: a dark cinematic image layer, not a video player. */
-.trailer-coming-soon::after {
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:
-    linear-gradient(90deg,rgba(5,17,29,.89),rgba(8,29,47,.66) 44%,rgba(5,16,27,.88)),
-    linear-gradient(0deg,rgba(5,17,29,.77),transparent 45%,rgba(5,17,29,.52)),
-    url("/media/the-lethal-elixir-trailer-still.jpg") center 36%/cover no-repeat;
-  transform:scale(1.03);
-}
-
-.trailer-coming-soon::before {
-  content:"";position:absolute;inset:5.5%;border:1px solid rgba(195,165,115,.26);pointer-events:none;
-}
-.trailer-coming-soon-copy { position:relative;z-index:1; }
-.trailer-coming-soon-copy span {
-  display:block;font:600 .7rem/1.5 var(--sans,Arial,sans-serif);
-  letter-spacing:.22em;color:#d6b987;margin-bottom:clamp(16px,3vw,30px);
-}
-.trailer-coming-soon-copy strong {
-  display:block;font:400 clamp(2.6rem,6.5vw,6rem)/1.03 var(--serif,Georgia,serif);
-  letter-spacing:-.035em;
-}
-.trailer-coming-soon-copy strong em { color:#d6b987;font-weight:400; }
-.trailer-coming-soon-copy p {color:#d2d9df;letter-spacing:.03em;margin:clamp(18px,3vw,30px) 0 0;}
-@media (max-width:600px) {
-  .trailer-coming-soon { min-height:220px; }
-  .trailer-coming-soon-copy span { letter-spacing:.12em;font-size:.6rem; }
 }

@@ -72,26 +72,23 @@ export default function Home() {
         <div className="container">
           <div className="home-trailer-top" data-reveal>
             <div>
-              <span className="eyebrow">FEATURED BOOK TRAILER PREVIEW</span>
+              <span className="eyebrow">FEATURED BOOK TRAILER</span>
               <h2 id="home-trailer-title">A story of suspense.<br /><em>Now in motion.</em></h2>
-              <p>Enter the world of <cite>The Lethal Elixir</cite>, a medical thriller by Dennis Ross. The official trailer will premiere soon.</p>
+              <p>Watch the official trailer for <cite>The Lethal Elixir</cite>, a medical thriller by Dennis Ross.</p>
             </div>
             <Link className="home-trailer-link" href="/books/the-lethal-elixir/#purchase">
               Explore the book <ArrowUpRight size={18} aria-hidden="true" />
             </Link>
           </div>
           <div className="home-trailer-video-wrap" data-reveal>
-            <div className="trailer-coming-soon" role="img" aria-label="The Lethal Elixir trailer coming soon">
-              <div className="trailer-coming-soon-copy">
-                <span>DENNIS ROSS / THE LETHAL ELIXIR</span>
-                <strong>Trailer <em>coming soon.</em></strong>
-                <p>A medical thriller. A story still unfolding.</p>
-              </div>
-            </div>
+            <video controls preload="metadata" playsInline aria-label="The Lethal Elixir official book trailer">
+              <source src="media/the-lethal-elixir-trailer.mp4" type="video/mp4" />
+              <a href="media/the-lethal-elixir-trailer.mp4">Download the trailer</a>
+            </video>
           </div>
           <div className="home-trailer-foot">
-            <span>THE LETHAL ELIXIR &nbsp; / &nbsp; BOOK TRAILER / COMING SOON</span>
-            <Link href="/books/the-lethal-elixir/#watch-trailer">Preview the book <ArrowRight size={15} aria-hidden="true" /></Link>
+            <span>THE LETHAL ELIXIR &nbsp; / &nbsp; OFFICIAL BOOK TRAILER</span>
+            <Link href="/books/the-lethal-elixir/#watch-trailer">Watch on the book page <ArrowRight size={15} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

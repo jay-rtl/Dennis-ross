@@ -1,5 +1,5 @@
-// GitHub Pages is static hosting. Build a separate copy so the optional server
-// integrations remain available in the original application.
+// Build static exports separately so the optional server integrations remain
+// available in the original application.
 import {
   cpSync,
   existsSync,
@@ -14,9 +14,10 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const stage = path.join(root, '.pages-build', 'app');
-const basePath = '/Dennis-ross';
-const siteUrl = `https://jay-rtl.github.io${basePath}`;
+const isHostinger = process.argv.includes('--hostinger');
+const stage = path.join(root, '.pages-build', isHostinger ? 'hostinger' : 'app');
+const basePath = isHostinger ? '' : '/Dennis-ross';
+const siteUrl = isHostinger ? 'https://dennisrosspublications.com' : `https://jay-rtl.github.io${basePath}`;
 function remove(target) {
   const resolved = path.resolve(target);
   if (!resolved.startsWith(path.join(root, '.pages-build') + path.sep))
@@ -72,7 +73,7 @@ function transform(directory) {
       'export const dynamicParams = false;',
     );
     source = source.replace(/url\('\/fonts\//g, `url('${basePath}/fonts/`);
-    if (filename.endsWith(path.join('lib', 'intro.ts')))
+    if (basePath && filename.endsWith(path.join('lib', 'intro.ts')))
       source = source.replace(
         "location.pathname !== '/'",
         `(location.pathname !== '${basePath}/' && location.pathname !== '${basePath}')`,
@@ -149,4 +150,4 @@ function flattenSegments(directory) {
 }
 flattenSegments(output);
 writeFileSync(path.join(output, '.nojekyll'), '');
-console.log(`GitHub Pages output: ${output}\nPublic URL: ${siteUrl}/`);
+console.log(`Static output: ${output}\nPublic URL: ${siteUrl}/`);
