@@ -36,4 +36,4 @@ document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;if(
 let was=single();window.addEventListener('resize',()=>{if(was!==single()){was=single();draw();}});
 try{if(!window.pdfjsLib)throw Error('PDF renderer unavailable');pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';pdf=await pdfjsLib.getDocument('the-lethal-elixir-sample.pdf').promise;el('seek').max=pdf.numPages;draw();}catch(err){loading.textContent='Sample PDF has not been uploaded yet, or the reader could not load it.';}
 })();
-</script></body></html>
+</script><script src="/review-buttons-disabled.js"></script><script src="/purchase-controls-paused.js"></script></body></html>

@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://jay-rtl.github.io/Dennis-ross/sitemap.xml
+Sitemap: https://dennisrosspublications.com/sitemap.xml
